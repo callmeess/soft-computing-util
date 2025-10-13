@@ -1,6 +1,4 @@
-package com.example.soft_util.impl;
-
-import com.example.soft_util.interfaces.MutationStrategy;
+package com.example.softcomputing.genetic.operators.mutation;
 
 public class SimpleMutation<T> implements MutationStrategy<T> {
     @Override

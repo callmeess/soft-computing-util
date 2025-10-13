@@ -1,7 +1,6 @@
-package com.example.soft_util.interfaces;
-
+package com.example.softcomputing.genetic.operators.crossover;
 import java.util.List;
 
-public interface CrossoverStrategy<T> {
-	List<T> crossover(T parent1, T parent2);
+public interface CrossoverStrategy<Chromosome> {
+	List<Chromosome> crossover(Chromosome parent1, Chromosome parent2);
 }

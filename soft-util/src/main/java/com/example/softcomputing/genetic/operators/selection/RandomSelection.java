@@ -1,8 +1,7 @@
-package com.example.soft_util.impl;
+package com.example.softcomputing.genetic.operators.selection;
 
 import java.util.List;
 import java.util.Random;
-import com.example.soft_util.interfaces.SelectionStrategy;
 
 public class RandomSelection implements SelectionStrategy {
     private final Random rnd = new Random();
