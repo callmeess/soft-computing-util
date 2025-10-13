@@ -1,8 +1,7 @@
-package com.example.soft_util.impl;
+package com.example.softcomputing.genetic.operators.crossover;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.example.soft_util.interfaces.CrossoverStrategy;
 
 public class SinglePointCrossover<T> implements CrossoverStrategy<T> {
     @Override

@@ -1,4 +1,4 @@
-package com.example.soft_util.interfaces;
+package com.example.softcomputing.genetic.operators.selection;
 
 import java.util.List;
 

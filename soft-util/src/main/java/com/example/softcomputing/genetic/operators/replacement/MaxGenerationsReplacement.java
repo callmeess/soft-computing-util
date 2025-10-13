@@ -1,6 +1,5 @@
-package com.example.soft_util.impl;
+package com.example.softcomputing.genetic.operators.replacement;
 
-import com.example.soft_util.interfaces.Replacement;
 
 public class MaxGenerationsReplacement<T> implements Replacement<T> {
     private final int maxGenerations;

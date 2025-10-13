@@ -1,12 +1,12 @@
-package com.example.soft_util;
+package com.example.softcomputing.genetic.core;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.soft_util.interfaces.CrossoverStrategy;
-import com.example.soft_util.interfaces.MutationStrategy;
-import com.example.soft_util.interfaces.Replacement;
-import com.example.soft_util.interfaces.SelectionStrategy;
+import com.example.softcomputing.genetic.operators.crossover.CrossoverStrategy;
+import com.example.softcomputing.genetic.operators.mutation.MutationStrategy;
+import com.example.softcomputing.genetic.operators.replacement.Replacement;
+import com.example.softcomputing.genetic.operators.selection.SelectionStrategy;
 
 public class GeneticAlgorithm {
     private final SelectionStrategy selection;
