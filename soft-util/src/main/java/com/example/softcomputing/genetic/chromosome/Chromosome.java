@@ -5,4 +5,5 @@ public interface Chromosome<G> {
     int length();      // number of genes
     G getGene(int index); // get gene at index
     void setGene(int index, G value); // set gene at index
+    double evaluate(); 
 }
