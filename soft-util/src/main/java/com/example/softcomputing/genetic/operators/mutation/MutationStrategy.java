@@ -1,5 +1,7 @@
-package com.example.soft_util.interfaces;
+package com.example.softcomputing.genetic.operators.mutation;
 
-public interface MutationStrategy<T> {
-	T mutate(T individual);
+import com.example.softcomputing.genetic.chromosome.Chromosome;
+
+public interface MutationStrategy<G, T extends Chromosome<G>> {
+    T mutate(T individual);
 }
