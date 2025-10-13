@@ -57,4 +57,9 @@ public class FloatingPointChromosome implements Chromosome<Double> {
     public String toString() {
         return "FloatingPointChromosome" + Arrays.toString(genes);
     }
+
+    @Override
+    public double evaluate() {
+        throw new UnsupportedOperationException("Unimplemented method 'evaluate'");
+    }
 }
