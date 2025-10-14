@@ -2,6 +2,7 @@ package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
 import java.util.Random;
+import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
 
 public class FloatingPointChromosome implements Chromosome<Double> {
     private final Double[] genes;

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.example.softcomputing.genetic.chromosome.Chromosome;
-import com.example.softcomputing.genetic.chromosome.ChromosomeFactory;
+import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
 
 public class TwoPointCrossover<G, C extends Chromosome<G>> implements CrossoverStrategy<C> {
     private final double crossoverProbability;

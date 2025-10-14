@@ -1,22 +1,33 @@
 package com.example.softcomputing.genetic.operators.mutation;
 
-import com.example.softcomputing.genetic.chromosome.Chromosome;
+import java.util.Random;
+
 import com.example.softcomputing.genetic.chromosome.IntegerChromosome;
 
-public class IntegerMutation implements MutationStrategy<Integer,IntegerChromosome > {
+public class IntegerMutation implements MutationStrategy<IntegerChromosome> {
+
+    private final double mutationRate;
+    private final Random random = new Random();
+
+    public IntegerMutation(double mutationRate) {
+        if (mutationRate < 0.0 || mutationRate > 1.0) {
+            throw new IllegalArgumentException("mutationRate must be in [0,1]");
+        }
+        this.mutationRate = mutationRate;
+    }
 
     @Override
-    public Chromosome<Integer> mutate(Chromosome<Integer> individual, Double mutationRate) {
+    public IntegerChromosome mutate(IntegerChromosome individual) {
+        if (individual == null) throw new NullPointerException("individual is null");
+        int len = individual.length();
+        if (len == 0) return individual;
 
-            if (Math.random() < mutationRate) {
-            int mutationValue = (int) (Math.random() * (10 - 0 + 1)) + 0; //  between 0 and 10
-            int mutationSign = Math.random() < 0.5 ? -1 : 1;
-            mutationValue *= mutationSign;
-
-            int mutationIndex = (int) (Math.random() * individual.length());
+        if (random.nextDouble() < mutationRate) {
+            int mutationValue = random.nextInt(11); // 0..10
+            if (random.nextBoolean()) mutationValue = -mutationValue;
+            int mutationIndex = random.nextInt(len);
             individual.setGene(mutationIndex, mutationValue);
 
-            return individual;
         }
         return individual;
     }
