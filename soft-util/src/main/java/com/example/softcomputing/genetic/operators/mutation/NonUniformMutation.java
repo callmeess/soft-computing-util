@@ -4,7 +4,7 @@ import java.util.Random;
 
 import com.example.softcomputing.genetic.chromosome.FloatingPointChromosome;
 
-public class NonUniformMutation implements MutationStrategy<Double, FloatingPointChromosome> {
+public class NonUniformMutation implements MutationStrategy<FloatingPointChromosome> {
 
     private final Double mutationRate;
     private final Random random = new Random();

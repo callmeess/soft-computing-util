@@ -1,9 +1,9 @@
 package com.example.softcomputing.genetic.chromosome;
 
-public interface Chromosome<G> {
-    G[] toArray();     // array of genes
-    int length();      // number of genes
-    G getGene(int index); // get gene at index
-    void setGene(int index, G value); // set gene at index
+public interface  Chromosome<G> {
+    G[] toArray();     // genes
+    int length();       
+    G getGene(int index); 
+    void setGene(int index, G value); 
     double evaluate(); 
 }

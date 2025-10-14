@@ -3,85 +3,81 @@ package com.example.softcomputing.genetic.core;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.example.softcomputing.genetic.chromosome.Chromosome;
 import com.example.softcomputing.genetic.operators.crossover.CrossoverStrategy;
 import com.example.softcomputing.genetic.operators.mutation.MutationStrategy;
 import com.example.softcomputing.genetic.operators.replacement.Replacement;
 import com.example.softcomputing.genetic.operators.selection.SelectionStrategy;
 
-public class GeneticAlgorithm {
-    private final SelectionStrategy selection;
-    private final CrossoverStrategy crossover;
-    private final MutationStrategy mutation;
-    private final Replacement replacement;
-    private final int populationSize;
+public class GeneticAlgorithm<C extends Chromosome<?>> {
 
-    private GeneticAlgorithm(Builder builder) {
-        this.selection = builder.selection;
-        this.crossover = builder.crossover;
-        this.mutation = builder.mutation;
-        this.replacement = builder.replacement;
-        this.populationSize = builder.populationSize;
+    private SelectionStrategy<C> _selection;
+    private CrossoverStrategy<C> _crossover;
+    private MutationStrategy<C> _mutation;
+    private Replacement<C> _replacement;
+    private int _populationSize;
+    private List<C> _population;
+
+    public GeneticAlgorithm(GeneticAlgorithmBuilder<C> builder) {
+        this._selection = builder.selection;
+        this._crossover = builder.crossover;
+        this._mutation = builder.mutation;
+        this._replacement = builder.replacement;
+        this._populationSize = builder.populationSize;
+        this._population = builder.population;
     }
 
     public void run() {
-        System.out.println("Running GeneticAlgorithm with population size: " + populationSize);
 
-        List<Integer> population = new ArrayList<>();
-        for (int i = 0; i < populationSize; i++) population.add(i);
+        if (_population == null || _population.isEmpty()) {
+            System.out.println("No initial population provided. Aborting run.");
+            return;
+        }
 
-        int generation = 0;
-        while (true) {
-            generation++;
+        if (_selection == null || _crossover == null || _mutation == null || _replacement == null) {
+            System.out.println("One or more strategies are not configured. Aborting run.");
+            return;
+        }
 
-            // selection
+        final int maxGenerations = 20;
 
-            //crossover
+        for (int gen = 1; gen <= maxGenerations; gen++) {
+            List<C> offspring = new ArrayList<>(_populationSize);
 
-            //mutation
+            while (offspring.size() < _populationSize) {
+                C parent1 = _selection.selectIndividual(_population);
+                C parent2 = _selection.selectIndividual(_population);
 
-            //replacement
+                List<C> children = _crossover.crossover(parent1, parent2);
 
-            if (generation > 10000) { // safety
-                System.out.println("Reached safety limit of 10000 generations.");
-                break;
+                for (C child : children) {
+                    C mutated = _mutation.mutate(child);
+                    offspring.add(mutated);
+                    if (offspring.size() >= _populationSize) break;
+                }
             }
+
+            //  replacement
+            _population = _replacement.replacePopulation(new ArrayList<>(_population), offspring);
+
+            // evaluate and report best individual of this generation
+            C best = null;
+            double bestFitness = Double.NEGATIVE_INFINITY;
+            for (C ind : _population) {
+                double fitness = ind.evaluate();
+                if (best == null || fitness > bestFitness) {
+                    best = ind;
+                    bestFitness = fitness;
+                }
+            }
+
+            System.out.println("Generation " + gen + " bestFitness=" + bestFitness + " best=" + best);
+
+            if (Double.isFinite(bestFitness) && bestFitness >= Double.POSITIVE_INFINITY - 1) break;
         }
     }
 
-    public static class Builder {
-        private SelectionStrategy selection;
-        private CrossoverStrategy crossover;
-        private MutationStrategy mutation;
-        private Replacement replacement;
-        private int populationSize = 100;
-
-        public Builder withSelectionStrategy(SelectionStrategy s) {
-            this.selection = s;
-            return this;
-        }
-
-        public Builder withCrossoverStrategy(CrossoverStrategy c) {
-            this.crossover = c;
-            return this;
-        }
-
-        public Builder withMutationStrategy(MutationStrategy m) {
-            this.mutation = m;
-            return this;
-        }
-
-        public Builder withReplacementStrategy(Replacement r) {
-            this.replacement = r;
-            return this;
-        }
-
-        public Builder withPopulationSize(int size) {
-            this.populationSize = size;
-            return this;
-        }
-
-        public GeneticAlgorithm build() {
-            return new GeneticAlgorithm(this);
-        }
+    public static <C extends Chromosome<?>> GeneticAlgorithmBuilder<C> builder() {
+        return new GeneticAlgorithmBuilder<C>();
     }
 }

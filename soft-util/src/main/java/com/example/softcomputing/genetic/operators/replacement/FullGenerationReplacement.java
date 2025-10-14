@@ -4,10 +4,10 @@ import java.util.List;
 
 import com.example.softcomputing.genetic.chromosome.Chromosome;
 
-public class FullGenerationReplacement  implements Replacement<Chromosome<?>> {
+public class FullGenerationReplacement<C extends Chromosome<?>> implements Replacement<C> {
 
     @Override
-    public List<Chromosome<?>> replacePopulation(List<Chromosome<?>> currentPopulation, List<Chromosome<?>> newIndividuals) {
+    public List<C> replacePopulation(List<C> currentPopulation, List<C> newIndividuals) {
         return newIndividuals;
     }
     
