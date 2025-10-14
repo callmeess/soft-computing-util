@@ -12,14 +12,14 @@ public class GeneticAlgorithm {
     private final SelectionStrategy selection;
     private final CrossoverStrategy crossover;
     private final MutationStrategy mutation;
-    private final Replacement termination;
+    private final Replacement replacement;
     private final int populationSize;
 
     private GeneticAlgorithm(Builder builder) {
         this.selection = builder.selection;
         this.crossover = builder.crossover;
         this.mutation = builder.mutation;
-        this.termination = builder.replacement;
+        this.replacement = builder.replacement;
         this.populationSize = builder.populationSize;
     }
 
@@ -32,14 +32,17 @@ public class GeneticAlgorithm {
         int generation = 0;
         while (true) {
             generation++;
-            // Just a placeholder for selection/crossover/mutation steps
-            Object best = population.get(0);
-            if (termination.shouldTerminate(generation, best)) {
-                System.out.println("Termination triggered at generation " + generation);
-                break;
-            }
+
+            // selection
+
+            //crossover
+
+            //mutation
+
+            //replacement
+
             if (generation > 10000) { // safety
-                System.out.println("Reached safety limit");
+                System.out.println("Reached safety limit of 10000 generations.");
                 break;
             }
         }
@@ -67,7 +70,7 @@ public class GeneticAlgorithm {
             return this;
         }
 
-        public Builder withTerminationStrategy(Replacement r) {
+        public Builder withReplacementStrategy(Replacement r) {
             this.replacement = r;
             return this;
         }
