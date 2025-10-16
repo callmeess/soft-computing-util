@@ -10,8 +10,7 @@ public class IntegerChromosome implements  Chromosome<Integer> {
 
     @Override
     public Integer[] toArray() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'toArray'");
+        return java.util.Arrays.copyOf(_genes, _genes.length);
     }
 
     @Override
