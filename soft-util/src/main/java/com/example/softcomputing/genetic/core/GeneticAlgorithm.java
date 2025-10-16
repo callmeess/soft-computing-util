@@ -17,6 +17,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
     private Replacement<C> _replacement;
     private int _populationSize;
     private List<C> _population;
+    private long _MaxGeneration = 100;
 
     public GeneticAlgorithm(GeneticAlgorithmBuilder<C> builder) {
         this._selection = builder.selection;
@@ -25,6 +26,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
         this._replacement = builder.replacement;
         this._populationSize = builder.populationSize;
         this._population = builder.population;
+        this._MaxGeneration = builder.maxGenerations;
     }
 
     public void run() {
@@ -39,9 +41,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
             return;
         }
 
-        final int maxGenerations = 20;
-
-        for (int gen = 1; gen <= maxGenerations; gen++) {
+        for (int gen = 1; gen <= _MaxGeneration; gen++) {
             List<C> offspring = new ArrayList<>(_populationSize);
 
             while (offspring.size() < _populationSize) {
