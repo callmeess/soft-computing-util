@@ -13,11 +13,12 @@ public class BinaryMutation implements MutationStrategy<BinaryChromosome> {
 
     @Override
     public BinaryChromosome mutate(BinaryChromosome individual) {
-        for (int i = 0; i < individual.length(); i++) {
-            if (random.nextDouble() < mutationRate) {
-                int current = individual.getGene(i);
-                individual.setGene(i, 1 - current);
-            }
+        if (individual.length() == 0) return individual;
+        // With probability mutationRate, flip one random bit
+        if (random.nextDouble() < mutationRate) {
+            int idx = random.nextInt(individual.length());
+            int current = individual.getGene(idx);
+            individual.setGene(idx, 1 - current);
         }
         return individual;
     }

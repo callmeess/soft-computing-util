@@ -9,6 +9,7 @@ import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.Factories.IntegerChromosomeFactory;
 import com.example.softcomputing.genetic.core.GeneticAlgorithm;
 import com.example.softcomputing.genetic.operators.selection.RandomSelection;
+import com.example.softcomputing.genetic.operators.crossover.UniformCrossover;
 import com.example.softcomputing.genetic.operators.crossover.SinglePointCrossover;
 import com.example.softcomputing.genetic.operators.mutation.IntegerMutation;
 import com.example.softcomputing.genetic.operators.replacement.FullGenerationReplacement;
@@ -65,21 +66,16 @@ public class SoftUtilApplication {
             System.out.println("\nSelected for crossover:");
             System.out.printf("Parent1: %s (%d)\n", parent1, parent1.toInt());
             System.out.printf("Parent2: %s (%d)\n", parent2, parent2.toInt());
-            // Random crossover point for each generation
-            int crossoverPoint = 1 + (int)(Math.random() * (populationSize-1));
-            System.out.printf("Crossover point for this generation: %d\n", crossoverPoint);
-            int[] child1Bits = new int[populationSize];
-            int[] child2Bits = new int[populationSize];
-            for (int i = 0; i < crossoverPoint; i++) {
-                child1Bits[i] = parent1.getGene(i);
-                child2Bits[i] = parent2.getGene(i);
-            }
-            for (int i = crossoverPoint; i < populationSize; i++) {
-                child1Bits[i] = parent2.getGene(i);
-                child2Bits[i] = parent1.getGene(i);
-            }
-            BinaryChromosome child1 = new BinaryChromosome(child1Bits);
-            BinaryChromosome child2 = new BinaryChromosome(child2Bits);
+            // Uniform crossover for each generation
+            ChromosomeFactory<Integer, BinaryChromosome> binFactory = genes -> {
+                int[] bits = new int[genes.length];
+                for (int i = 0; i < genes.length; i++) bits[i] = genes[i];
+                return new BinaryChromosome(bits);
+            };
+            UniformCrossover<Integer, BinaryChromosome> crossover = new UniformCrossover<>(binFactory);
+            java.util.List<BinaryChromosome> children = crossover.crossover(parent1, parent2);
+            BinaryChromosome child1 = children.get(0);
+            BinaryChromosome child2 = children.get(1);
             // Mutate children
             mut.mutate(child1);
             mut.mutate(child2);
