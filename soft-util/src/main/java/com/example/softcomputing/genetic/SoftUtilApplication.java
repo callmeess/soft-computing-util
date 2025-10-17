@@ -4,10 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.Random;
+
 import com.example.softcomputing.genetic.chromosome.BinaryChromosome;
+import com.example.softcomputing.genetic.chromosome.FloatingPointChromosome;
 import com.example.softcomputing.genetic.operators.mutation.BinaryMutation;
 import com.example.softcomputing.genetic.chromosome.IntegerChromosome;
 import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
+import com.example.softcomputing.genetic.chromosome.Factories.FloatingPointChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.Factories.IntegerChromosomeFactory;
 import com.example.softcomputing.genetic.core.GeneticAlgorithm;
 
@@ -17,12 +20,14 @@ import com.example.softcomputing.utils.AppLogger;
 
 import com.example.softcomputing.genetic.operators.crossover.SinglePointCrossover;
 import com.example.softcomputing.genetic.operators.mutation.IntegerMutation;
+import com.example.softcomputing.genetic.operators.mutation.UniformMutation;
 import com.example.softcomputing.genetic.operators.replacement.FullGenerationReplacement;
 
 public class SoftUtilApplication {
+
     private static AppLogger logger;
 
-    private static void runBinaryGAExample() {
+    static void runBinaryGAExample() {
         System.out.println("\n--- Binary GA Example (as in slides) ---");
         int populationSize = 3 + (int) (Math.random() * 6); // random size between 3 and 8
         double mutationRate = 0.01 + Math.random() * 0.3; // random mutation rate between 0.01 and 0.31
@@ -136,13 +141,33 @@ public class SoftUtilApplication {
         }
     }
 
-    public static void main(String[] args) {
-        // runBinaryGAExample();
+    static void runFloatingPointGAExample(AppLogger logger) {
 
-        AppLogger.configure(Level.INFO);
-        logger = AppLogger.getLogger(SoftUtilApplication.class);
-        logger.info("Starting soft-util...");
-        logger.info("Running Integer Chromosome GA example...");
+        logger.info("\n--- Floating Point GA Example ---");
+        double mutationRate = 0.05;
+        int populationSize = 50;
+        int geneLength = 10;
+
+        ChromosomeFactory<Double, FloatingPointChromosome> factory = new FloatingPointChromosomeFactory(-10.0, 10.0);
+        List<FloatingPointChromosome> initialPopulation = factory.createPopulation(populationSize, geneLength);
+
+        GeneticAlgorithm<FloatingPointChromosome> ga = GeneticAlgorithm.<FloatingPointChromosome>builder()
+                .withPopulationSize(populationSize)
+                .withPopulation(initialPopulation)
+                .withChromosomeFactory(factory)
+                .withSelectionStrategy(new RandomSelection<FloatingPointChromosome>())
+                .withCrossoverStrategy(new SinglePointCrossover<FloatingPointChromosome>())
+                .withMutationStrategy(new UniformMutation(mutationRate))
+                .withReplacementStrategy(new FullGenerationReplacement<FloatingPointChromosome>())
+                .withMaxGenerations(100)
+                .build();
+        ga.run();
+
+    }
+
+    static void runIntegerGAExample(AppLogger logger) {
+
+        logger.info("\n--- Integer GA Example ---");
 
         double mutationRate = 0.05;
         int populationSize = 50;
@@ -163,6 +188,19 @@ public class SoftUtilApplication {
                 .build();
 
         ga.run();
+    } 
+
+    public static void main(String[] args) {
+        
+
+        AppLogger.configure(Level.INFO);
+        logger = AppLogger.getLogger(SoftUtilApplication.class);
+        logger.info("Starting soft-util...");
+        logger.info("Running Integer Chromosome GA example...");
+
+        // runBinaryGAExample(logger);
+        runFloatingPointGAExample(logger);
+        // runIntegerGAExample(logger);
     }
 
 }
