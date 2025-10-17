@@ -10,7 +10,7 @@ public class IntegerChromosome implements  Chromosome<Integer> {
 
     @Override
     public Integer[] toArray() {
-        return _genes;
+        return java.util.Arrays.copyOf(_genes, _genes.length);
     }
 
     @Override
