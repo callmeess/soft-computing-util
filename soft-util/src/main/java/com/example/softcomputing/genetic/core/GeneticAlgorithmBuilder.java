@@ -11,6 +11,7 @@ import com.example.softcomputing.genetic.operators.replacement.Replacement;
 import com.example.softcomputing.genetic.operators.selection.SelectionStrategy;
 
 public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
+
     SelectionStrategy<C> selection;
     CrossoverStrategy<C> crossover;
     MutationStrategy<C> mutation;
@@ -18,6 +19,7 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
     int populationSize = 100;
     long maxGenerations = 100;
     List<C> population = null;
+    int geneLength = 10;
     ChromosomeFactory<?, C> chromosomeFactory;
 
     public GeneticAlgorithmBuilder<C> withChromosomeFactory(ChromosomeFactory<?, C> factory) {
@@ -27,6 +29,16 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
 
     public GeneticAlgorithmBuilder<C> withPopulation(List<C> population) {
         this.population = population;
+        return this;
+    }
+
+    public GeneticAlgorithmBuilder<C> withPopulation() {
+        if (chromosomeFactory == null) {
+            throw new IllegalStateException("Chromosome factory must be set before initializing population.");
+        }
+
+        List<C> initialPopulation = chromosomeFactory.createPopulation(populationSize, geneLength);
+        this.population = initialPopulation;
         return this;
     }
 
@@ -54,7 +66,7 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
         this.populationSize = size;
         return this;
     }
-   
+
     public GeneticAlgorithmBuilder<C> withMaxGenerations(long maxGen) {
         this.maxGenerations = maxGen;
         return this;
@@ -66,8 +78,9 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
         Objects.requireNonNull(mutation, "mutation strategy is required");
         Objects.requireNonNull(replacement, "replacement strategy is required");
         Objects.requireNonNull(chromosomeFactory, "chromosome factory is required");
-        if (populationSize <= 0) throw new IllegalArgumentException("populationSize must be > 0");
-
+        if (populationSize <= 0) {
+            throw new IllegalArgumentException("populationSize must be > 0");
+        }
 
         return new GeneticAlgorithm<C>(this);
     }

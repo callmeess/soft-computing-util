@@ -3,7 +3,7 @@ package com.example.softcomputing.genetic;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-
+import java.util.Random;
 import com.example.softcomputing.genetic.chromosome.BinaryChromosome;
 import com.example.softcomputing.genetic.operators.mutation.BinaryMutation;
 import com.example.softcomputing.genetic.chromosome.IntegerChromosome;
@@ -147,18 +147,9 @@ public class SoftUtilApplication {
         double mutationRate = 0.05;
         int populationSize = 50;
         int geneLength = 10;
+
         ChromosomeFactory<Integer, IntegerChromosome> factory = new IntegerChromosomeFactory();
-
-        java.util.Random rnd = new java.util.Random();
-
-        List<IntegerChromosome> initialPopulation = new ArrayList<>(populationSize);
-        for (int i = 0; i < populationSize; i++) {
-            Integer[] genes = new Integer[geneLength];
-            for (int g = 0; g < geneLength; g++) {
-                genes[g] = rnd.nextInt(100); //  [0,99]
-            }
-            initialPopulation.add(factory.create(genes));
-        }
+        List<IntegerChromosome> initialPopulation = factory.createPopulation(populationSize, geneLength);
 
         GeneticAlgorithm<IntegerChromosome> ga = GeneticAlgorithm.<IntegerChromosome>builder()
                 .withPopulationSize(populationSize)
