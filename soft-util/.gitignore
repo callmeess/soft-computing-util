@@ -95,3 +95,6 @@ credentials.json
 *.bak
 *.swp
 *~
+
+## logs
+app.log
