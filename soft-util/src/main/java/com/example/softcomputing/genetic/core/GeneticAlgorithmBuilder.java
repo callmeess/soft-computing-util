@@ -16,6 +16,7 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
     MutationStrategy<C> mutation;
     Replacement<C> replacement;
     int populationSize = 100;
+    long maxGenerations = 100;
     List<C> population = null;
     ChromosomeFactory<?, C> chromosomeFactory;
 
@@ -53,7 +54,11 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
         this.populationSize = size;
         return this;
     }
-    
+   
+    public GeneticAlgorithmBuilder<C> withMaxGenerations(long maxGen) {
+        this.maxGenerations = maxGen;
+        return this;
+    }
 
     public GeneticAlgorithm<C> build() {
         Objects.requireNonNull(selection, "selection strategy is required");
