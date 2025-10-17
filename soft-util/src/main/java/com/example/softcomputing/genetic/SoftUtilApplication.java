@@ -1,6 +1,9 @@
 
 package com.example.softcomputing.genetic;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Level;
 
 import com.example.softcomputing.genetic.chromosome.BinaryChromosome;
 import com.example.softcomputing.genetic.operators.mutation.BinaryMutation;
@@ -8,8 +11,11 @@ import com.example.softcomputing.genetic.chromosome.IntegerChromosome;
 import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.Factories.IntegerChromosomeFactory;
 import com.example.softcomputing.genetic.core.GeneticAlgorithm;
+
 import com.example.softcomputing.genetic.operators.selection.RandomSelection;
 import com.example.softcomputing.genetic.operators.crossover.UniformCrossover;
+import com.example.softcomputing.utils.AppLogger;
+
 import com.example.softcomputing.genetic.operators.crossover.SinglePointCrossover;
 import com.example.softcomputing.genetic.operators.mutation.IntegerMutation;
 import com.example.softcomputing.genetic.operators.replacement.FullGenerationReplacement;
@@ -103,7 +109,12 @@ public class SoftUtilApplication {
     public static void main(String[] args) {
         // runBinaryGAExample();
 
-		double mutationRate = 0.05;
+		    AppLogger.configure(Level.INFO);
+		    var log = AppLogger.getLogger(SoftUtilApplication.class);
+		    log.info("Starting soft-util...");
+		    log.info("Running Integer Chromosome GA example...");
+
+		    double mutationRate = 0.05;
         int populationSize = 50;
         int geneLength = 10;
         ChromosomeFactory<Integer,IntegerChromosome> factory = new IntegerChromosomeFactory();
@@ -127,6 +138,7 @@ public class SoftUtilApplication {
             .withCrossoverStrategy(new SinglePointCrossover<IntegerChromosome>())
             .withMutationStrategy(new IntegerMutation(mutationRate))
             .withReplacementStrategy(new FullGenerationReplacement<IntegerChromosome>())
+			.withMaxGenerations(100)
 			.build();
 
         ga.run();
