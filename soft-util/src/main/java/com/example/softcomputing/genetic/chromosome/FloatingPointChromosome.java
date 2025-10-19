@@ -1,10 +1,9 @@
 package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
-import java.util.Random;
-import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
 
 public class FloatingPointChromosome implements Chromosome<Double> {
+
     private final Double[] genes;
     private final double lowerBound;
     private final double upperBound;
@@ -13,15 +12,6 @@ public class FloatingPointChromosome implements Chromosome<Double> {
         this.genes = genes;
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
-    }
-
-    public static FloatingPointChromosome randomInit(int size, double lowerBound, double upperBound) {
-        Random rand = new Random();
-        Double[] genes = new Double[size];
-        for (int i = 0; i < size; i++) {
-            genes[i] = lowerBound + rand.nextDouble() * (upperBound - lowerBound);
-        }
-        return new FloatingPointChromosome(genes, lowerBound, upperBound);
     }
 
     @Override
@@ -50,10 +40,6 @@ public class FloatingPointChromosome implements Chromosome<Double> {
         return upperBound;
     }
 
-    public static ChromosomeFactory<Double, FloatingPointChromosome> factory(double lower, double upper) {
-        return genes -> new FloatingPointChromosome(genes, lower, upper);
-    }
-
     @Override
     public String toString() {
         return "FloatingPointChromosome" + Arrays.toString(genes);
@@ -61,11 +47,11 @@ public class FloatingPointChromosome implements Chromosome<Double> {
 
     @Override
     public double evaluate() {
-        // Fitness: sum of all gene values (maximize sum)
-        double fitness = 0.0;
+        double fitness = 1.0;
         for (Double gene : genes) {
-            fitness += gene;
+            fitness *= gene;
         }
+        System.err.println("Fitness as max product : " + fitness);
         return fitness;
     }
 }

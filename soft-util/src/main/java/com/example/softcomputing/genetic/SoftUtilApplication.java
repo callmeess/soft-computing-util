@@ -2,10 +2,12 @@ package com.example.softcomputing.genetic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.Random;
 
 import com.example.softcomputing.genetic.chromosome.BinaryChromosome;
 import com.example.softcomputing.genetic.chromosome.FloatingPointChromosome;
+import com.example.softcomputing.genetic.operators.mutation.BinaryMutation;
 import com.example.softcomputing.genetic.chromosome.IntegerChromosome;
 import com.example.softcomputing.genetic.chromosome.Factories.BinaryChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
