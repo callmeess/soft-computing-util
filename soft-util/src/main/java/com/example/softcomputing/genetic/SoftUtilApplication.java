@@ -22,6 +22,7 @@ import com.example.softcomputing.genetic.operators.mutation.UniformMutation;
 import com.example.softcomputing.genetic.operators.replacement.FullGenerationReplacement;
 import com.example.softcomputing.genetic.operators.selection.RandomSelection;
 import com.example.softcomputing.genetic.operators.selection.RouletteWheelSelection;
+import com.example.softcomputing.genetic.utils.PopulationInitializer;
 
 /**
  * Main application with static examples for Binary, Integer, and FloatingPoint chromosomes.
@@ -161,10 +162,9 @@ public class SoftUtilApplication {
             populationSize, geneLength, lowerBound, upperBound, mutationRate, maxGenerations);
         
         // Create random initial population
-        List<FloatingPointChromosome> population = new ArrayList<>();
-        for (int i = 0; i < populationSize; i++) {
-            population.add(FloatingPointChromosome.randomInit(geneLength, lowerBound, upperBound));
-        }
+        List<FloatingPointChromosome> population;
+        PopulationInitializer initializer = new PopulationInitializer();
+        population = initializer.randomFloatingPopulation(populationSize, geneLength, lowerBound, upperBound);
         
         // Factory for crossover
         ChromosomeFactory<Double, FloatingPointChromosome> factory = 

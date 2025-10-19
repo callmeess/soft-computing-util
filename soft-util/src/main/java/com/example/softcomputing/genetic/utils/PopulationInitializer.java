@@ -2,6 +2,7 @@ package com.example.softcomputing.genetic.utils;
 
 import com.example.softcomputing.genetic.chromosome.BinaryChromosome;
 import com.example.softcomputing.genetic.chromosome.IntegerChromosome;
+import com.example.softcomputing.genetic.chromosome.Factories.FloatingPointChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.FloatingPointChromosome;
 import java.util.ArrayList;
 import java.util.List;
@@ -47,19 +48,10 @@ public class PopulationInitializer {
         return population;
     }
 
-    /**
-     * Creates a random FloatingPoint chromosome population.
-     * @param populationSize number of individuals
-     * @param geneLength number of genes per chromosome
-     * @param lowerBound lower bound for gene values
-     * @param upperBound upper bound for gene values
-     * @return list of randomized floating point chromosomes
-     */
     public static List<FloatingPointChromosome> randomFloatingPopulation(int populationSize, int geneLength, double lowerBound, double upperBound) {
         List<FloatingPointChromosome> population = new ArrayList<>(populationSize);
-        for (int i = 0; i < populationSize; i++) {
-            population.add(FloatingPointChromosome.randomInit(geneLength, lowerBound, upperBound));
-        }
+        FloatingPointChromosomeFactory factory = new FloatingPointChromosomeFactory(lowerBound, upperBound);
+        population = factory.createPopulation(populationSize, geneLength);
         return population;
     }
 }
