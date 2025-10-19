@@ -41,6 +41,10 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
             return;
         }
 
+        // Track overall best solution found across all generations
+        C overallBest = null;
+        double overallBestFitness = Double.NEGATIVE_INFINITY;
+
         for (int gen = 1; gen <= _MaxGeneration; gen++) {
             List<C> offspring = new ArrayList<>(_populationSize);
 
@@ -71,10 +75,23 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
                 }
             }
 
+            // Update overall best if current generation is better
+            if (bestFitness > overallBestFitness) {
+                overallBest = best;
+                overallBestFitness = bestFitness;
+            }
+
             System.out.println("Generation " + gen + " bestFitness=" + bestFitness + " best=" + best);
 
             if (Double.isFinite(bestFitness) && bestFitness >= Double.POSITIVE_INFINITY - 1) break;
         }
+
+        // Print overall best solution found
+        System.out.println("\n====================================");
+        System.out.println("BEST SOLUTION FOUND OVERALL:");
+        System.out.println("Best Fitness: " + overallBestFitness);
+        System.out.println("Best Chromosome: " + overallBest);
+        System.out.println("====================================\n");
     }
 
     public static <C extends Chromosome<?>> GeneticAlgorithmBuilder<C> builder() {

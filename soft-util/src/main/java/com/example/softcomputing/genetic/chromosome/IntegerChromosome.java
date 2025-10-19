@@ -1,5 +1,7 @@
 package com.example.softcomputing.genetic.chromosome;
 
+import java.util.Arrays;
+
 public class IntegerChromosome implements  Chromosome<Integer> {
 
     private Integer[] _genes;
@@ -38,5 +40,7 @@ public class IntegerChromosome implements  Chromosome<Integer> {
         return fitness;
     }
 
-    
+    public String toString() {
+        return "IntegerChromosome" + Arrays.toString(_genes);
+    } 
 }

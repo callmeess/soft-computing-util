@@ -4,12 +4,14 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.logging.ConsoleHandler;
+import java.util.logging.FileHandler;
 import java.util.logging.Formatter;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 public final class AppLogger {
+
     private final Logger logger;
 
     private AppLogger(Class<?> clazz) {
@@ -28,7 +30,8 @@ public final class AppLogger {
         }
         ConsoleHandler ch = new ConsoleHandler();
         ch.setLevel(level);
-        ch.setFormatter(new Formatter() {
+
+        Formatter formatter = new Formatter() {
             private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSS")
                     .withZone(ZoneId.systemDefault());
 
@@ -46,7 +49,21 @@ public final class AppLogger {
                 }
                 return String.format("%s %-7s [%s] %s%s%n", time, lvl, loggerName, msg, thrown);
             }
-        });
+        };
+        ch.setFormatter(formatter);
+
+        try {
+            FileHandler fh = new FileHandler("app.log", true); // append
+            fh.setLevel(level);
+            fh.setFormatter(formatter);
+            root.addHandler(fh);
+        } catch (java.io.IOException | SecurityException e) {
+            root.addHandler(ch);
+            root.setLevel(level);
+            root.log(Level.WARNING, "Could not create FileHandler app.log; logging to console only", e);
+            return;
+        }
+
         root.addHandler(ch);
         root.setLevel(level);
     }
@@ -66,5 +83,5 @@ public final class AppLogger {
     public void error(String msg) {
         logger.log(Level.SEVERE, msg);
     }
-    
+
 }
