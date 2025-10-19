@@ -61,6 +61,11 @@ public class FloatingPointChromosome implements Chromosome<Double> {
 
     @Override
     public double evaluate() {
-        throw new UnsupportedOperationException("Unimplemented method 'evaluate'");
+        // Fitness: sum of all gene values (maximize sum)
+        double fitness = 0.0;
+        for (Double gene : genes) {
+            fitness += gene;
+        }
+        return fitness;
     }
 }
