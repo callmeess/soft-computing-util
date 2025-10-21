@@ -9,198 +9,180 @@ import com.example.softcomputing.genetic.chromosome.BinaryChromosome;
 import com.example.softcomputing.genetic.chromosome.FloatingPointChromosome;
 import com.example.softcomputing.genetic.operators.mutation.BinaryMutation;
 import com.example.softcomputing.genetic.chromosome.IntegerChromosome;
+import com.example.softcomputing.genetic.chromosome.Factories.BinaryChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.Factories.FloatingPointChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.Factories.IntegerChromosomeFactory;
 import com.example.softcomputing.genetic.core.GeneticAlgorithm;
-
-import com.example.softcomputing.genetic.operators.selection.RandomSelection;
-import com.example.softcomputing.genetic.operators.crossover.UniformCrossover;
-import com.example.softcomputing.utils.AppLogger;
-
 import com.example.softcomputing.genetic.operators.crossover.SinglePointCrossover;
+import com.example.softcomputing.genetic.operators.crossover.UniformCrossover;
+import com.example.softcomputing.genetic.operators.mutation.BinaryMutation;
 import com.example.softcomputing.genetic.operators.mutation.IntegerMutation;
 import com.example.softcomputing.genetic.operators.mutation.UniformMutation;
 import com.example.softcomputing.genetic.operators.replacement.FullGenerationReplacement;
+import com.example.softcomputing.genetic.operators.selection.RandomSelection;
+import com.example.softcomputing.genetic.operators.selection.RouletteWheelSelection;
+import com.example.softcomputing.genetic.utils.PopulationInitializer;
 
+/**
+ * Main application with static examples for Binary, Integer, and FloatingPoint chromosomes.
+ * Uncomment the example you want to run in main().
+ */
 public class SoftUtilApplication {
-
-    private static AppLogger logger;
-
-//    static void runBinaryGAExample() {
-//        System.out.println("\n--- Binary GA Example (as in slides) ---");
-//        int populationSize = 3 + (int) (Math.random() * 6); // random size between 3 and 8
-//        double mutationRate = 0.01 + Math.random() * 0.3; // random mutation rate between 0.01 and 0.31
-//        BinaryChromosome[] pop = new BinaryChromosome[populationSize];
-//        for (int i = 0; i < populationSize; i++) {
-//            pop[i] = BinaryChromosome.random(populationSize);
-//        }
-//        System.out.printf("Randomized parameters: popSize=%d, mutationRate=%.3f\n", populationSize, mutationRate);
-//
-//        // Print initial population and fitness
-//        System.out.println("Generation G0:");
-//        for (int i = 0; i < populationSize; i++) {
-//            System.out.printf("G0_%d: %s\tFitness: %d\n", i + 1, pop[i], pop[i].toInt());
-//        }
-//
-//        // Mutation (flip bits with probability)
-//        BinaryMutation mut = new BinaryMutation(mutationRate);
-//
-//        // Generalized loop: keep evolving until optimal or max generations
-//        BinaryChromosome[] population = new BinaryChromosome[populationSize];
-//        for (int i = 0; i < populationSize; i++) {
-//            population[i] = pop[i];
-//        }
-//        int maxTries = 100;
-//        int generation = 0;
-//        int optimal = (1 << populationSize) - 1; // all bits 1 for current chromosome size
-//        boolean found = false;
-//        int bestFitness = 0;
-//        while (generation < maxTries && !found) {
-//            System.out.println("\nGeneration G" + generation + ":");
-//            for (int i = 0; i < populationSize; i++) {
-//                int fit = population[i].toInt();
-//                System.out.printf("G%d_%d: %s\tFitness: %d\n", generation, i + 1, population[i], fit);
-//                if (fit == optimal) {
-//                    found = true;
-//                }
-//                if (fit > bestFitness) {
-//                    bestFitness = fit;
-//                }
-//            }
-//            if (found) {
-//                break;
-//            }
-//            // Select two best
-//            int[] fitness = new int[populationSize];
-//            for (int i = 0; i < populationSize; i++) {
-//                fitness[i] = population[i].toInt();
-//            }
-//            int first = 0, second = 1;
-//            if (fitness[1] > fitness[0]) {
-//                first = 1;
-//                second = 0;
-//            }
-//            for (int i = 2; i < populationSize; i++) {
-//                if (fitness[i] > fitness[first]) {
-//                    second = first;
-//                    first = i;
-//                } else if (fitness[i] > fitness[second]) {
-//                    second = i;
-//                }
-//            }
-//            BinaryChromosome parent1 = population[first];
-//            BinaryChromosome parent2 = population[second];
-//            System.out.println("\nSelected for crossover:");
-//            System.out.printf("Parent1: %s (%d)\n", parent1, parent1.toInt());
-//            System.out.printf("Parent2: %s (%d)\n", parent2, parent2.toInt());
-//            // Uniform crossover for each generation
-//            ChromosomeFactory<Integer, BinaryChromosome> binFactory = genes -> {
-//                int[] bits = new int[genes.length];
-//                for (int i = 0; i < genes.length; i++) {
-//                    bits[i] = genes[i];
-//                }
-//                return new BinaryChromosome(bits);
-//            };
-//            UniformCrossover<Integer, BinaryChromosome> crossover = new UniformCrossover<>(binFactory);
-//            java.util.List<BinaryChromosome> children = crossover.crossover(parent1, parent2);
-//            BinaryChromosome child1 = children.get(0);
-//            BinaryChromosome child2 = children.get(1);
-//            // Mutate children
-//            mut.mutate(child1);
-//            mut.mutate(child2);
-//            System.out.println("\nChildren after crossover and mutation:");
-//            System.out.printf("Child1: %s\tFitness: %d\n", child1, child1.toInt());
-//            System.out.printf("Child2: %s\tFitness: %d\n", child2, child2.toInt());
-//            // Replace two worst in population
-//            int[] idx = new int[populationSize];
-//            for (int i = 0; i < populationSize; i++) {
-//                idx[i] = i;
-//            }
-//            // Sort idx by fitness ascending
-//            for (int i = 0; i < populationSize - 1; i++) {
-//                for (int j = i + 1; j < populationSize; j++) {
-//                    if (fitness[idx[i]] > fitness[idx[j]]) {
-//                        int t = idx[i];
-//                        idx[i] = idx[j];
-//                        idx[j] = t;
-//                    }
-//                }
-//            }
-//            population[idx[0]] = child1;
-//            population[idx[1]] = child2;
-//            generation++;
-//        }
-//        if (found) {
-//            System.out.println("\nOptimal solution found!");
-//        } else {
-//            System.out.printf("\nMax tries (%d) reached, best fitness found: %d\n", maxTries, bestFitness);
-//        }
-//        for (int i = 0; i < populationSize; i++) {
-//            System.out.printf("Final G%d_%d: %s\tFitness: %d\n", generation, i + 1, population[i], population[i].toInt());
-//        }
-//    }
-
-    static void runFloatingPointGAExample(AppLogger logger) {
-
-        logger.info("\n--- Floating Point GA Example ---");
-        double mutationRate = 0.05;
-        int populationSize = 50;
-        int geneLength = 10;
-
-        ChromosomeFactory<Double, FloatingPointChromosome> factory = new FloatingPointChromosomeFactory(-10.0, 10.0);
-        List<FloatingPointChromosome> initialPopulation = factory.createPopulation(populationSize, geneLength);
-
-        GeneticAlgorithm<FloatingPointChromosome> ga = GeneticAlgorithm.<FloatingPointChromosome>builder()
-                .withPopulationSize(populationSize)
-                .withPopulation(initialPopulation)
-                .withChromosomeFactory(factory)
-                .withSelectionStrategy(new RandomSelection<FloatingPointChromosome>())
-                .withCrossoverStrategy(new SinglePointCrossover<FloatingPointChromosome>())
-                .withMutationStrategy(new UniformMutation(mutationRate))
-                .withReplacementStrategy(new FullGenerationReplacement<FloatingPointChromosome>())
-                .withMaxGenerations(100)
-                .build();
-        ga.run();
-
-    }
-
-    static void runIntegerGAExample(AppLogger logger) {
-
-        logger.info("\n--- Integer GA Example ---");
-
-        double mutationRate = 0.05;
-        int populationSize = 50;
-        int geneLength = 10;
-
-        ChromosomeFactory<Integer, IntegerChromosome> factory = new IntegerChromosomeFactory();
-        List<IntegerChromosome> initialPopulation = factory.createPopulation(populationSize, geneLength);
-
-        GeneticAlgorithm<IntegerChromosome> ga = GeneticAlgorithm.<IntegerChromosome>builder()
-                .withPopulationSize(populationSize)
-                .withPopulation(initialPopulation)
-                .withChromosomeFactory(factory)
-                .withSelectionStrategy(new RandomSelection<IntegerChromosome>())
-                .withCrossoverStrategy(new SinglePointCrossover<IntegerChromosome>())
-                .withMutationStrategy(new IntegerMutation(mutationRate))
-                .withReplacementStrategy(new FullGenerationReplacement<IntegerChromosome>())
-                .withMaxGenerations(100)
-                .build();
-
-        ga.run();
-    } 
-
+   
     public static void main(String[] args) {
+        System.out.println("=== SoftUtil Genetic Algorithm Examples ===\n");
+        System.out.println("Choose chromosome type:");
+        System.out.println("1. Binary Chromosome");
+        System.out.println("2. Integer Chromosome");
+        System.out.println("3. FloatingPoint Chromosome");
+        System.out.print("\nEnter your choice (1, 2, or 3): ");
         
-
-        AppLogger.configure(Level.INFO);
-        logger = AppLogger.getLogger(SoftUtilApplication.class);
-        logger.info("Starting soft-util...");
-        logger.info("Running Integer Chromosome GA example...");
-
-        // runBinaryGAExample(logger);
-        runFloatingPointGAExample(logger);
-        // runIntegerGAExample(logger);
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        int choice = scanner.nextInt();
+        System.out.println();
+        
+        switch (choice) {
+            case 1:
+                runBinaryExample();
+                break;
+            case 2:
+                runIntegerExample();
+                break;
+            case 3:
+                runFloatingPointExample();
+                break;
+            default:
+                System.out.println("Invalid choice. Please run again and select 1, 2, or 3.");
+        }
+        
+        scanner.close();
     }
 
+    private static void runBinaryExample() {
+        System.out.println("--- Binary Chromosome GA ---");
+        
+        // Configuration (easy to change) - MATCHED TO INTEGER EXAMPLE
+        int populationSize = 50;  // Increased from 4 to 50
+        int geneLength = 10;
+        double mutationRate = 0.05;
+        int maxGenerations = 100;  // Increased from 10 to 100
+        
+        System.out.printf("Config: popSize=%d, geneLength=%d, mutationRate=%.3f, maxGen=%d\n", 
+            populationSize, geneLength, mutationRate, maxGenerations);
+        
+        // Create random initial population
+        List<BinaryChromosome> population = new ArrayList<>();
+        for (int i = 0; i < populationSize; i++) {
+            population.add(BinaryChromosome.random(geneLength));
+        }
+        
+        // Factory for crossover
+        ChromosomeFactory<Integer, BinaryChromosome> factory = new BinaryChromosomeFactory();
+        
+        // Build and run GA
+        GeneticAlgorithm<BinaryChromosome> ga = GeneticAlgorithm.<BinaryChromosome>builder()
+            .withPopulationSize(populationSize)
+            .withPopulation(population)
+            .withChromosomeFactory(factory)
+            .withSelectionStrategy(new RandomSelection<>())
+            .withCrossoverStrategy(new SinglePointCrossover<>(factory))
+            .withMutationStrategy(new BinaryMutation(mutationRate))
+            .withReplacementStrategy(new FullGenerationReplacement<>())
+            .withMaxGenerations(maxGenerations)
+            .build();
+        
+        ga.run();
+        System.out.println("Binary GA completed.\n");
+    }
+
+    /**
+     * Integer Chromosome Example with randomized population.
+     * Default: popSize=50, geneLength=10, geneRange=[0,99], mutationRate=0.05, maxGen=100
+     */
+    private static void runIntegerExample() {
+        System.out.println("--- Integer Chromosome GA ---");
+        
+        // Configuration (easy to change)
+        int populationSize = 50;
+        int geneLength = 10;
+        int geneMin = 0;
+        int geneMax = 99;
+        double mutationRate = 0.05;
+        int maxGenerations = 100;
+        
+        System.out.printf("Config: popSize=%d, geneLength=%d, geneRange=[%d,%d], mutationRate=%.3f, maxGen=%d\n", 
+            populationSize, geneLength, geneMin, geneMax, mutationRate, maxGenerations);
+        
+        // Create random initial population
+        Random rnd = new Random();
+        ChromosomeFactory<Integer, IntegerChromosome> factory = new IntegerChromosomeFactory();
+        List<IntegerChromosome> population = new ArrayList<>();
+        
+        for (int i = 0; i < populationSize; i++) {
+            Integer[] genes = new Integer[geneLength];
+            for (int g = 0; g < geneLength; g++) {
+                genes[g] = rnd.nextInt(geneMax - geneMin + 1) + geneMin;
+            }
+            population.add(factory.create(genes));
+        }
+        
+        // Build and run GA
+        GeneticAlgorithm<IntegerChromosome> ga = GeneticAlgorithm.<IntegerChromosome>builder()
+            .withPopulationSize(populationSize)
+            .withPopulation(population)
+            .withChromosomeFactory(factory)
+            .withSelectionStrategy(new RandomSelection<>())
+            .withCrossoverStrategy(new SinglePointCrossover<>(factory))
+            .withMutationStrategy(new IntegerMutation(mutationRate))
+            .withReplacementStrategy(new FullGenerationReplacement<>())
+            .withMaxGenerations(maxGenerations)
+            .build();
+        
+        ga.run();
+        System.out.println("Integer GA completed.\n");
+    }
+
+    /**
+     * FloatingPoint Chromosome Example with randomized population.
+     * Default: popSize=50, geneLength=10, bounds=[-10.0, 10.0], mutationRate=0.05, maxGen=100
+     */
+    private static void runFloatingPointExample() {
+        System.out.println("--- FloatingPoint Chromosome GA ---");
+        
+        // Configuration (easy to change)
+        int populationSize = 50;
+        int geneLength = 10;
+        double lowerBound = -10.0;
+        double upperBound = 10.0;
+        double mutationRate = 0.05;
+        int maxGenerations = 100;
+        
+        System.out.printf("Config: popSize=%d, geneLength=%d, bounds=[%.1f,%.1f], mutationRate=%.3f, maxGen=%d\n", 
+            populationSize, geneLength, lowerBound, upperBound, mutationRate, maxGenerations);
+        
+        // Create random initial population
+        List<FloatingPointChromosome> population;
+        PopulationInitializer initializer = new PopulationInitializer();
+        population = initializer.randomFloatingPopulation(populationSize, geneLength, lowerBound, upperBound);
+        
+        // Factory for crossover
+        ChromosomeFactory<Double, FloatingPointChromosome> factory = 
+            new FloatingPointChromosomeFactory(lowerBound, upperBound);
+        
+        // Build and run GA
+        GeneticAlgorithm<FloatingPointChromosome> ga = GeneticAlgorithm.<FloatingPointChromosome>builder()
+            .withPopulationSize(populationSize)
+            .withPopulation(population)
+            .withChromosomeFactory(factory)
+            .withSelectionStrategy(new RandomSelection<>())
+            .withCrossoverStrategy(new SinglePointCrossover<>(factory))
+            .withMutationStrategy(new UniformMutation(mutationRate))
+            .withReplacementStrategy(new FullGenerationReplacement<>())
+            .withMaxGenerations(maxGenerations)
+            .build();
+        
+        ga.run();
+        System.out.println("FloatingPoint GA completed.\n");
+    }
 }
