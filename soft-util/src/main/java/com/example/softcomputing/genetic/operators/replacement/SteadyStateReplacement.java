@@ -6,75 +6,14 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Steady-State Replacement (Incremental Replacement) for Genetic Algorithms.
- *
- * <p>This replacement strategy replaces only a small portion of the population each generation,
- * maintaining high population overlap between generations. This preserves diversity while
- * allowing gradual improvement.</p>
- *
- * <p><b>Key Characteristics:</b></p>
- * <ul>
- *   <li>Replaces only N worst individuals per generation (typically 1-2 or 10-20% of population)</li>
- *   <li>Maintains majority of population unchanged between generations</li>
- *   <li>Provides smoother convergence than generational replacement</li>
- *   <li>Higher diversity maintained throughout evolution</li>
- *   <li>More stable best fitness progression</li>
- *   <li>Less sensitive to parameter settings</li>
- * </ul>
- *
- * <p><b>Algorithm:</b></p>
- * <ol>
- *   <li>Evaluate fitness for all individuals in current population</li>
- *   <li>Sort current population by fitness (descending for maximization)</li>
- *   <li>Identify worst N individuals to replace</li>
- *   <li>Evaluate fitness for offspring</li>
- *   <li>Sort offspring by fitness and select best N</li>
- *   <li>Create new population: keep best (populationSize - N) + best N offspring</li>
- * </ol>
- *
- * <p><b>Replacement Count Guidelines:</b></p>
- * <ul>
- *   <li>Small populations (10-50): 1-2 individuals</li>
- *   <li>Medium populations (50-200): 5-20 individuals (10%)</li>
- *   <li>Large populations (200+): 10-40 individuals (10-20%)</li>
- *   <li>Smaller replacement → slower convergence, more diversity</li>
- *   <li>Larger replacement → faster convergence, less diversity</li>
- * </ul>
- *
- * <p><b>Comparison with Generational Replacement:</b></p>
- * <table border="1">
- *   <tr><th>Characteristic</th><th>Generational</th><th>Steady-State</th></tr>
- *   <tr><td>Replacement Rate</td><td>100%</td><td>10-20%</td></tr>
- *   <tr><td>Diversity</td><td>Lower</td><td>Higher</td></tr>
- *   <tr><td>Convergence</td><td>Faster</td><td>Slower</td></tr>
- *   <tr><td>Population Overlap</td><td>Low</td><td>High</td></tr>
- *   <tr><td>Computational Cost</td><td>Bursty</td><td>Smooth</td></tr>
- * </table>
- *
- * <p><b>Replacement Modes:</b></p>
- * <ul>
- *   <li><b>FITNESS</b> (default): Replace individuals with worst fitness values</li>
- *   <li><b>AGE</b>: Replace oldest individuals regardless of fitness (requires age tracking - future)</li>
- *   <li><b>PARENT</b>: Replace parents that generated offspring (future enhancement)</li>
- * </ul>
- *
- * @param <C> The chromosome type extending Chromosome interface
- *
- * @author Soft Computing Util
- * @version 1.0
- */
 public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacement<C> {
 
-    /**
-     * Enum defining different replacement modes.
-     */
     public enum ReplacementMode {
-        /** Replace individuals with worst fitness values (default) */
+        // Replace individuals with worst fitness values (default)
         FITNESS,
-        /** Replace oldest individuals regardless of fitness (requires age tracking) */
+        // Replace oldest individuals regardless of fitness (requires age tracking)
         AGE,
-        /** Replace parents that generated the offspring */
+        // Replace parents that generated the offspring
         PARENT
     }
 
@@ -82,36 +21,14 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
     private final ReplacementMode mode;
     private final boolean allowParentReplacement;
 
-    /**
-     * Creates a SteadyStateReplacement with specified replacement count.
-     * Uses FITNESS mode by default.
-     *
-     * @param replacementCount Number of individuals to replace per generation
-     * @throws IllegalArgumentException if replacementCount <= 0
-     */
     public SteadyStateReplacement(int replacementCount) {
         this(replacementCount, ReplacementMode.FITNESS, true);
     }
 
-    /**
-     * Creates a SteadyStateReplacement with specified replacement count and mode.
-     *
-     * @param replacementCount Number of individuals to replace per generation
-     * @param mode Replacement mode (FITNESS, AGE, or PARENT)
-     * @throws IllegalArgumentException if replacementCount <= 0
-     */
     public SteadyStateReplacement(int replacementCount, ReplacementMode mode) {
         this(replacementCount, mode, true);
     }
-
-    /**
-     * Creates a SteadyStateReplacement with full configuration.
-     *
-     * @param replacementCount Number of individuals to replace per generation
-     * @param mode Replacement mode (FITNESS, AGE, or PARENT)
-     * @param allowParentReplacement Whether offspring can replace their parents
-     * @throws IllegalArgumentException if replacementCount <= 0
-     */
+    
     public SteadyStateReplacement(int replacementCount, ReplacementMode mode, boolean allowParentReplacement) {
         if (replacementCount <= 0) {
             throw new IllegalArgumentException(
@@ -123,15 +40,6 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
         this.allowParentReplacement = allowParentReplacement;
     }
 
-    /**
-     * Factory method to create SteadyStateReplacement with percentage-based replacement count.
-     *
-     * @param <C> The chromosome type
-     * @param populationSize The size of the population
-     * @param replacementPercentage Percentage of population to replace (0.0 to 1.0)
-     * @return A new SteadyStateReplacement instance
-     * @throws IllegalArgumentException if percentage is not in (0.0, 1.0) or population size <= 0
-     */
     public static <C extends Chromosome<?>> SteadyStateReplacement<C> withPercentage(
             int populationSize, double replacementPercentage) {
         if (populationSize <= 0) {
