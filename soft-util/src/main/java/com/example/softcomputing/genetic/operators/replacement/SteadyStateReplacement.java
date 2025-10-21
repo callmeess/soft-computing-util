@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacement<C> {
 
     public enum ReplacementMode {
-        // Replace individuals with worst fitness values (default)
+        // Replace individuals with worst fitness (default)
         FITNESS,
         // Replace oldest individuals regardless of fitness (requires age tracking)
         AGE,
@@ -54,133 +54,50 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
         return new SteadyStateReplacement<>(count);
     }
 
-    /**
-     * Factory method to create SteadyStateReplacement with standard 10% replacement rate.
-     *
-     * @param <C> The chromosome type
-     * @param populationSize The size of the population
-     * @return A new SteadyStateReplacement instance with 10% replacement
-     * @throws IllegalArgumentException if population size <= 0
-     */
+    // with 10% replacement
     public static <C extends Chromosome<?>> SteadyStateReplacement<C> withStandardRate(int populationSize) {
         return withPercentage(populationSize, 0.1);
     }
-
-    /**
-     * Replaces the worst individuals in the current population with the best offspring.
-     *
-     * <p><b>Algorithm Steps:</b></p>
-     * <ol>
-     *   <li>Validate that replacementCount < populationSize</li>
-     *   <li>Handle edge case: if fewer offspring than replacementCount, adjust count</li>
-     *   <li>Evaluate fitness for all current population individuals</li>
-     *   <li>Sort current population by fitness (descending)</li>
-     *   <li>Evaluate fitness for all offspring</li>
-     *   <li>Sort offspring by fitness (descending)</li>
-     *   <li>Select best (populationSize - actualReplacement) from current population</li>
-     *   <li>Select best actualReplacement from offspring</li>
-     *   <li>Combine them to form new population</li>
-     * </ol>
-     *
-     * <p><b>Edge Cases Handled:</b></p>
-     * <ul>
-     *   <li>Empty current population: returns empty list</li>
-     *   <li>Empty offspring: returns current population unchanged</li>
-     *   <li>Fewer offspring than replacementCount: replaces only available offspring count</li>
-     *   <li>replacementCount >= populationSize: caps at populationSize - 1</li>
-     *   <li>Equal fitness values: preserves order stability</li>
-     * </ul>
-     *
-     * @param currentPopulation The current population (not modified)
-     * @param newIndividuals The offspring generated this generation
-     * @return A new population with worst individuals replaced by best offspring
-     * @throws IllegalArgumentException if replacementCount >= populationSize
-     */
+    
     @Override
     public List<C> replacePopulation(List<C> currentPopulation, List<C> newIndividuals) {
-        // Handle empty population edge case
-        if (currentPopulation == null || currentPopulation.isEmpty()) {
-            return new ArrayList<>();
-        }
 
-        // Handle empty offspring edge case
-        if (newIndividuals == null || newIndividuals.isEmpty()) {
-            return new ArrayList<>(currentPopulation);
-        }
+        if (currentPopulation == null || currentPopulation.isEmpty())  return new ArrayList<>();
+        if (newIndividuals == null || newIndividuals.isEmpty()) return new ArrayList<>(currentPopulation);
 
         int populationSize = currentPopulation.size();
 
-        // Validate replacement count
-        if (replacementCount >= populationSize) {
-            throw new IllegalArgumentException(
-                String.format("Replacement count (%d) must be less than population size (%d)",
-                             replacementCount, populationSize)
-            );
-        }
+        // Adjust replacement count 
+        int actualReplacementCount = Math.min(replacementCount, populationSize);
+        actualReplacementCount = Math.min(actualReplacementCount, newIndividuals.size());
 
-        // Adjust replacement count if fewer offspring available
-        int actualReplacementCount = Math.min(replacementCount, newIndividuals.size());
-
-        // Perform replacement based on mode
-        switch (mode) {
-            case FITNESS:
-                return replaceFitnessBased(currentPopulation, newIndividuals,
-                                          populationSize, actualReplacementCount);
-            case AGE:
-                // Age-based replacement would require age tracking in chromosomes
-                // For now, fall back to fitness-based
-                System.out.println("Warning: AGE mode not yet implemented, using FITNESS mode");
-                return replaceFitnessBased(currentPopulation, newIndividuals,
-                                          populationSize, actualReplacementCount);
-            case PARENT:
-                // Parent replacement would require tracking parent-offspring relationships
-                // For now, fall back to fitness-based
-                System.out.println("Warning: PARENT mode not yet implemented, using FITNESS mode");
-                return replaceFitnessBased(currentPopulation, newIndividuals,
-                                          populationSize, actualReplacementCount);
-            default:
-                return replaceFitnessBased(currentPopulation, newIndividuals,
-                                          populationSize, actualReplacementCount);
-        }
+        return replaceFitnessBased(currentPopulation, newIndividuals, populationSize, actualReplacementCount);
     }
 
-    /**
-     * Performs fitness-based replacement: worst fitness individuals are replaced.
-     *
-     * @param currentPopulation Current population
-     * @param offspring Generated offspring
-     * @param populationSize Size of population
-     * @param actualReplacementCount Actual number to replace
-     * @return New population with replacements made
-     */
     private List<C> replaceFitnessBased(List<C> currentPopulation, List<C> offspring,
                                         int populationSize, int actualReplacementCount) {
-        // Create a list with fitness evaluations for current population
+
+        // parents
         List<IndividualWithFitness<C>> currentWithFitness = currentPopulation.stream()
             .map(ind -> new IndividualWithFitness<>(ind, ind.evaluate()))
             .collect(Collectors.toList());
 
-        // Sort current population by fitness (descending - best first)
         currentWithFitness.sort(Comparator.comparingDouble(IndividualWithFitness<C>::getFitness).reversed());
 
-        // Create a list with fitness evaluations for offspring
+        // offsprings
         List<IndividualWithFitness<C>> offspringWithFitness = offspring.stream()
             .map(ind -> new IndividualWithFitness<>(ind, ind.evaluate()))
             .collect(Collectors.toList());
 
-        // Sort offspring by fitness (descending - best first)
         offspringWithFitness.sort(Comparator.comparingDouble(IndividualWithFitness<C>::getFitness).reversed());
 
-        // Create new population
         List<C> newPopulation = new ArrayList<>(populationSize);
 
-        // Keep best (populationSize - actualReplacementCount) from current population
         int keepCount = populationSize - actualReplacementCount;
         for (int i = 0; i < keepCount; i++) {
             newPopulation.add(currentWithFitness.get(i).getIndividual());
         }
 
-        // Add best actualReplacementCount offspring
         for (int i = 0; i < actualReplacementCount; i++) {
             newPopulation.add(offspringWithFitness.get(i).getIndividual());
         }
@@ -188,43 +105,20 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
         return newPopulation;
     }
 
-    /**
-     * Gets the replacement count.
-     *
-     * @return Number of individuals replaced per generation
-     */
     public int getReplacementCount() {
         return replacementCount;
     }
 
-    /**
-     * Gets the replacement mode.
-     *
-     * @return The replacement mode (FITNESS, AGE, or PARENT)
-     */
     public ReplacementMode getMode() {
         return mode;
     }
 
-    /**
-     * Checks if parent replacement is allowed.
-     *
-     * @return true if offspring can replace their parents
-     */
+    
     public boolean isAllowParentReplacement() {
         return allowParentReplacement;
     }
 
-    @Override
-    public String toString() {
-        return String.format("SteadyStateReplacement(count=%d, mode=%s, allowParentReplacement=%s)",
-                           replacementCount, mode, allowParentReplacement);
-    }
-
-    /**
-     * Helper class to pair individuals with their fitness values.
-     * This avoids re-evaluating fitness multiple times.
-     */
+    
     private static class IndividualWithFitness<C extends Chromosome<?>> {
         private final C individual;
         private final double fitness;
@@ -241,6 +135,12 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
         public double getFitness() {
             return fitness;
         }
+    }
+
+    @Override
+    public String toString() {
+        return String.format("SteadyStateReplacement(count=%d, mode=%s, allowParentReplacement=%s)",
+                           replacementCount, mode, allowParentReplacement);
     }
 }
 

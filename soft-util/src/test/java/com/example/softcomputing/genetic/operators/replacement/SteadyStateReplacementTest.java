@@ -14,11 +14,6 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Comprehensive unit tests for SteadyStateReplacement operator.
- * Tests cover all requirements including replacement counts, fitness-based selection,
- * edge cases, population size maintenance, and validation.
- */
 class SteadyStateReplacementTest {
 
     @Nested
