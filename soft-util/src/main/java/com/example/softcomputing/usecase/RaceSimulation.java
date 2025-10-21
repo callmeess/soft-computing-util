@@ -64,6 +64,9 @@ public class RaceSimulation extends JPanel implements ActionListener {
         // Move the car
         car.move();
         
+        // Update laser rays
+        car.updateRays(track);
+        
         // Check if car is still on track
         if (!track.isCarOnTrack(car.getX(), car.getY())) {
             // Car went off track - reset
