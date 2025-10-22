@@ -13,15 +13,19 @@ import com.example.softcomputing.utils.AppLogger;
 
 public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
 
+    long maxGenerations = 100;
+    int geneLength = 10;
+    int populationSize = 100;
+    double mutationRate = 0.01;
+    double crossoverRate = 0.7;
+
+    List<C> population = null;
     SelectionStrategy<C> selection;
     CrossoverStrategy<C> crossover;
     MutationStrategy<C> mutation;
     Replacement<C> replacement;
-    int populationSize = 100;
-    long maxGenerations = 100;
-    List<C> population = null;
-    int geneLength = 10;
     ChromosomeFactory<?, C> chromosomeFactory;
+
     AppLogger logger = AppLogger.getLogger(GeneticAlgorithmBuilder.class);
 
     public GeneticAlgorithmBuilder<C> withChromosomeFactory(ChromosomeFactory<?, C> factory) {
@@ -31,6 +35,20 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
 
     public GeneticAlgorithmBuilder<C> withPopulation(List<C> population) {
         this.population = population;
+        return this;
+    }
+
+    public GeneticAlgorithmBuilder<C> withCrossoverRate(double rate) {
+        this.crossoverRate = rate;
+        return this;
+    }
+    public GeneticAlgorithmBuilder<C> withMutationRate(double rate) {
+        this.mutationRate = rate;
+        return this;
+    }
+
+    public GeneticAlgorithmBuilder<C> withGeneLength(int length) {
+        this.geneLength = length;
         return this;
     }
 

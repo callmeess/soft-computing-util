@@ -12,23 +12,29 @@ import com.example.softcomputing.utils.AppLogger;
 
 public class GeneticAlgorithm<C extends Chromosome<?>> {
 
+    private int _populationSize;
+    private long _MaxGeneration = 100;
+    private List<C> _population;
+    private double _crossoverRate = 0.8;
+    private double _mutationRate = 0.01;
+
     private SelectionStrategy<C> _selection;
     private CrossoverStrategy<C> _crossover;
     private MutationStrategy<C> _mutation;
     private Replacement<C> _replacement;
-    private int _populationSize;
-    private List<C> _population;
-    private long _MaxGeneration = 100;
+
     AppLogger _logger = AppLogger.getLogger(GeneticAlgorithm.class);
 
     public GeneticAlgorithm(GeneticAlgorithmBuilder<C> builder) {
+        this._populationSize = builder.populationSize;
+        this._MaxGeneration = builder.maxGenerations;
+        this._population = builder.population;
+        this._crossoverRate = builder.crossoverRate;
+        this._mutationRate = builder.mutationRate;
         this._selection = builder.selection;
         this._crossover = builder.crossover;
         this._mutation = builder.mutation;
         this._replacement = builder.replacement;
-        this._populationSize = builder.populationSize;
-        this._population = builder.population;
-        this._MaxGeneration = builder.maxGenerations;
         this._logger = builder.logger;
     }
 
@@ -55,8 +61,10 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
                 C parent1 = _selection.selectIndividual(_population);
                 C parent2 = _selection.selectIndividual(_population);
 
+                // crossover
                 List<C> children = _crossover.crossover(parent1, parent2);
 
+                // mutation
                 for (C child : children) {
                     C mutated = _mutation.mutate(child);
                     offspring.add(mutated);
