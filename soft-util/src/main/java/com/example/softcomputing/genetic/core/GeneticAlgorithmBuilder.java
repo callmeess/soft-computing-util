@@ -9,6 +9,7 @@ import com.example.softcomputing.genetic.operators.crossover.CrossoverStrategy;
 import com.example.softcomputing.genetic.operators.mutation.MutationStrategy;
 import com.example.softcomputing.genetic.operators.replacement.Replacement;
 import com.example.softcomputing.genetic.operators.selection.SelectionStrategy;
+import com.example.softcomputing.utils.AppLogger;
 
 public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
 
@@ -21,6 +22,7 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
     List<C> population = null;
     int geneLength = 10;
     ChromosomeFactory<?, C> chromosomeFactory;
+    AppLogger logger = AppLogger.getLogger(GeneticAlgorithmBuilder.class);
 
     public GeneticAlgorithmBuilder<C> withChromosomeFactory(ChromosomeFactory<?, C> factory) {
         this.chromosomeFactory = factory;

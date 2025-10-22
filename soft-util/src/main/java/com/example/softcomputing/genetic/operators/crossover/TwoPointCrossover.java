@@ -21,7 +21,7 @@ public class TwoPointCrossover<G, C extends Chromosome<G>> implements CrossoverS
     public List<C> crossover(C parent1, C parent2) {
         List<C> children = new ArrayList<>();
 
-        if (random.nextDouble() > crossoverProbability) {
+        if (random.nextDouble() < crossoverProbability) {
             children.add(parent1);
             children.add(parent2);
             return children;

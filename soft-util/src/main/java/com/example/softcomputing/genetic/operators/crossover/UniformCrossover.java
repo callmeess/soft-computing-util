@@ -25,8 +25,10 @@ public class UniformCrossover<T, C extends Chromosome<T>> implements CrossoverSt
 	public List<C> crossover(C parent1, C parent2) {
 		int length = parent1.length();
 		if (length != parent2.length()) throw new IllegalArgumentException("Parents must have the same length");
+
 		T[] child1Genes = parent1.toArray();
 		T[] child2Genes = parent2.toArray();
+
 		for (int i = 0; i < length; i++) {
 			double r = rand.nextDouble();
 			if (r < mixingRatio) {

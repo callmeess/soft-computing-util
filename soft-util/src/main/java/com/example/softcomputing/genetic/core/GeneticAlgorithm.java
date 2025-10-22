@@ -8,6 +8,7 @@ import com.example.softcomputing.genetic.operators.crossover.CrossoverStrategy;
 import com.example.softcomputing.genetic.operators.mutation.MutationStrategy;
 import com.example.softcomputing.genetic.operators.replacement.Replacement;
 import com.example.softcomputing.genetic.operators.selection.SelectionStrategy;
+import com.example.softcomputing.utils.AppLogger;
 
 public class GeneticAlgorithm<C extends Chromosome<?>> {
 
@@ -18,6 +19,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
     private int _populationSize;
     private List<C> _population;
     private long _MaxGeneration = 100;
+    AppLogger _logger = AppLogger.getLogger(GeneticAlgorithm.class);
 
     public GeneticAlgorithm(GeneticAlgorithmBuilder<C> builder) {
         this._selection = builder.selection;
@@ -27,21 +29,22 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
         this._populationSize = builder.populationSize;
         this._population = builder.population;
         this._MaxGeneration = builder.maxGenerations;
+        this._logger = builder.logger;
     }
 
     public void run() {
 
         if (_population == null || _population.isEmpty()) {
-            System.out.println("No initial population provided. Aborting run.");
+            _logger.error("No initial population provided. Aborting run.");
             return;
         }
 
         if (_selection == null || _crossover == null || _mutation == null || _replacement == null) {
-            System.out.println("One or more strategies are not configured. Aborting run.");
+            _logger.error("One or more strategies are not configured. Aborting run.");
             return;
         }
 
-        // Track overall best solution found across all generations
+        //  best for all generations
         C overallBest = null;
         double overallBestFitness = Double.NEGATIVE_INFINITY;
 
@@ -64,7 +67,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
             //  replacement
             _population = _replacement.replacePopulation(new ArrayList<>(_population), offspring);
 
-            // evaluate and report best individual of this generation
+            //  best for this generation
             C best = null;
             double bestFitness = Double.NEGATIVE_INFINITY;
             for (C ind : _population) {
@@ -75,23 +78,22 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
                 }
             }
 
-            // Update overall best if current generation is better
             if (bestFitness > overallBestFitness) {
                 overallBest = best;
                 overallBestFitness = bestFitness;
             }
 
-            System.out.println("Generation " + gen + " bestFitness=" + bestFitness + " best=" + best);
+            _logger.info("Generation " + gen + " bestFitness=" + bestFitness + " best=" + best);
 
             if (Double.isFinite(bestFitness) && bestFitness >= Double.POSITIVE_INFINITY - 1) break;
         }
 
-        // Print overall best solution found
-        System.out.println("\n====================================");
-        System.out.println("BEST SOLUTION FOUND OVERALL:");
-        System.out.println("Best Fitness: " + overallBestFitness);
-        System.out.println("Best Chromosome: " + overallBest);
-        System.out.println("====================================\n");
+        _logger.info("Overall bestFitness=" + overallBestFitness + " best=" + overallBest);
+        _logger.info("\n====================================");
+        _logger.info("BEST SOLUTION FOUND OVERALL:");
+        _logger.info("Best Fitness: " + overallBestFitness);
+        _logger.info("Best Chromosome: " + overallBest);
+        _logger.info("====================================\n");
     }
 
     public static <C extends Chromosome<?>> GeneticAlgorithmBuilder<C> builder() {
