@@ -65,6 +65,6 @@ public class BinaryChromosome implements Chromosome<Integer> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int g : genes) sb.append(g);
-        return sb.toString();
+        return "BinaryChromosome" + sb.toString();
     }
 }

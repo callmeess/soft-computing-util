@@ -8,11 +8,13 @@ import com.example.softcomputing.genetic.chromosome.Chromosome;
 import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
 
 public class SinglePointCrossover<G, C extends Chromosome<G>> implements CrossoverStrategy<C> {
-    private final ChromosomeFactory<G, C> factory;
-    private final Random random = new Random();
+    private final ChromosomeFactory<G, C> _factory;
+    private double _crossoverProbability = 0.7;
+    private final Random _random = new Random();
 
-    public SinglePointCrossover(ChromosomeFactory<G, C> factory) {
-        this.factory = factory;
+    public SinglePointCrossover(double crossoverProbability, ChromosomeFactory<G, C> factory) {
+        this._crossoverProbability = crossoverProbability;
+        this._factory = factory;
     }
 
     @Override
@@ -24,26 +26,29 @@ public class SinglePointCrossover<G, C extends Chromosome<G>> implements Crossov
             throw new IllegalArgumentException("Parents must have the same length");
         }
 
-        // Pick a random crossover point (1 to length-1)
-        int crossoverPoint = 1 + random.nextInt(length - 1);
+        Random DoCrossover = new Random();
+        if (DoCrossover.nextDouble() > _crossoverProbability) {
+            children.add(parent1);
+            children.add(parent2);
+            return children;
+        }
 
-        // Get parent genes
+        // random crossover point
+        int crossoverPoint = 1 + _random.nextInt(length - 1);
+
         G[] p1Genes = parent1.toArray();
         G[] p2Genes = parent2.toArray();
 
-        // Create child genes arrays
         G[] child1Genes = p1Genes.clone();
         G[] child2Genes = p2Genes.clone();
 
-        // Swap genes after crossover point
         for (int i = crossoverPoint; i < length; i++) {
             child1Genes[i] = p2Genes[i];
             child2Genes[i] = p1Genes[i];
         }
 
-        // Create children using factory
-        children.add(factory.create(child1Genes));
-        children.add(factory.create(child2Genes));
+        children.add(_factory.create(child1Genes));
+        children.add(_factory.create(child2Genes));
 
         return children;
     }

@@ -32,14 +32,15 @@ public final class AppLogger {
         ch.setLevel(level);
 
         Formatter formatter = new Formatter() {
-            private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu-MM-dd HH:mm:ss.SSS")
-                    .withZone(ZoneId.systemDefault());
+        private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss")
+            .withZone(ZoneId.systemDefault());
 
             @Override
             public String format(LogRecord record) {
                 String time = dtf.format(Instant.ofEpochMilli(record.getMillis()));
                 String lvl = record.getLevel().getName();
                 String loggerName = record.getLoggerName();
+                String simpleName = loggerName == null ? "" : loggerName.substring(loggerName.lastIndexOf('.') + 1);
                 String msg = formatMessage(record);
                 String thrown = "";
                 if (record.getThrown() != null) {
@@ -47,7 +48,7 @@ public final class AppLogger {
                     record.getThrown().printStackTrace(new java.io.PrintWriter(sw));
                     thrown = System.lineSeparator() + sw.toString();
                 }
-                return String.format("%s %-7s [%s] %s%s%n", time, lvl, loggerName, msg, thrown);
+                return String.format("%s %-7s [%s] %s%s%n", time, lvl, simpleName, msg, thrown);
             }
         };
         ch.setFormatter(formatter);
