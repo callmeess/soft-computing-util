@@ -1,3 +1,10 @@
+/*
+ * GeneticAlgorithm.java
+ * implements a genetic algorithm to evolve a population of cars
+ * using neural networks to navigate a track
+ * runs the simulation and evolution process 
+ */
+
 package com.example.softcomputing.usecase.simulation;
 
 import java.util.ArrayList;
@@ -32,7 +39,7 @@ public class GeneticAlgorithm {
     private double avgFitness;
     private int aliveCars;
     private long generationStartTime;
-    private final long GENERATION_TIMEOUT_MS = 30_000; // 30 seconds
+    private final long GENERATION_TIMEOUT_MS = 30_000;
 
     private final Random random = new Random();
 
@@ -54,17 +61,18 @@ public class GeneticAlgorithm {
         this.generation = 0;
     }
 
+    // Initialize population of cars at starting position
     public void initializePopulation() {
         population.clear();
         double[] startPos = { 150, 700 };
-
+        // Create cars with random neural networks
         for (int i = 0; i < populationSize; i++) {
             NeuralNetwork nn = new NeuralNetwork(5, 8, 1);
             double startAngle = random.nextDouble() * Math.PI * 2;
-
             Car car = new Car(startPos[0], startPos[1], startAngle, trackGrid, nn);
             population.add(car);
         }
+
         generationStartTime = System.currentTimeMillis();
         System.out.println("Initialized population with " + populationSize + " cars at position (" +
                 (int) startPos[0] + ", " + (int) startPos[1] + ")");
@@ -86,47 +94,46 @@ public class GeneticAlgorithm {
             }
         }
 
-        // Store best car
+        // Store best car for this generation to visualize it
         bestCar = currentBest;
         bestFitness = maxFitness;
     }
 
-    /**
-     * When all cars are dead evolve.
-     */
+    // determine if generation should evolve
     public boolean shouldEvolve() {
         long elapsed = System.currentTimeMillis() - generationStartTime;
         boolean timeoutReached = elapsed >= GENERATION_TIMEOUT_MS;
         boolean allDead = aliveCars == 0;
-
         return allDead || timeoutReached;
     }
 
+    // evolve to next generation
     public void evolveGeneration() {
-        long evolveStartTime = System.currentTimeMillis();
-        long generationDuration = evolveStartTime - generationStartTime;
         generation++;
-
+        // Convert cars to chromosomes
         List<FloatingPointChromosome> parents = new ArrayList<>(populationSize);
         for (int i = 0; i < population.size(); i++) {
             Car car = population.get(i);
             NeuralNetwork nn = car.getNeuralNetwork();
             double[] weights = nn.flatten();
+            // we need to box the double[] to Double[] for the chromosome factory
             Double[] boxed = Arrays.stream(weights).boxed().toArray(Double[]::new);
             FloatingPointChromosome chrom = chromosomeFactory.create(boxed);
+            // get fitness to assign to this chromosome
             chrom.setFitness(car.getFitness());
             parents.add(chrom);
         }
-
+        // calculate best fitness
         OptionalDouble max = parents.stream().mapToDouble(FloatingPointChromosome::getFitness).max();
         bestFitness = max.orElse(0);
-
+        // new population
         List<FloatingPointChromosome> newChromosomes = new ArrayList<>(populationSize);
         int operationNum = 0;
+        // create new chromosomes until we reach population size
         while (newChromosomes.size() < populationSize) {
             FloatingPointChromosome parent1 = selectionStrategy.selectIndividual(parents);
             FloatingPointChromosome parent2 = selectionStrategy.selectIndividual(parents);
-
+            // we can log the selected parents for the first few operations
             int p1Index = parents.indexOf(parent1);
             int p2Index = parents.indexOf(parent2);
 
@@ -137,9 +144,9 @@ public class GeneticAlgorithm {
                 System.out.println(String.format("  Selected parent2 (Car %d): fitness=%.2f",
                         p2Index, parent2.getFitness()));
             }
-
+            // crossover
             List<FloatingPointChromosome> children = crossoverStrategy.crossover(parent1, parent2);
-
+            // mutation for each child
             for (int childIdx = 0; childIdx < children.size(); childIdx++) {
                 FloatingPointChromosome child = children.get(childIdx);
                 FloatingPointChromosome mutated = mutationStrategy.mutate(child);
@@ -150,9 +157,10 @@ public class GeneticAlgorithm {
             }
             operationNum++;
         }
-
+        // replacement
         List<FloatingPointChromosome> nextGenChromosomes = replacementStrategy.replacePopulation(parents,
                 newChromosomes);
+        // create new cars from chromosomes
         List<Car> newPopulation = new ArrayList<>(populationSize);
         double[] startPos = { 150, 700 };
 
@@ -173,7 +181,6 @@ public class GeneticAlgorithm {
 
         this.population = newPopulation;
 
-        long evolveEndTime = System.currentTimeMillis();
         generationStartTime = System.currentTimeMillis();
     }
 

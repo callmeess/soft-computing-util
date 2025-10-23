@@ -1,3 +1,8 @@
+/*
+ * SimulationCanvas.java
+ * responsible for rendering the simulation state
+ * and visualizing the cars and track
+ */
 package com.example.softcomputing.usecase.simulation.utils;
 
 import java.awt.*;
@@ -33,32 +38,28 @@ public class SimulationCanvas extends JPanel {
         // Update and draw cars
         if (geneticAlgorithm.getPopulation() != null) {
             Car bestCar = geneticAlgorithm.getBestCar();
-
-            // Track and log best car's output activation
             if (bestCar != null && bestCar.isAlive()) {
                 double currentOutput = bestCar.getLastOutputActivation();
                 outputActivationHistory.addLast(currentOutput);
-
                 updateCounter++;
-
-                // Log periodically
-                if (updateCounter % LOG_INTERVAL == 0) {
-                    System.out.println(String.format(
-                            "Gen %d | Time: %d | Best Car Output: %.4f | Fitness: %.2f",
-                            geneticAlgorithm.getGeneration(),
-                            updateCounter,
-                            currentOutput,
-                            bestCar.getFitness()));
-                }
             }
 
             for (Car car : geneticAlgorithm.getPopulation()) {
                 car.setBest(car == bestCar);
                 car.draw(g2d);
             }
+            if (bestCar != null) {
+                double currentOutput = bestCar.getLastOutputActivation();
+                int x = (int) bestCar.getX();
+                int y = (int) bestCar.getY();
+
+                g2d.setColor(new Color(255, 255, 255, 220));
+                g2d.setColor(Color.BLACK);
+                g2d.setFont(new Font("Arial", Font.BOLD, 12));
+                g2d.drawString(String.format("%.3f", currentOutput), x - 15, y - 23);
+            }
         }
 
-        // Draw stats
         drawStats(g2d);
     }
 
