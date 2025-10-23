@@ -70,9 +70,6 @@ public class GeneticAlgorithm {
                 (int)startPos[0] + ", " + (int)startPos[1] + ")");
     }
 
-    /**
-     * Update simulation step for all cars
-     */
     public void updatePopulation() {
         aliveCars = 0;
         Car currentBest = null;

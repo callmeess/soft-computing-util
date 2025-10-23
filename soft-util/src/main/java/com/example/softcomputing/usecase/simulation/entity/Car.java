@@ -1,11 +1,11 @@
 package com.example.softcomputing.usecase.simulation.entity;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
+
 import com.example.softcomputing.neuralnetwork.core.NeuralNetwork;
 import com.example.softcomputing.usecase.simulation.utils.SimulationCanvas;
-
-import java.awt.Graphics2D;
-import java.awt.Color;
-import java.awt.geom.AffineTransform;
 
 public class Car {
     private double x, y;
@@ -65,7 +65,7 @@ public class Car {
     }
 
     public Car(double startX, double startY, double startAngle,
-               boolean[][] trackGrid, NeuralNetwork nn) {
+            boolean[][] trackGrid, NeuralNetwork nn) {
         this(startX, startY, startAngle, trackGrid);
         this.nn = new NeuralNetwork(nn);
     }
@@ -142,15 +142,11 @@ public class Car {
     private void updateFitness() {
         double currentDistanceToFinish = calculateDistanceToFinish();
 
-        // Update closest distance if we got closer
         if (currentDistanceToFinish < closestDistanceToFinish) {
             closestDistanceToFinish = currentDistanceToFinish;
         }
 
-        // Fitness is simply the inverse of distance to finish
-        // Closer to finish = higher fitness
-        // Maximum possible distance is ~1077 pixels (diagonal from start to finish)
-        double maxDistance = 1200.0; // Upper bound for normalization
+        double maxDistance = 1200.0;
 
         fitness = maxDistance - closestDistanceToFinish;
     }

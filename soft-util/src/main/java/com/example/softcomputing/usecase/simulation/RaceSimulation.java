@@ -1,13 +1,14 @@
 package com.example.softcomputing.usecase.simulation;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 
 import com.example.softcomputing.genetic.chromosome.Factories.FloatingPointChromosomeFactory;
-import com.example.softcomputing.genetic.operators.crossover.SinglePointCrossover;
+import com.example.softcomputing.genetic.operators.crossover.UniformCrossover;
 import com.example.softcomputing.genetic.operators.mutation.UniformMutation;
-import com.example.softcomputing.genetic.operators.selection.TournametSelection;
 import com.example.softcomputing.genetic.operators.replacement.FullGenerationReplacement;
+import com.example.softcomputing.genetic.operators.selection.TournametSelection;
 import com.example.softcomputing.usecase.simulation.utils.SimulationCanvas;
 
 public class RaceSimulation extends JFrame {
@@ -19,19 +20,16 @@ public class RaceSimulation extends JFrame {
     private Timer updateTimer;
 
     public RaceSimulation() {
-        // Create H-shaped track
         boolean[][] trackGrid = createHShapedTrack();
 
-        // Initialize GA with your operators
         FloatingPointChromosomeFactory factory = new FloatingPointChromosomeFactory(-1.0, 1.0);
         geneticAlgorithm = new GeneticAlgorithm(
                 30, // population size
                 trackGrid,
-                new SinglePointCrossover<>(0.8, factory),
+                new UniformCrossover<>(factory),
                 new UniformMutation(0.05),
                 new TournametSelection<>(3),
-                new FullGenerationReplacement<>()
-        );
+                new FullGenerationReplacement<>());
 
         canvas = new SimulationCanvas(geneticAlgorithm);
 
@@ -57,12 +55,16 @@ public class RaceSimulation extends JFrame {
 
         // Outer boundaries
         for (int x = 0; x < gridWidth; x++) {
-            for (int y = 0; y < margin; y++) track[y][x] = true; // Top
-            for (int y = gridHeight - margin; y < gridHeight; y++) track[y][x] = true; // Bottom
+            for (int y = 0; y < margin; y++)
+                track[y][x] = true; // Top
+            for (int y = gridHeight - margin; y < gridHeight; y++)
+                track[y][x] = true; // Bottom
         }
         for (int y = 0; y < gridHeight; y++) {
-            for (int x = 0; x < margin; x++) track[y][x] = true; // Left
-            for (int x = gridWidth - margin; x < gridWidth; x++) track[y][x] = true; // Right
+            for (int x = 0; x < margin; x++)
+                track[y][x] = true; // Left
+            for (int x = gridWidth - margin; x < gridWidth; x++)
+                track[y][x] = true; // Right
         }
 
         // H vertical bars (inner walls)
@@ -70,12 +72,16 @@ public class RaceSimulation extends JFrame {
         int rightBarX = gridWidth - margin - 30 - wallThickness;
 
         for (int y = margin; y < horizontalBarY - 20; y++) {
-            for (int x = leftBarX; x < leftBarX + wallThickness; x++) track[y][x] = true;
-            for (int x = rightBarX; x < rightBarX + wallThickness; x++) track[y][x] = true;
+            for (int x = leftBarX; x < leftBarX + wallThickness; x++)
+                track[y][x] = true;
+            for (int x = rightBarX; x < rightBarX + wallThickness; x++)
+                track[y][x] = true;
         }
         for (int y = horizontalBarY + 20; y < gridHeight - margin; y++) {
-            for (int x = leftBarX; x < leftBarX + wallThickness; x++) track[y][x] = true;
-            for (int x = rightBarX; x < rightBarX + wallThickness; x++) track[y][x] = true;
+            for (int x = leftBarX; x < leftBarX + wallThickness; x++)
+                track[y][x] = true;
+            for (int x = rightBarX; x < rightBarX + wallThickness; x++)
+                track[y][x] = true;
         }
 
         // H horizontal bar walls (top and bottom of middle bar)
