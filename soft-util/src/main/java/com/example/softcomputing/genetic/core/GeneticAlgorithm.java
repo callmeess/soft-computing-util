@@ -22,8 +22,9 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
     private CrossoverStrategy<C> _crossover;
     private MutationStrategy<C> _mutation;
     private Replacement<C> _replacement;
-
+    private FitnessFunction<C> _fitnessFunction;
     AppLogger _logger = AppLogger.getLogger(GeneticAlgorithm.class);
+
 
     public GeneticAlgorithm(GeneticAlgorithmBuilder<C> builder) {
         this._populationSize = builder.populationSize;
@@ -34,6 +35,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
         this._mutation = builder.mutation;
         this._replacement = builder.replacement;
         this._logger = builder.logger;
+        this._fitnessFunction = builder.fitnessFunction;
     }
 
     public void run() {
@@ -83,6 +85,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
             C best = null;
             double bestFitness = Double.NEGATIVE_INFINITY;
             for (C ind : _population) {
+                ind.setFitness(_fitnessFunction.evaluate(ind));
                 double fitness = ind.getFitness();
                 if (best == null || fitness > bestFitness) {
                     best = ind;
