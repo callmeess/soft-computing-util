@@ -8,6 +8,7 @@ public class FloatingPointChromosome implements Chromosome<Double> {
     private final Double[] genes;
     private final double lowerBound;
     private final double upperBound;
+    private double fitness = 0.0;
 
     public FloatingPointChromosome(Double[] genes, double lowerBound, double upperBound) {
         this.genes = genes;
@@ -48,11 +49,14 @@ public class FloatingPointChromosome implements Chromosome<Double> {
 
     @Override
     public double evaluate() {
-        double fitness = 1.0;
-        for (Double gene : genes) {
-            fitness *= gene;
-        }
-        System.err.println("Fitness as max product : " + fitness);
+        return 1.0;
+    }
+
+    public void setFitness(double fitness) {
+        this.fitness = fitness;
+    }
+
+    public double getFitness() {
         return fitness;
     }
 

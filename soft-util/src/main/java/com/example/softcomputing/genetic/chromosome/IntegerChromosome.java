@@ -3,7 +3,7 @@ package com.example.softcomputing.genetic.chromosome;
 import java.util.Arrays;
 import java.util.function.ToDoubleFunction;
 
-public class IntegerChromosome implements  Chromosome<Integer> {
+public class IntegerChromosome implements Chromosome<Integer> {
 
     private Integer[] _genes;
 
@@ -29,6 +29,11 @@ public class IntegerChromosome implements  Chromosome<Integer> {
     @Override
     public void setGene(int index, Integer value) {
         _genes[index] = value;
+    }
+
+    @Override
+    public double getFitness() {
+        return evaluate();
     }
 
     @Override

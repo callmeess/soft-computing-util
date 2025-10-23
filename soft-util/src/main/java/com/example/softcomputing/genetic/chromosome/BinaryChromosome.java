@@ -1,5 +1,4 @@
 
-
 package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
@@ -29,7 +28,8 @@ public class BinaryChromosome implements Chromosome<Integer> {
     @Override
     public Integer[] toArray() {
         Integer[] arr = new Integer[genes.length];
-        for (int i = 0; i < genes.length; i++) arr[i] = genes[i];
+        for (int i = 0; i < genes.length; i++)
+            arr[i] = genes[i];
         return arr;
     }
 
@@ -46,6 +46,11 @@ public class BinaryChromosome implements Chromosome<Integer> {
     @Override
     public void setGene(int index, Integer value) {
         genes[index] = value == 0 ? 0 : 1;
+    }
+
+    @Override
+    public double getFitness() {
+        return evaluate();
     }
 
     @Override
@@ -71,7 +76,8 @@ public class BinaryChromosome implements Chromosome<Integer> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int g : genes) sb.append(g);
+        for (int g : genes)
+            sb.append(g);
         return "BinaryChromosome" + sb.toString();
     }
 }

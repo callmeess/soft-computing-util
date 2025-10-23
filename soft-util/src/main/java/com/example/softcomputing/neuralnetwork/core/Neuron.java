@@ -8,15 +8,15 @@ public class Neuron {
     
     public enum ActivationType {
         RELU,    
-        TANH,    // [-1, 1] - good for steering/directional output
-        SIGMOID, // [0, 1] - good for throttle/probability
-        LINEAR   // (-∞, ∞) - no activation
+        TANH,    
+        SIGMOID, 
+        LINEAR   
     }
     
     public Neuron(int inputCount, Random rand, ActivationType type) {
         weights = new double[inputCount];
         for (int i = 0; i < inputCount; i++) {
-            weights[i] = rand.nextDouble() * 2 - 1; // random [-1, 1]
+            weights[i] = rand.nextDouble() * 2 - 1;
         }
         bias = rand.nextDouble() * 2 - 1;
         this.activationType = type;
@@ -37,7 +37,6 @@ public class Neuron {
         }
     }
     
-    // Forward pass for this neuron
     public double forward(double[] inputs) {
         double sum = bias;
         for (int i = 0; i < weights.length; i++) {
