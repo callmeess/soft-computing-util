@@ -4,6 +4,7 @@ package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
 import java.util.Random;
+import java.util.function.ToDoubleFunction;
 
 public class BinaryChromosome implements Chromosome<Integer> {
     private final int[] genes;
@@ -49,8 +50,14 @@ public class BinaryChromosome implements Chromosome<Integer> {
 
     @Override
     public double evaluate() {
-        // Fitness: decimal value of the bit string
         return toInt();
+    }
+
+    public double evaluate(ToDoubleFunction<Chromosome<Integer>> evaluator) {
+        if (evaluator != null) {
+            return evaluator.applyAsDouble(this);
+        }
+        return evaluate();
     }
 
     public int toInt() {
@@ -65,6 +72,6 @@ public class BinaryChromosome implements Chromosome<Integer> {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (int g : genes) sb.append(g);
-        return sb.toString();
+        return "BinaryChromosome" + sb.toString();
     }
 }

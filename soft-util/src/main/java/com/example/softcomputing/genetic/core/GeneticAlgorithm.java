@@ -12,11 +12,10 @@ import com.example.softcomputing.utils.AppLogger;
 
 public class GeneticAlgorithm<C extends Chromosome<?>> {
 
+    // default
     private int _populationSize;
     private long _MaxGeneration = 100;
     private List<C> _population;
-    private double _crossoverRate = 0.8;
-    private double _mutationRate = 0.01;
 
     private SelectionStrategy<C> _selection;
     private CrossoverStrategy<C> _crossover;
@@ -29,8 +28,6 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
         this._populationSize = builder.populationSize;
         this._MaxGeneration = builder.maxGenerations;
         this._population = builder.population;
-        this._crossoverRate = builder.crossoverRate;
-        this._mutationRate = builder.mutationRate;
         this._selection = builder.selection;
         this._crossover = builder.crossover;
         this._mutation = builder.mutation;
@@ -50,32 +47,38 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
             return;
         }
 
-        //  best for all generations
+        // best for all generations
         C overallBest = null;
         double overallBestFitness = Double.NEGATIVE_INFINITY;
 
         for (int gen = 1; gen <= _MaxGeneration; gen++) {
             List<C> offspring = new ArrayList<>(_populationSize);
 
+            // selection
             while (offspring.size() < _populationSize) {
                 C parent1 = _selection.selectIndividual(_population);
                 C parent2 = _selection.selectIndividual(_population);
+                // _logger.info("Selected Parents: \n Parent1: " + parent1 + "\n Parent2: " +
+                // parent2);
 
                 // crossover
                 List<C> children = _crossover.crossover(parent1, parent2);
+                // _logger.info("Generated Children after Crossover: " + children);
 
                 // mutation
                 for (C child : children) {
                     C mutated = _mutation.mutate(child);
                     offspring.add(mutated);
-                    if (offspring.size() >= _populationSize) break;
+                    // _logger.info("Mutated Child: " + mutated);
+                    if (offspring.size() >= _populationSize)
+                        break;
                 }
             }
 
-            //  replacement
-            _population = _replacement.replacePopulation(new ArrayList<>(_population), offspring);
+            // replacement
+            _population = _replacement.replacePopulation(_population, offspring);
 
-            //  best for this generation
+            // best for this generation
             C best = null;
             double bestFitness = Double.NEGATIVE_INFINITY;
             for (C ind : _population) {
@@ -93,7 +96,8 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
 
             _logger.info("Generation " + gen + " bestFitness=" + bestFitness + " best=" + best);
 
-            if (Double.isFinite(bestFitness) && bestFitness >= Double.POSITIVE_INFINITY - 1) break;
+            if (Double.isFinite(bestFitness) && bestFitness >= Double.POSITIVE_INFINITY - 1)
+                break;
         }
 
         _logger.info("Overall bestFitness=" + overallBestFitness + " best=" + overallBest);

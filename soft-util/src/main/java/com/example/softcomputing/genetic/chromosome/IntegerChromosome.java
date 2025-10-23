@@ -1,6 +1,7 @@
 package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
+import java.util.function.ToDoubleFunction;
 
 public class IntegerChromosome implements  Chromosome<Integer> {
 
@@ -40,7 +41,15 @@ public class IntegerChromosome implements  Chromosome<Integer> {
         return fitness;
     }
 
+    @Override
+    public double evaluate(ToDoubleFunction<Chromosome<Integer>> evaluator) {
+        if (evaluator != null) {
+            return evaluator.applyAsDouble(this);
+        }
+        return evaluate();
+    }
+
     public String toString() {
         return "IntegerChromosome" + Arrays.toString(_genes);
-    } 
+    }
 }

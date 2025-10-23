@@ -1,6 +1,7 @@
 package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
+import java.util.function.ToDoubleFunction;
 
 public class FloatingPointChromosome implements Chromosome<Double> {
 
@@ -53,5 +54,12 @@ public class FloatingPointChromosome implements Chromosome<Double> {
         }
         System.err.println("Fitness as max product : " + fitness);
         return fitness;
+    }
+
+    public double evaluate(ToDoubleFunction<Chromosome<Double>> evaluator) {
+        if (evaluator != null) {
+            return evaluator.applyAsDouble(this);
+        }
+        return evaluate();
     }
 }

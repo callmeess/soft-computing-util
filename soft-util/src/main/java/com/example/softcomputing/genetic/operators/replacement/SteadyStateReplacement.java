@@ -9,12 +9,7 @@ import java.util.stream.Collectors;
 public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacement<C> {
 
     public enum ReplacementMode {
-        // Replace individuals with worst fitness (default)
-        FITNESS,
-        // Replace oldest individuals regardless of fitness (requires age tracking)
-        AGE,
-        // Replace parents that generated the offspring
-        PARENT
+        FITNESS
     }
 
     private final int replacementCount;
