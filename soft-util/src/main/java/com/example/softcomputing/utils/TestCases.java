@@ -24,6 +24,7 @@ import com.example.softcomputing.genetic.operators.replacement.FullGenerationRep
 import com.example.softcomputing.genetic.operators.replacement.SteadyStateReplacement;
 import com.example.softcomputing.genetic.operators.selection.RandomSelection;
 import com.example.softcomputing.genetic.operators.selection.RankSelection;
+import com.example.softcomputing.genetic.operators.selection.RouletteWheelSelection;
 import com.example.softcomputing.genetic.utils.PopulationInitializer;
 
 public class TestCases {
@@ -50,8 +51,10 @@ public class TestCases {
                 ChromosomeFactory<Integer, BinaryChromosome> factory = new BinaryChromosomeFactory();
 
                 GeneticAlgorithm<BinaryChromosome> ga = GeneticAlgorithm.<BinaryChromosome>builder()
-                                .withPopulationSize(populationSize).withPopulation(population)
-                                .withChromosomeFactory(factory).withSelectionStrategy(new RandomSelection<>())
+                                .withPopulationSize(populationSize)
+                                .withPopulation(population)
+                                .withChromosomeFactory(factory)
+                                .withSelectionStrategy(new RouletteWheelSelection<>(population))
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new BinaryMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
