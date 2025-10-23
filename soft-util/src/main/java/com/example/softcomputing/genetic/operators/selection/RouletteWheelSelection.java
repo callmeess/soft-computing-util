@@ -11,6 +11,10 @@ public class RouletteWheelSelection<C extends Chromosome<?>> implements Selectio
 
     private Map<C, Pair<Double, Double>> wheel;
 
+    public RouletteWheelSelection() {
+        this.wheel = new HashMap<>();
+    }
+
     public RouletteWheelSelection(List<C> population) {
         createWheel(population);
     }
@@ -44,8 +48,7 @@ public class RouletteWheelSelection<C extends Chromosome<?>> implements Selectio
 
     @Override
     public C selectIndividual(List<C> population) {
-
-        if (wheel == null) {
+        if (wheel == null || wheel.isEmpty()) {
             createWheel(population);
         }
         Double randomValue = Math.random();

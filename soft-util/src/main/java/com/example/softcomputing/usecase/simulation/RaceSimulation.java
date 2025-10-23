@@ -46,7 +46,7 @@ public class RaceSimulation extends JFrame {
                 trackGrid,
                 new UniformCrossover<>(factory),
                 new UniformMutation(0.05),
-                new TournametSelection<>(5),
+                new TournametSelection<>(7),
                 new ElitismReplacement<>());
 
         // Initialize simulation canvas
@@ -91,7 +91,6 @@ public class RaceSimulation extends JFrame {
             List<Car> population = new ArrayList<>();
             population.add(car);
 
-            // Manually set the population in genetic algorithm
             geneticAlgorithm.getPopulation().clear();
             geneticAlgorithm.getPopulation().add(car);
 
@@ -118,7 +117,6 @@ public class RaceSimulation extends JFrame {
 
                 geneticAlgorithm.evolveGeneration();
             } else if (!TRAINING_MODE) {
-                // In inference mode, restart the car if it dies
                 List<Car> population = geneticAlgorithm.getPopulation();
                 if (!population.isEmpty() && !population.get(0).isAlive()) {
                     System.out.println("Car died. Restarting...");

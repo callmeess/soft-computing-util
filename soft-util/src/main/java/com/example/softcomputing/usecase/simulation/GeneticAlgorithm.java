@@ -13,14 +13,16 @@ import java.util.List;
 import java.util.OptionalDouble;
 import java.util.Random;
 
-import com.example.softcomputing.genetic.chromosome.FloatingPointChromosome;
 import com.example.softcomputing.genetic.chromosome.Factories.FloatingPointChromosomeFactory;
+import com.example.softcomputing.genetic.chromosome.FloatingPointChromosome;
 import com.example.softcomputing.genetic.operators.crossover.CrossoverStrategy;
 import com.example.softcomputing.genetic.operators.mutation.MutationStrategy;
 import com.example.softcomputing.genetic.operators.replacement.Replacement;
 import com.example.softcomputing.genetic.operators.selection.SelectionStrategy;
 import com.example.softcomputing.neuralnetwork.core.NeuralNetwork;
 import com.example.softcomputing.usecase.simulation.entity.Car;
+import com.example.softcomputing.usecase.simulation.utils.CarInfeasibleSolution;
+import com.example.softcomputing.utils.InfeasibleSolution;
 
 public class GeneticAlgorithm {
     private final int populationSize;
@@ -40,7 +42,7 @@ public class GeneticAlgorithm {
     private int aliveCars;
     private long generationStartTime;
     private final long GENERATION_TIMEOUT_MS = 30_000;
-
+    InfeasibleSolution<FloatingPointChromosome> infeasibleCheck = new CarInfeasibleSolution();
     private final Random random = new Random();
 
     public GeneticAlgorithm(
@@ -128,7 +130,6 @@ public class GeneticAlgorithm {
         bestFitness = max.orElse(0);
         // new population
         List<FloatingPointChromosome> newChromosomes = new ArrayList<>(populationSize);
-        int operationNum = 0;
         // create new chromosomes until we reach population size
         while (newChromosomes.size() < populationSize) {
             FloatingPointChromosome parent1 = selectionStrategy.selectIndividual(parents);
@@ -136,26 +137,21 @@ public class GeneticAlgorithm {
             // we can log the selected parents for the first few operations
             int p1Index = parents.indexOf(parent1);
             int p2Index = parents.indexOf(parent2);
-
-            if (operationNum < 5) {
-                System.out.println(String.format("Operation %d:", operationNum));
-                System.out.println(String.format("  Selected parent1 (Car %d): fitness=%.2f",
-                        p1Index, parent1.getFitness()));
-                System.out.println(String.format("  Selected parent2 (Car %d): fitness=%.2f",
-                        p2Index, parent2.getFitness()));
-            }
             // crossover
             List<FloatingPointChromosome> children = crossoverStrategy.crossover(parent1, parent2);
             // mutation for each child
             for (int childIdx = 0; childIdx < children.size(); childIdx++) {
                 FloatingPointChromosome child = children.get(childIdx);
                 FloatingPointChromosome mutated = mutationStrategy.mutate(child);
+                // check infeasible
+                if (infeasibleCheck.checkInfeasible(mutated)) {
+                    mutated = child;
+                }
                 mutated.setFitness(0.0);
                 newChromosomes.add(mutated);
                 if (newChromosomes.size() >= populationSize)
                     break;
             }
-            operationNum++;
         }
         // replacement
         List<FloatingPointChromosome> nextGenChromosomes = replacementStrategy.replacePopulation(parents,

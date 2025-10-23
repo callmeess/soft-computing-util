@@ -1094,3 +1094,631 @@
 21:36:33 INFO    [GeneticAlgorithmBuilder] Best Chromosome: IntegerChromosome[77, 39, 93, 51, 40, 33, 81, 10, 27, 92]
 21:36:33 INFO    [GeneticAlgorithmBuilder] ====================================
 
+22:00:33 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+22:00:33 INFO    [SoftUtilApplication] Choose chromosome type:
+22:00:33 INFO    [SoftUtilApplication] 1. Binary Chromosome
+22:00:33 INFO    [SoftUtilApplication] 2. Integer Chromosome
+22:00:33 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+22:00:33 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+22:00:33 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+22:00:33 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+22:00:33 INFO    [SoftUtilApplication] ===========================================
+22:00:34 INFO    [TestCases] --- Binary Chromosome GA ---
+22:00:34 INFO    [TestCases] Config: popSize=50, geneLength=10, mutationRate=0.050, maxGen=100
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=1008.0 best=BinaryChromosome1111110000
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=1012.0 best=BinaryChromosome1111110100
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=1000.0 best=BinaryChromosome1111101000
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=1012.0 best=BinaryChromosome1111110100
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=1005.0 best=BinaryChromosome1111101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=1008.0 best=BinaryChromosome1111110000
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=904.0 best=BinaryChromosome1110001000
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=997.0 best=BinaryChromosome1111100101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=905.0 best=BinaryChromosome1110001001
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=905.0 best=BinaryChromosome1110001001
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=905.0 best=BinaryChromosome1110001001
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=909.0 best=BinaryChromosome1110001101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=989.0 best=BinaryChromosome1111011101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=957.0 best=BinaryChromosome1110111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=907.0 best=BinaryChromosome1110001011
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=909.0 best=BinaryChromosome1110001101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=997.0 best=BinaryChromosome1111100101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=947.0 best=BinaryChromosome1110110011
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=955.0 best=BinaryChromosome1110111011
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=955.0 best=BinaryChromosome1110111011
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=955.0 best=BinaryChromosome1110111011
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=955.0 best=BinaryChromosome1110111011
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=955.0 best=BinaryChromosome1110111011
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=957.0 best=BinaryChromosome1110111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=957.0 best=BinaryChromosome1110111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=957.0 best=BinaryChromosome1110111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=941.0 best=BinaryChromosome1110101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=957.0 best=BinaryChromosome1110111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=943.0 best=BinaryChromosome1110101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=943.0 best=BinaryChromosome1110101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=943.0 best=BinaryChromosome1110101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=969.0 best=BinaryChromosome1111001001
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=1023.0 best=BinaryChromosome1111111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=955.0 best=BinaryChromosome1110111011
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=975.0 best=BinaryChromosome1111001111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=975.0 best=BinaryChromosome1111001111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=1013.0 best=BinaryChromosome1111110101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=1023.0 best=BinaryChromosome1111111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=959.0 best=BinaryChromosome1110111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=1007.0 best=BinaryChromosome1111101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=969.0 best=BinaryChromosome1111001001
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=1023.0 best=BinaryChromosome1111111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=1023.0 best=BinaryChromosome1111111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=998.0 best=BinaryChromosome1111100110
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=1007.0 best=BinaryChromosome1111101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=895.0 best=BinaryChromosome1101111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=895.0 best=BinaryChromosome1101111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=895.0 best=BinaryChromosome1101111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=895.0 best=BinaryChromosome1101111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=937.0 best=BinaryChromosome1110101001
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=911.0 best=BinaryChromosome1110001111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=911.0 best=BinaryChromosome1110001111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=893.0 best=BinaryChromosome1101111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=879.0 best=BinaryChromosome1101101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=879.0 best=BinaryChromosome1101101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=879.0 best=BinaryChromosome1101101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=879.0 best=BinaryChromosome1101101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=879.0 best=BinaryChromosome1101101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=877.0 best=BinaryChromosome1101101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=941.0 best=BinaryChromosome1110101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=941.0 best=BinaryChromosome1110101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=815.0 best=BinaryChromosome1100101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=815.0 best=BinaryChromosome1100101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=813.0 best=BinaryChromosome1100101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=813.0 best=BinaryChromosome1100101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=813.0 best=BinaryChromosome1100101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=813.0 best=BinaryChromosome1100101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=877.0 best=BinaryChromosome1101101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=877.0 best=BinaryChromosome1101101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=877.0 best=BinaryChromosome1101101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=893.0 best=BinaryChromosome1101111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=893.0 best=BinaryChromosome1101111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=865.0 best=BinaryChromosome1101100001
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=869.0 best=BinaryChromosome1101100101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=869.0 best=BinaryChromosome1101100101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=653.0 best=BinaryChromosome1010001101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=639.0 best=BinaryChromosome1001111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=767.0 best=BinaryChromosome1011111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=639.0 best=BinaryChromosome1001111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=639.0 best=BinaryChromosome1001111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=749.0 best=BinaryChromosome1011101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=765.0 best=BinaryChromosome1011111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=637.0 best=BinaryChromosome1001111101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=639.0 best=BinaryChromosome1001111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=639.0 best=BinaryChromosome1001111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=639.0 best=BinaryChromosome1001111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=685.0 best=BinaryChromosome1010101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=685.0 best=BinaryChromosome1010101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=687.0 best=BinaryChromosome1010101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=685.0 best=BinaryChromosome1010101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=687.0 best=BinaryChromosome1010101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=685.0 best=BinaryChromosome1010101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=685.0 best=BinaryChromosome1010101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=687.0 best=BinaryChromosome1010101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=687.0 best=BinaryChromosome1010101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=941.0 best=BinaryChromosome1110101101
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=943.0 best=BinaryChromosome1110101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=943.0 best=BinaryChromosome1110101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=943.0 best=BinaryChromosome1110101111
+22:00:34 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=681.0 best=BinaryChromosome1010101001
+22:00:34 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=1023.0 best= BinaryChromosome1111111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] 
+====================================
+22:00:34 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+22:00:34 INFO    [GeneticAlgorithmBuilder] Best Fitness: 1023.0
+22:00:34 INFO    [GeneticAlgorithmBuilder] Best Chromosome: BinaryChromosome1111111111
+22:00:34 INFO    [GeneticAlgorithmBuilder] ====================================
+
+22:00:34 INFO    [TestCases] Binary GA completed.
+
+22:00:39 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+22:00:39 INFO    [SoftUtilApplication] Choose chromosome type:
+22:00:39 INFO    [SoftUtilApplication] 1. Binary Chromosome
+22:00:39 INFO    [SoftUtilApplication] 2. Integer Chromosome
+22:00:39 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+22:00:39 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+22:00:39 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+22:00:39 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+22:00:39 INFO    [SoftUtilApplication] ===========================================
+22:00:39 INFO    [TestCases] --- Integer Chromosome GA ---
+22:00:39 INFO    [TestCases] Config: popSize=50, geneLength=10, geneRange=[0,99], mutationRate=0.050, maxGen=100
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=640.0 best=IntegerChromosome[51, 90, 31, 64, 63, 23, 41, 98, 94, 85]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=633.0 best=IntegerChromosome[18, 93, 95, 38, 87, 6, 33, 92, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=653.0 best=IntegerChromosome[24, 61, 77, 77, 71, 27, 83, 95, 58, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=628.0 best=IntegerChromosome[89, 10, 50, 86, 29, 47, 85, 79, 68, 85]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=628.0 best=IntegerChromosome[89, 10, 50, 86, 29, 47, 85, 79, 68, 85]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=616.0 best=IntegerChromosome[42, 66, 51, 61, 94, 6, 33, 92, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=651.0 best=IntegerChromosome[79, 66, 88, 37, 43, 43, 84, 73, 58, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=640.0 best=IntegerChromosome[84, 66, 51, 61, 94, 6, 33, 92, 73, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=585.0 best=IntegerChromosome[42, 66, 51, 61, 1, 47, 85, 79, 68, 85]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=585.0 best=IntegerChromosome[42, 66, 51, 61, 1, 47, 85, 79, 68, 85]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=621.0 best=IntegerChromosome[42, 66, 51, 61, 87, 63, 23, 73, 57, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=581.0 best=IntegerChromosome[42, 66, 51, 61, 94, 6, 33, 73, 57, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=581.0 best=IntegerChromosome[42, 66, 51, 61, 94, 6, 33, 73, 57, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=643.0 best=IntegerChromosome[89, 61, 50, 61, 43, 43, 85, 73, 58, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=588.0 best=IntegerChromosome[41, 66, 51, 86, 1, 47, 85, 73, 58, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=567.0 best=IntegerChromosome[14, 66, 50, 46, 94, 63, 23, 73, 58, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=557.0 best=IntegerChromosome[18, 66, 51, 46, 52, 12, 84, 73, 57, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=541.0 best=IntegerChromosome[-10, 66, 51, 61, 52, 12, 84, 92, 35, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=473.0 best=IntegerChromosome[-10, 28, 5, 4, 87, 63, 85, 73, 58, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=513.0 best=IntegerChromosome[79, 68, 5, 86, 23, 43, 33, 92, 35, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=486.0 best=IntegerChromosome[-10, 66, 49, 37, 43, 43, 33, 92, 35, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=520.0 best=IntegerChromosome[79, 68, 5, 86, 8, 9, 84, 92, 9, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=435.0 best=IntegerChromosome[-10, -6, 50, 9, 52, 12, 84, 73, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=513.0 best=IntegerChromosome[-10, 28, 50, 37, 87, 63, 33, 92, 35, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=540.0 best=IntegerChromosome[-10, 66, 49, 9, 52, 63, 85, 73, 73, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=523.0 best=IntegerChromosome[-10, 66, 5, 4, 67, 63, 84, 73, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=474.0 best=IntegerChromosome[-10, 28, 5, -7, 67, 63, 84, 73, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=517.0 best=IntegerChromosome[-5, 66, 5, -7, 67, 63, 84, 73, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=485.0 best=IntegerChromosome[1, 28, 5, -7, 67, 63, 84, 73, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=474.0 best=IntegerChromosome[-10, 28, 5, -7, 67, 63, 84, 73, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=474.0 best=IntegerChromosome[-10, 28, 5, -7, 67, 63, 84, 73, 73, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=432.0 best=IntegerChromosome[-10, 28, 5, -7, 87, 63, 84, 92, -8, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=453.0 best=IntegerChromosome[-10, 9, 10, 28, 87, 63, 84, 92, -8, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=453.0 best=IntegerChromosome[-10, 9, 10, 28, 87, 63, 84, 92, -8, 98]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=456.0 best=IntegerChromosome[-10, 28, 49, 9, 52, 63, 85, 73, 58, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=396.0 best=IntegerChromosome[-10, 28, 50, 0, 52, 63, 85, 73, 58, -3]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=411.0 best=IntegerChromosome[-10, 28, 50, 0, 52, 63, 85, 73, 73, -3]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=411.0 best=IntegerChromosome[-10, 28, 50, 0, 52, 63, 85, 73, 73, -3]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=409.0 best=IntegerChromosome[-10, 28, 50, 4, 67, 43, 84, 73, 73, -3]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=423.0 best=IntegerChromosome[-10, 28, 50, 4, 23, 63, 85, 73, 58, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=444.0 best=IntegerChromosome[-10, 28, 50, 0, 52, 63, 85, 92, 35, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=352.0 best=IntegerChromosome[-10, 28, 5, -7, 52, 63, 84, 73, 58, 6]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=388.0 best=IntegerChromosome[-10, -6, 5, 4, 67, 63, 85, 73, 58, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=388.0 best=IntegerChromosome[-10, -6, 5, 4, 67, 63, 85, 73, 58, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=375.0 best=IntegerChromosome[-10, -6, 50, -7, 43, 63, 85, 73, 35, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=403.0 best=IntegerChromosome[9, 28, 49, -7, 52, 63, 85, 69, 58, -3]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=388.0 best=IntegerChromosome[1, 28, 5, 4, 87, 43, 84, 73, 58, 5]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=395.0 best=IntegerChromosome[1, 28, 5, 4, 87, 6, 84, 73, 58, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=388.0 best=IntegerChromosome[1, 28, 5, 4, 87, 43, 84, 73, 58, 5]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=384.0 best=IntegerChromosome[-10, 28, 5, 4, 87, 6, 84, 73, 58, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=367.0 best=IntegerChromosome[-10, 28, 49, 4, 87, 6, 23, 73, 58, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=328.0 best=IntegerChromosome[-10, 28, 5, 4, 43, 63, 85, 69, 35, 6]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=328.0 best=IntegerChromosome[-10, 28, 5, 4, 43, 63, 85, 69, 35, 6]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=317.0 best=IntegerChromosome[-10, 28, 0, 4, 23, 63, 85, 69, 58, -3]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=348.0 best=IntegerChromosome[1, 28, 0, 4, 43, 63, 85, 69, 58, -3]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=348.0 best=IntegerChromosome[1, 28, 0, 4, 43, 63, 85, 69, 58, -3]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=278.0 best=IntegerChromosome[1, 28, 5, 9, 87, 6, 84, 73, -8, -7]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=270.0 best=IntegerChromosome[-10, 28, 5, 7, 23, 63, 84, 73, -8, 5]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=270.0 best=IntegerChromosome[-10, 28, 5, 7, 23, 63, 84, 73, -8, 5]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=279.0 best=IntegerChromosome[-10, 9, 49, 9, 87, 63, 10, 69, -8, 1]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=282.0 best=IntegerChromosome[-10, 28, 5, 9, 87, 63, -10, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=282.0 best=IntegerChromosome[-10, 28, 5, 9, 87, 63, -10, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=288.0 best=IntegerChromosome[-10, 9, 49, 4, 23, 63, 84, 69, -8, 5]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=284.0 best=IntegerChromosome[1, -6, 49, 4, 23, 63, 84, 69, -8, 5]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=328.0 best=IntegerChromosome[1, -6, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=332.0 best=IntegerChromosome[-10, 9, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=307.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 5]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=301.0 best=IntegerChromosome[-10, 2, 0, 9, 87, 63, 84, 69, -8, 5]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=297.0 best=IntegerChromosome[-10, 28, 0, 9, 87, 63, 10, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=282.0 best=IntegerChromosome[-10, 9, 4, 9, 87, 63, 10, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=277.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 10, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=290.0 best=IntegerChromosome[-10, 9, 49, 4, 23, 63, 84, 69, -8, 7]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=290.0 best=IntegerChromosome[-10, 9, 49, 4, 23, 63, 84, 69, -8, 7]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=359.0 best=IntegerChromosome[1, 9, 49, 4, 87, 63, 84, 69, -8, 1]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=257.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, -10, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=258.0 best=IntegerChromosome[-10, 9, 49, 4, 23, 63, 10, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=361.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, 2, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=351.0 best=IntegerChromosome[-10, 28, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=407.0 best=IntegerChromosome[1, 9, 49, 4, 87, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=415.0 best=IntegerChromosome[-10, 28, 49, 4, 87, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=407.0 best=IntegerChromosome[1, 9, 49, 4, 87, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=407.0 best=IntegerChromosome[1, 9, 49, 4, 87, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=407.0 best=IntegerChromosome[1, 9, 49, 4, 87, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=415.0 best=IntegerChromosome[-10, 28, 49, 4, 87, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=407.0 best=IntegerChromosome[1, 9, 49, 4, 87, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=407.0 best=IntegerChromosome[1, 9, 49, 4, 87, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=395.0 best=IntegerChromosome[-10, 9, 49, 4, 87, 63, 84, 69, -9, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=345.0 best=IntegerChromosome[4, 9, 49, 4, 23, 63, 84, 69, -9, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=337.0 best=IntegerChromosome[1, 3, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=337.0 best=IntegerChromosome[1, 3, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=337.0 best=IntegerChromosome[1, 3, 49, 4, 23, 63, 84, 69, -8, 49]
+22:00:39 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=653.0 best= IntegerChromosome[24, 61, 77, 77, 71, 27, 83, 95, 58, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] 
+====================================
+22:00:39 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+22:00:39 INFO    [GeneticAlgorithmBuilder] Best Fitness: 653.0
+22:00:39 INFO    [GeneticAlgorithmBuilder] Best Chromosome: IntegerChromosome[24, 61, 77, 77, 71, 27, 83, 95, 58, 80]
+22:00:39 INFO    [GeneticAlgorithmBuilder] ====================================
+
+22:00:39 INFO    [TestCases] Integer GA completed.
+
+22:00:41 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+22:00:41 INFO    [SoftUtilApplication] Choose chromosome type:
+22:00:41 INFO    [SoftUtilApplication] 1. Binary Chromosome
+22:00:41 INFO    [SoftUtilApplication] 2. Integer Chromosome
+22:00:41 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+22:00:41 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+22:00:41 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+22:00:41 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+22:00:41 INFO    [SoftUtilApplication] ===========================================
+22:00:42 INFO    [TestCases] --- FloatingPoint Chromosome GA ---
+22:00:42 INFO    [TestCases] Config: popSize=50, geneLength=10, bounds=[-10.0,10.0], mutationRate=0.050, maxGen=100
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=6.804272618063161E7 best=FloatingPointChromosome[-8.88691357835431, -5.605687604852447, -8.94860301875567, -6.345854940315851, -8.989665017673127, 9.962042599410417, -5.059198268717477, 1.3321041523535797, 9.677088307711387, 4.1181293656659115]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=4.4810787157053754E7 best=FloatingPointChromosome[-6.283144429579504, 9.588152097823205, 6.631965914300945, 7.784593399562954, -4.649716150473544, 5.987535587656227, -4.588340075194384, 8.06469827372704, -5.352089198828185, 2.61306842011981]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=3.763991795966653E8 best=FloatingPointChromosome[-6.283144429579504, 9.588152097823205, 7.04560673559334, 7.784593399562954, -9.268798937543622, -8.128455304886668, -6.859666776296789, -7.003073686253696, 6.261750236074718, -5.026473980224731]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=8.33012145363529E7 best=FloatingPointChromosome[8.542541506220338, 5.017409887306991, -3.8308494904624313, 6.608333421869496, -7.16670382797945, -9.875046213696898, -3.4645328942461573, -6.315401267827198, -4.98430404617455, 9.946925344084544]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=8.478191551131085E7 best=FloatingPointChromosome[8.542541506220338, 5.017409887306991, -3.8308494904624313, 6.048783334816687, -7.16670382797945, -9.875046213696898, -3.4645328942461573, -7.022257644767173, -4.98430404617455, 9.946925344084544]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=8.478191551131085E7 best=FloatingPointChromosome[8.542541506220338, 5.017409887306991, -3.8308494904624313, 6.048783334816687, -7.16670382797945, -9.875046213696898, -3.4645328942461573, -7.022257644767173, -4.98430404617455, 9.946925344084544]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=9.30702508689562E7 best=FloatingPointChromosome[-7.0599956993596, 5.651273418265053, 4.517713357774241, 6.048783334816687, -7.16670382797945, -9.875046213696898, -3.4645328942461573, -7.022257644767173, -4.98430404617455, 9.946925344084544]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=7.551041138988836E7 best=FloatingPointChromosome[7.788450241040705, 4.730080499567308, -3.8308494904624313, 6.267852066707186, -7.16670382797945, -9.875046213696898, -3.4645328942461573, -7.022257644767173, -4.98430404617455, 9.946925344084544]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=6.331795098064099E7 best=FloatingPointChromosome[6.530870399196562, 4.730080499567308, -3.8308494904624313, 6.267852066707186, -7.16670382797945, -9.875046213696898, -3.4645328942461573, -7.022257644767173, -4.98430404617455, 9.946925344084544]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=4.199876095165345E7 best=FloatingPointChromosome[8.542541506220338, 5.017409887306991, 5.649616967007354, 3.2649027644285766, 5.567807123864963, -5.116767041670735, -5.35587671128555, -7.022257644767173, -4.98430404617455, 9.946925344084544]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=5.5222978292696856E7 best=FloatingPointChromosome[8.475178528860303, 4.730080499567308, -3.8308494904624313, 6.267852066707186, -7.5677516196648815, -9.875046213696898, -3.4645328942461573, -7.346354263986623, -4.98430404617455, 6.05147886908291]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=5.5222978292696856E7 best=FloatingPointChromosome[8.475178528860303, 4.730080499567308, -3.8308494904624313, 6.267852066707186, -7.5677516196648815, -9.875046213696898, -3.4645328942461573, -7.346354263986623, -4.98430404617455, 6.05147886908291]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=5.5222978292696856E7 best=FloatingPointChromosome[8.475178528860303, 4.730080499567308, -3.8308494904624313, 6.267852066707186, -7.5677516196648815, -9.875046213696898, -3.4645328942461573, -7.346354263986623, -4.98430404617455, 6.05147886908291]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=1.5034421414096244E7 best=FloatingPointChromosome[-5.417646933492792, 3.366234729726669, 7.932870338015199, 7.782113418802869, -6.3096383696099805, -9.875046213696898, -3.4645328942461573, -7.022257644767173, -4.98430404617455, 1.7673970727070765]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=2.9780905417899486E7 best=FloatingPointChromosome[7.788450241040705, -8.435724520520829, 5.649616967007354, 5.835134957984975, 6.995404846832653, -7.836484365126037, -9.496336997819396, -4.522221388222879, -1.1612039409744277, -5.02972204282523]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=9670555.553107448 best=FloatingPointChromosome[-4.580373352195718, 3.366234729726669, 7.932870338015199, 7.782113418802869, -6.3096383696099805, -9.875046213696898, -2.63584102577826, -7.022257644767173, -4.98430404617455, 1.7673970727070765]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=3.926289438745418E7 best=FloatingPointChromosome[7.788450241040705, -8.435724520520829, 5.649616967007354, 5.835134957984975, 6.995404846832653, -7.836484365126037, -9.496336997819396, -5.962058516050474, -1.1612039409744277, -5.02972204282523]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=3.1232130761520255E7 best=FloatingPointChromosome[8.203602181419704, 5.017409887306991, 3.048188260423205, 2.9641953512375894, -8.136193036355525, -8.932463769916737, -9.496336997819396, 8.99173417472904, -5.178762172340298, 2.61306842011981]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=3.7503146401594676E7 best=FloatingPointChromosome[-4.064700978699872, 4.730080499567308, -3.8308494904624313, 8.715477139932682, -5.505361850421078, 5.5209873597692996, -10.0, 3.581293489889976, -8.900959514311962, -6.029828400259265]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=7236957.571373361 best=FloatingPointChromosome[9.867913835934575, 5.126464011707252, -3.361712673367644, 6.267852066707186, -7.852115608097848, -8.567110886513504, -6.939812018932832, 0.8086189163888573, -4.326762409302867, -4.156786423891839]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=5.197124880630703E7 best=FloatingPointChromosome[7.788450241040705, -8.435724520520829, 5.670576160448798, 5.835134957984975, -9.013842858268827, -8.932463769916737, -9.480092282968409, 1.791666314297052, -5.222355941689699, -3.347296728190961]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=1.863149738795568E7 best=FloatingPointChromosome[7.788450241040705, -7.759498530430518, 5.695586766868715, 6.250902704293872, -4.168103238519235, 5.987535587656227, -8.805017577114391, 4.71511063161644, 1.386015864417296, -6.029828400259265]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=1.216426554236951E7 best=FloatingPointChromosome[9.088921340964657, 5.291077747967153, -1.2463626138413568, 6.589493027794807, 6.995404846832653, -7.836484365126037, -8.805017577114391, 4.71511063161644, -5.178762172340298, 2.61306842011981]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=2.1435776247593958E7 best=FloatingPointChromosome[-4.957205757120201, 4.730080499567308, -2.9086942870019645, 8.046867713834088, 6.995404846832653, -7.652028964720662, -9.004379551474262, -5.988096599393263, -5.178762172340298, 2.61306842011981]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=6.000454845896978E7 best=FloatingPointChromosome[9.088921340964657, 4.730080499567308, 8.290718562362015, 8.724533497732287, 5.567807123864963, -4.428831047398253, -9.656729503139111, -5.988096599393263, -5.178762172340298, 2.61306842011981]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=6.000454845896978E7 best=FloatingPointChromosome[9.088921340964657, 4.730080499567308, 8.290718562362015, 8.724533497732287, 5.567807123864963, -4.428831047398253, -9.656729503139111, -5.988096599393263, -5.178762172340298, 2.61306842011981]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=1.6288716861139527E7 best=FloatingPointChromosome[9.088921340964657, 4.730080499567308, 8.290718562362015, 8.724533497732287, 5.567807123864963, -4.314569183175735, -9.656729503139111, -5.988096599393263, -1.8974849252561679, 1.9872513112011938]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=8532485.23536489 best=FloatingPointChromosome[7.788450241040705, -8.435724520520829, 5.109951428556337, 3.250543712597322, -4.168103238519235, 5.987535587656227, -9.858521920911786, -5.381438717850598, -1.420609886271528, -4.156786423891839]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=4265595.066935505 best=FloatingPointChromosome[7.235178815515165, -8.435724520520829, -1.2463626138413568, 7.520061066114112, 6.995404846832653, -7.652028964720662, -9.495963348620926, -5.988096599393263, -1.420609886271528, 1.7244478613092449]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=1.1888524139818424E7 best=FloatingPointChromosome[-4.064700978699872, 4.730080499567308, 5.695586766868715, 4.813228677481312, 7.077972920218006, 5.987535587656227, -9.858521920911786, -5.929042738701159, 1.5453230268140634, -5.892277259171608]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=1.1360555112807143E7 best=FloatingPointChromosome[-4.064700978699872, 4.520017755893582, 5.695586766868715, 4.813228677481312, 7.077972920218006, 5.987535587656227, -9.858521920911786, -5.929042738701159, 1.5453230268140634, -5.892277259171608]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=7922724.290212743 best=FloatingPointChromosome[7.788450241040705, -8.435724520520829, 5.695586766868715, 3.9604254386684175, 6.859564937074652, 2.4590586256771636, -9.520817067296822, -5.619472291278287, 1.0220580787355047, -5.795754830394941]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=2392558.423985993 best=FloatingPointChromosome[-4.064700978699872, 4.730080499567308, 5.8776373370242005, 3.9604254386684175, 6.859564937074652, 2.4590586256771636, -9.520817067296822, -5.619472291278287, 1.0220580787355047, -5.795754830394941]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=2829965.579683448 best=FloatingPointChromosome[-4.0582099215696115, -8.435724520520829, 4.455979786292927, 0.5593655380199335, 7.077972920218006, 6.228431784546686, -9.495963348620926, 9.862351837706573, 1.386015864417296, -5.795754830394941]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=6777279.114810268 best=FloatingPointChromosome[6.504831567092435, 4.022835814954889, 5.695586766868715, 3.9604254386684175, 7.077972920218006, 3.1804258273316908, -7.633985696299375, 9.862351837706573, 1.386015864417296, -4.887789468813218]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=6611209.351512784 best=FloatingPointChromosome[-3.7611244751467243, 4.520017755893582, 5.695586766868715, 8.70021491076532, 5.567807123864963, 2.4590586256771636, -9.520817067296822, -6.611878635189841, 1.5453230268140634, -5.892277259171608]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=6991996.821352998 best=FloatingPointChromosome[-4.064700978699872, -8.435724520520829, -0.9336197387750025, 9.658171362561237, 5.987567229945073, -5.192233275464939, -9.181676806257967, 9.862351837706573, 1.386015864417296, -5.795754830394941]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=2831000.000292788 best=FloatingPointChromosome[-4.064700978699872, 4.073096728094759, 5.695586766868715, 3.392878291559186, -4.641899680523998, 5.987535587656227, -7.633985696299375, 9.862351837706573, 0.8651503882584137, -4.887789468813218]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=1196801.9766458496 best=FloatingPointChromosome[-4.064700978699872, -8.030661314078966, 5.109951428556337, 3.250543712597322, -4.168103238519235, 3.0553763479846325, -9.719601861202932, 9.862351837706573, -0.517227125938811, -3.4958771475108907]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=2923725.247439054 best=FloatingPointChromosome[-4.064700978699872, 4.073096728094759, 5.695586766868715, 3.392878291559186, 5.567807123864963, 4.855076898798185, -7.096781305454378, -5.93002540750741, 1.386015864417296, -5.795754830394941]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=1783641.152372545 best=FloatingPointChromosome[-4.064700978699872, -8.030661314078966, 5.204127187053858, 8.542830999237966, 6.995404846832653, 1.8268104640338412, -9.870493390996534, -5.694687754105328, 2.2918273339768467, 0.7465877113653074]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=3891851.2599379667 best=FloatingPointChromosome[7.629883887906727, 3.7781746377987435, 5.8776373370242005, -1.471251915077829, 8.782208598119333, 6.228431784546686, -9.495963348620926, 9.862351837706573, -0.517227125938811, -5.892277259171608]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=3.703828243259367E7 best=FloatingPointChromosome[-4.064700978699872, -8.030661314078966, 5.204127187053858, 8.542830999237966, 6.995404846832653, 5.579512802454958, -8.118582538911085, 9.862351837706573, 1.386015864417296, -5.892277259171608]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=3.697913475886896E7 best=FloatingPointChromosome[-4.0582099215696115, -8.030661314078966, 5.204127187053858, 8.542830999237966, 6.995404846832653, 5.579512802454958, -8.118582538911085, 9.862351837706573, 1.386015864417296, -5.892277259171608]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=3483134.9494576366 best=FloatingPointChromosome[-3.8465075724551356, 3.263776174410596, -3.391360029296715, 8.248860015709514, -5.382924606071699, 5.579512802454958, -8.118582538911085, -5.622059059239338, 1.1917411095543686, -6.070764703966636]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=1.1873994407463891E7 best=FloatingPointChromosome[-4.064700978699872, -8.435724520520829, 4.232884369402736, 8.248860015709514, -5.382924606071699, 5.579512802454958, -8.118582538911085, -5.622059059239338, 1.1917411095543686, -6.070764703966636]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=1.1958950514309023E7 best=FloatingPointChromosome[-4.064700978699872, -8.435724520520829, 4.232884369402736, 8.30787899523713, -5.382924606071699, 5.579512802454958, -8.118582538911085, -5.622059059239338, 1.1917411095543686, -6.070764703966636]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=7621810.56611536 best=FloatingPointChromosome[8.565602214204565, 3.7781746377987435, 5.695586766868715, 3.392878291559186, -4.641899680523998, 6.8423649488546765, -6.77513321497117, -5.694687754105328, 1.6715955474753916, -5.949637714799152]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=5002758.723654523 best=FloatingPointChromosome[7.0917813719218685, 2.4944645736110624, 5.695586766868715, 3.392878291559186, -4.903420592001027, 6.8423649488546765, -6.77513321497117, -6.473291715863437, 1.6715955474753916, -5.949637714799152]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=8425734.395918189 best=FloatingPointChromosome[-3.8465075724551356, -8.793051108019782, 5.695586766868715, 3.392878291559186, -4.903420592001027, 6.8423649488546765, -6.77513321497117, -5.70229755026485, 1.6715955474753916, -5.949637714799152]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=1.0405156933059664E7 best=FloatingPointChromosome[8.565602214204565, 3.7781746377987435, -3.665540207197146, 9.477380192024622, 7.643261137322897, 6.97806367601909, -7.314098228954444, -5.694687754105328, 1.1917411095543686, -3.4958771475108907]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=7484830.78854611 best=FloatingPointChromosome[-4.009754976814016, 3.263776174410596, -3.391360029296715, 8.248860015709514, -5.382924606071699, 5.579512802454958, -7.431427085394652, -5.404807587875174, 2.4965820233151144, -6.788332083099972]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=1.0788888296826415E7 best=FloatingPointChromosome[7.780418334671593, -8.030661314078966, 5.695586766868715, 9.477380192024622, 7.643261137322897, 5.55411795968427, -7.617162896914103, -6.264369863228496, 0.23263130170615287, -6.788332083099972]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=4863488.447156232 best=FloatingPointChromosome[-3.8465075724551356, -9.932921239928401, 3.826896515307489, 8.248860015709514, -5.382924606071699, 1.315912138192068, -9.060344490559052, -5.653637650410386, 1.6199383261524778, -6.8603662414493805]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=1.1782943929089865E7 best=FloatingPointChromosome[-3.8465075724551356, 4.704609392716634, -3.391360029296715, 8.248860015709514, -5.382924606071699, 5.579512802454958, -7.431427085394652, -5.404807587875174, 2.8422724354620366, -6.788332083099972]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=1.5757631862784611E7 best=FloatingPointChromosome[-3.4092726955074046, 4.704609392716634, -4.318863930840786, 9.477380192024622, -5.081153378379644, 5.579512802454958, -8.118582538911085, -5.404807587875174, 2.8422724354620366, -6.788332083099972]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=1.5757631862784611E7 best=FloatingPointChromosome[-3.4092726955074046, 4.704609392716634, -4.318863930840786, 9.477380192024622, -5.081153378379644, 5.579512802454958, -8.118582538911085, -5.404807587875174, 2.8422724354620366, -6.788332083099972]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=1.5757631862784611E7 best=FloatingPointChromosome[-3.4092726955074046, 4.704609392716634, -4.318863930840786, 9.477380192024622, -5.081153378379644, 5.579512802454958, -8.118582538911085, -5.404807587875174, 2.8422724354620366, -6.788332083099972]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=5978620.798736326 best=FloatingPointChromosome[-3.8465075724551356, 4.704609392716634, -4.318863930840786, 8.727844580294066, -4.50284611529495, 4.3892363176232, -8.118582538911085, -6.645806740676755, 1.4483947928414391, -5.674706152382122]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=3036957.269105841 best=FloatingPointChromosome[-3.8465075724551356, 3.263776174410596, -4.318863930840786, 9.618795394241335, 7.643261137322897, 5.55411795968427, -8.118582538911085, -6.645806740676755, 1.377387187178236, 1.8457962511937953]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=3304033.3498840416 best=FloatingPointChromosome[-3.3211509151028586, -9.50688685736298, -3.391360029296715, 9.477380192024622, 7.643261137322897, 5.540740169813643, -7.991909406036453, -6.956731216301414, 0.23263130170615287, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=3637784.283878033 best=FloatingPointChromosome[-3.3211509151028586, -9.50688685736298, -3.391360029296715, 9.477380192024622, 7.643261137322897, 5.540740169813643, -8.84051964852896, -6.264369863228496, 0.251769280002889, -6.070764703966636]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=1.636439941661193E7 best=FloatingPointChromosome[9.00059254308473, 3.3604626988808377, -3.391360029296715, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -6.264369863228496, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=1.636439941661193E7 best=FloatingPointChromosome[9.00059254308473, 3.3604626988808377, -3.391360029296715, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -6.264369863228496, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=1.636439941661193E7 best=FloatingPointChromosome[9.00059254308473, 3.3604626988808377, -3.391360029296715, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -6.264369863228496, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=1.636439941661193E7 best=FloatingPointChromosome[9.00059254308473, 3.3604626988808377, -3.391360029296715, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -6.264369863228496, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=1.3718677833237853E7 best=FloatingPointChromosome[9.00059254308473, 2.879765239015034, -3.2910316012625307, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -6.995550938605463, 0.9669016504407056, -6.522603551403859]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=1.77198670633664E7 best=FloatingPointChromosome[9.761239255240024, 3.263776174410596, -3.4864154768140114, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -6.264369863228496, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=1.484574747938063E7 best=FloatingPointChromosome[8.818772377502672, 3.6909675936546544, -2.4949000706064943, 10.0, 7.439768559886386, 5.55411795968427, -9.060344490559052, -7.742443219581173, 0.9669016504407056, -6.522603551403859]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=1.7159044200725056E7 best=FloatingPointChromosome[9.00059254308473, 3.263776174410596, -4.089131346228137, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -5.470962414339456, 1.205022468157921, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=2187068.902881885 best=FloatingPointChromosome[-4.684951206025443, 4.021033534750508, -4.195299077111672, 8.908193992112299, 7.643261137322897, 6.468435367053663, -9.060344490559052, -7.006794525552571, 0.573951247856741, 1.7244478613092449]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=1.8423119598665994E7 best=FloatingPointChromosome[9.00059254308473, 3.3849458129399723, -3.391360029296715, 9.895388966252105, 7.643261137322897, 5.55411795968427, -9.060344490559052, -4.547550117693412, 1.8051221215284032, -5.7070409873268595]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=1.9575945837343305E7 best=FloatingPointChromosome[9.00059254308473, 4.019960287386073, -3.391360029296715, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -6.264369863228496, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=2.0183249677264094E7 best=FloatingPointChromosome[9.00059254308473, 4.019960287386073, -3.391360029296715, 9.477380192024622, 7.643261137322897, 6.325828912625637, -10.0, -4.361732845432982, 1.3845095321280838, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=1.0265945405087493E7 best=FloatingPointChromosome[9.00059254308473, 4.019960287386073, -3.391360029296715, 9.477380192024622, 7.643261137322897, 5.55411795968427, -9.060344490559052, -7.006794525552571, 0.573951247856741, -5.7070409873268595]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=6372348.9317822615 best=FloatingPointChromosome[9.00059254308473, -8.485803518355468, -3.665540207197146, 8.526739599914789, -5.764445221364442, 1.1431614400918568, -9.232192966900035, -6.280478593533568, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=6685135.754357897 best=FloatingPointChromosome[9.00059254308473, -8.485803518355468, -4.213199475475098, 8.526739599914789, -5.764445221364442, 1.0433841026961028, -9.232192966900035, -6.280478593533568, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=3994156.507609474 best=FloatingPointChromosome[9.00059254308473, -8.485803518355468, -3.665540207197146, 6.020401920680202, -4.182818364396966, 1.6747430594515333, -8.229919723376382, -7.256189596310423, 1.175349195404614, -4.8195801127011855]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=5521889.836230935 best=FloatingPointChromosome[-2.9783259898997394, 3.263776174410596, -4.280355192634071, 7.943860624855063, -3.9908901928138083, 7.2584014537453, -9.850458019052335, -7.114357738176992, 1.3845095321280838, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=1518051.0705700112 best=FloatingPointChromosome[-4.684951206025443, 3.263776174410596, -3.391360029296715, 9.009267732484801, -6.1494132735291105, 1.1431614400918568, -10.0, -6.616137364236052, 1.175349195404614, -5.944083156895761]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=2218464.5811078176 best=FloatingPointChromosome[-4.684951206025443, 3.263776174410596, -3.665540207197146, 9.513023522687245, -6.2974982343053245, 1.1431614400918568, -9.232192966900035, -5.69038551697994, 1.6931096282658014, -6.497753576615135]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=1754492.086264922 best=FloatingPointChromosome[-1.9888075448482423, -7.595836090631153, -3.336737532308466, 9.092413019498546, 7.826806073741653, 1.6747430594515333, -8.229919723376382, -6.264369863228496, 1.175349195404614, -4.8195801127011855]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=2248550.354240916 best=FloatingPointChromosome[-2.9783259898997394, 3.263776174410596, -4.280355192634071, 7.943860624855063, -4.870794313316228, 4.671386303409452, -8.425574258967446, -6.264369863228496, 1.175349195404614, -4.8195801127011855]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=2611298.313571103 best=FloatingPointChromosome[-2.9783259898997394, 3.790305698085689, -4.280355192634071, 7.943860624855063, -4.870794313316228, 4.671386303409452, -8.425574258967446, -6.264369863228496, 1.175349195404614, -4.8195801127011855]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=3815696.4149745503 best=FloatingPointChromosome[9.00059254308473, -7.595836090631153, -3.336737532308466, 8.985981966128453, -7.153219762784362, 5.572816676687928, -10.0, -6.137982964587331, -0.480674043342204, 1.5826572254968938]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=3571116.620911667 best=FloatingPointChromosome[9.00059254308473, -7.595836090631153, -3.336737532308466, 8.985981966128453, -7.153219762784362, 5.572816676687928, -9.359016631661158, -6.137982964587331, -0.480674043342204, 1.5826572254968938]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=7086090.023574397 best=FloatingPointChromosome[-4.763992588531741, -8.485803518355468, -3.7453733692049838, 9.977277466710063, 7.826806073741653, 1.6747430594515333, -9.041080706299548, -5.69038551697994, 1.22686539120254, -5.669486640155615]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=7086090.023574397 best=FloatingPointChromosome[-4.763992588531741, -8.485803518355468, -3.7453733692049838, 9.977277466710063, 7.826806073741653, 1.6747430594515333, -9.041080706299548, -5.69038551697994, 1.22686539120254, -5.669486640155615]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=5754598.859246679 best=FloatingPointChromosome[-5.761634998447454, -7.710356630617199, -2.7678805813288587, 9.977277466710063, 7.826806073741653, 1.6747430594515333, -9.041080706299548, -5.69038551697994, 1.22686539120254, -5.669486640155615]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=5754598.859246679 best=FloatingPointChromosome[-5.761634998447454, -7.710356630617199, -2.7678805813288587, 9.977277466710063, 7.826806073741653, 1.6747430594515333, -9.041080706299548, -5.69038551697994, 1.22686539120254, -5.669486640155615]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=1349288.1093278304 best=FloatingPointChromosome[-1.9888075448482423, 6.147007786689405, -3.908988899854047, 7.274454456833833, 6.742716313735418, 1.2629598156519621, -9.232192966900035, -6.112802150609572, -1.4151506644485454, -5.7070409873268595]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=1861006.7584587801 best=FloatingPointChromosome[-5.194235800084243, -7.762564840506709, -3.694569432280455, 9.977277466710063, 7.826806073741653, 1.6747430594515333, -9.041080706299548, -5.402645410048057, 0.3662072218074387, -5.340214360902147]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=1574443.9671026107 best=FloatingPointChromosome[9.00059254308473, 2.9199117105874985, -4.795447845506315, 9.977277466710063, 7.826806073741653, 1.6747430594515333, -9.041080706299548, -5.402645410048057, 0.3662072218074387, -5.340214360902147]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=2431625.1977223544 best=FloatingPointChromosome[9.317711714991876, -7.762564840506709, -5.054715532984865, 6.756333913069375, -4.075504253474739, 2.561330530707342, -8.92555567794749, -5.402645410048057, 0.3662072218074387, -5.340214360902147]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=1574443.9671026107 best=FloatingPointChromosome[9.00059254308473, 2.9199117105874985, -4.795447845506315, 9.977277466710063, 7.826806073741653, 1.6747430594515333, -9.041080706299548, -5.402645410048057, 0.3662072218074387, -5.340214360902147]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=2372372.4052823954 best=FloatingPointChromosome[-5.761634998447454, -7.641856406912442, -2.7678805813288587, 6.184910837538329, 8.800482693042179, 1.959973718609685, -9.041080706299548, -5.69038551697994, -1.4151506644485454, 2.506316999229276]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=2709004.012897252 best=FloatingPointChromosome[-5.761634998447454, -7.641856406912442, -2.7678805813288587, 7.0625287332612565, 8.800482693042179, 1.959973718609685, -9.041080706299548, -5.69038551697994, -1.4151506644485454, 2.506316999229276]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=1107969.8071185602 best=FloatingPointChromosome[-5.761634998447454, -7.641856406912442, -2.7678805813288587, 7.0625287332612565, 8.800482693042179, 0.8415523178116748, -9.010997266682859, -5.69038551697994, -1.9657283641256011, 1.7244478613092449]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=1101305.5107906377 best=FloatingPointChromosome[9.317711714991876, -7.762564840506709, -4.74839350739079, 7.416432698441826, -4.075504253474739, 1.6747430594515333, -8.49846915763877, -5.4737649013130465, 0.2568534863654096, -5.301633406147283]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=1036511.3753493044 best=FloatingPointChromosome[-6.57146059267486, -7.641856406912442, -4.950624898410407, 9.977277466710063, -4.870794313316228, 1.3942137212925907, -9.98113596730689, -7.006794525552571, 0.573951247856741, 1.5329843422337914]
+22:00:42 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=3.763991795966653E8 best= FloatingPointChromosome[-6.283144429579504, 9.588152097823205, 7.04560673559334, 7.784593399562954, -9.268798937543622, -8.128455304886668, -6.859666776296789, -7.003073686253696, 6.261750236074718, -5.026473980224731]
+22:00:42 INFO    [GeneticAlgorithmBuilder] 
+====================================
+22:00:42 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+22:00:42 INFO    [GeneticAlgorithmBuilder] Best Fitness: 3.763991795966653E8
+22:00:42 INFO    [GeneticAlgorithmBuilder] Best Chromosome: FloatingPointChromosome[-6.283144429579504, 9.588152097823205, 7.04560673559334, 7.784593399562954, -9.268798937543622, -8.128455304886668, -6.859666776296789, -7.003073686253696, 6.261750236074718, -5.026473980224731]
+22:00:42 INFO    [GeneticAlgorithmBuilder] ====================================
+
+22:00:42 INFO    [TestCases] FloatingPoint GA completed.
+
+22:00:43 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+22:00:43 INFO    [SoftUtilApplication] Choose chromosome type:
+22:00:43 INFO    [SoftUtilApplication] 1. Binary Chromosome
+22:00:43 INFO    [SoftUtilApplication] 2. Integer Chromosome
+22:00:43 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+22:00:43 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+22:00:43 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+22:00:43 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+22:00:43 INFO    [SoftUtilApplication] ===========================================
+22:00:43 INFO    [TestCases] Config: popSize=50, geneLength=10, geneRange=[0,99], mutationRate=0.050, maxGen=100
+22:00:43 INFO    [TestCases] Running Integer GA  (SinglePoint + IntegerMutation + FullGeneration)
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=719.0 best=IntegerChromosome[95, 98, 91, 99, 35, 70, 76, 43, 65, 47]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=614.0 best=IntegerChromosome[29, 79, 23, 94, 38, 49, 65, 81, 77, 79]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=614.0 best=IntegerChromosome[29, 79, 23, 94, 38, 49, 65, 81, 77, 79]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=614.0 best=IntegerChromosome[29, 79, 23, 94, 38, 49, 65, 81, 77, 79]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=627.0 best=IntegerChromosome[15, 86, 99, 46, 88, 11, 90, 92, 14, 86]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=644.0 best=IntegerChromosome[15, 86, 99, 46, 88, 11, 90, 92, 31, 86]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=606.0 best=IntegerChromosome[15, 58, 23, 57, 93, 39, 84, 81, 77, 79]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=666.0 best=IntegerChromosome[15, 86, 99, 46, 88, 11, 84, 81, 77, 79]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=666.0 best=IntegerChromosome[15, 86, 99, 46, 88, 11, 84, 81, 77, 79]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=617.0 best=IntegerChromosome[15, 86, 99, 46, 88, 87, 88, 60, 33, 15]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=678.0 best=IntegerChromosome[5, 82, 70, 43, 80, 87, 88, 75, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=698.0 best=IntegerChromosome[44, 86, 99, 46, 88, 87, 88, 60, 33, 67]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=631.0 best=IntegerChromosome[19, 78, 89, 22, 69, 91, 88, 35, 73, 67]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=582.0 best=IntegerChromosome[44, 44, 89, 22, 69, 91, 40, 35, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=582.0 best=IntegerChromosome[44, 44, 89, 22, 69, 91, 40, 35, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=579.0 best=IntegerChromosome[44, 44, 70, 43, 80, 87, 22, 75, 39, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=598.0 best=IntegerChromosome[44, 44, 99, 43, 88, 60, 40, 75, 73, 32]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=590.0 best=IntegerChromosome[44, 44, 99, 43, 88, 11, 78, 35, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=590.0 best=IntegerChromosome[44, 44, 99, 43, 88, 11, 78, 35, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=612.0 best=IntegerChromosome[44, 44, 70, 43, 88, 60, 40, 75, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=579.0 best=IntegerChromosome[44, 44, 89, 22, 69, 91, 40, 75, 73, 32]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=524.0 best=IntegerChromosome[44, 49, 70, 43, 69, 17, 81, 92, 39, 20]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=579.0 best=IntegerChromosome[44, 49, 70, 43, 69, 17, 81, 92, 39, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=579.0 best=IntegerChromosome[44, 49, 70, 43, 69, 17, 81, 92, 39, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=587.0 best=IntegerChromosome[67, 44, 99, 46, 69, 17, 81, 92, -3, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=591.0 best=IntegerChromosome[67, 44, 99, 46, 69, 17, 81, 92, 1, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=663.0 best=IntegerChromosome[67, 44, 99, 46, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=663.0 best=IntegerChromosome[67, 44, 99, 46, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=663.0 best=IntegerChromosome[67, 44, 99, 46, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=663.0 best=IntegerChromosome[67, 44, 99, 46, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=663.0 best=IntegerChromosome[67, 44, 99, 46, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=639.0 best=IntegerChromosome[67, 44, 99, 22, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=583.0 best=IntegerChromosome[67, 44, 99, 43, 69, 17, 4, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=583.0 best=IntegerChromosome[67, 44, 99, 43, 69, 17, 4, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=583.0 best=IntegerChromosome[67, 44, 99, 43, 69, 17, 4, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=583.0 best=IntegerChromosome[67, 44, 99, 43, 69, 17, 4, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=562.0 best=IntegerChromosome[67, 44, 99, 22, 69, 17, 4, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=562.0 best=IntegerChromosome[67, 44, 99, 22, 69, 17, 4, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=554.0 best=IntegerChromosome[67, 44, 70, 43, 69, 17, 4, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=639.0 best=IntegerChromosome[67, 44, 99, 22, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=616.0 best=IntegerChromosome[44, 44, 99, 22, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=618.0 best=IntegerChromosome[67, 44, 99, 1, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=631.0 best=IntegerChromosome[67, 44, 70, 43, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=554.0 best=IntegerChromosome[67, 44, 70, 43, 69, 17, 4, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=539.0 best=IntegerChromosome[67, 44, 70, 22, -2, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=623.0 best=IntegerChromosome[67, 49, 99, 1, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=631.0 best=IntegerChromosome[67, 44, 70, 43, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=631.0 best=IntegerChromosome[67, 44, 70, 43, 69, 17, 81, 92, 73, 75]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=535.0 best=IntegerChromosome[44, 44, 70, 43, 69, 17, 81, 92, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=587.0 best=IntegerChromosome[67, 44, 99, 43, 69, 17, 81, 92, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=554.0 best=IntegerChromosome[67, 44, 70, 43, 69, 17, 81, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=537.0 best=IntegerChromosome[67, 49, 99, 22, 69, 17, 81, 92, 39, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=447.0 best=IntegerChromosome[44, 44, 70, 43, 69, 17, -7, 92, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=447.0 best=IntegerChromosome[44, 44, 70, 43, 69, 17, -7, 92, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=531.0 best=IntegerChromosome[44, 44, 70, 43, 69, 17, 81, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=531.0 best=IntegerChromosome[44, 44, 70, 43, 69, 17, 81, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=497.0 best=IntegerChromosome[44, 44, 70, 43, 69, 17, 81, 92, 39, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=383.0 best=IntegerChromosome[8, 44, 70, 22, 69, 17, -10, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=442.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -10, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=403.0 best=IntegerChromosome[67, 44, 10, 43, 69, 17, -10, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=403.0 best=IntegerChromosome[67, 44, 10, 43, 69, 17, -10, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=403.0 best=IntegerChromosome[67, 44, 10, 43, 69, 17, -10, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=395.0 best=IntegerChromosome[67, -5, 70, 43, 69, 17, 1, 92, 39, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=409.0 best=IntegerChromosome[67, 44, 10, 43, 69, 17, -4, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=396.0 best=IntegerChromosome[44, 44, 10, 43, 69, 17, 6, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=423.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, 1, 92, 39, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=423.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, 1, 92, 39, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=381.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 92, 6, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=381.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 92, 6, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=381.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 92, 6, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=381.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 92, 6, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=381.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 92, 6, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=381.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 92, 6, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=324.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 2, 39, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=352.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -10, 2, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=448.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 92, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=357.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -10, 7, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=352.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -10, 2, 73, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=350.0 best=IntegerChromosome[67, 44, 10, 22, 69, 17, -8, 92, 39, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=350.0 best=IntegerChromosome[67, 44, 10, 22, 69, 17, -8, 92, 39, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=350.0 best=IntegerChromosome[67, 44, 10, 22, 69, 17, -8, 92, 39, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=339.0 best=IntegerChromosome[67, 44, 70, 22, -2, 17, -8, 92, 39, -2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=328.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 35, 6, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=328.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -4, 35, 6, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=321.0 best=IntegerChromosome[44, -7, 70, 22, 69, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=321.0 best=IntegerChromosome[44, -7, 70, 22, 69, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=321.0 best=IntegerChromosome[44, -7, 70, 22, 69, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=345.0 best=IntegerChromosome[67, -6, 70, 22, 69, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=345.0 best=IntegerChromosome[67, -6, 70, 22, 69, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=321.0 best=IntegerChromosome[44, -7, 70, 22, 69, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=321.0 best=IntegerChromosome[44, -7, 70, 22, 69, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=231.0 best=IntegerChromosome[67, 44, 3, -6, 0, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=271.0 best=IntegerChromosome[44, 44, 70, 22, 69, 17, -10, 7, 6, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=271.0 best=IntegerChromosome[44, 44, 70, 22, 69, 17, -10, 7, 6, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=275.0 best=IntegerChromosome[44, 44, 70, 22, 69, -3, -4, 35, -4, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=239.0 best=IntegerChromosome[8, 44, 70, -6, 0, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=239.0 best=IntegerChromosome[8, 44, 70, -6, 0, 17, -4, 35, 73, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=220.0 best=IntegerChromosome[44, -7, 70, 22, 69, 17, -10, 7, 6, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=220.0 best=IntegerChromosome[44, -7, 70, 22, 69, 17, -10, 7, 6, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=272.0 best=IntegerChromosome[67, 44, 70, 22, 69, 17, -10, -5, -4, 2]
+22:00:43 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=719.0 best= IntegerChromosome[95, 98, 91, 99, 35, 70, 76, 43, 65, 47]
+22:00:43 INFO    [GeneticAlgorithmBuilder] 
+====================================
+22:00:43 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+22:00:43 INFO    [GeneticAlgorithmBuilder] Best Fitness: 719.0
+22:00:43 INFO    [GeneticAlgorithmBuilder] Best Chromosome: IntegerChromosome[95, 98, 91, 99, 35, 70, 76, 43, 65, 47]
+22:00:43 INFO    [GeneticAlgorithmBuilder] ====================================
+
+22:00:47 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+22:00:47 INFO    [SoftUtilApplication] Choose chromosome type:
+22:00:47 INFO    [SoftUtilApplication] 1. Binary Chromosome
+22:00:47 INFO    [SoftUtilApplication] 2. Integer Chromosome
+22:00:47 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+22:00:47 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+22:00:47 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+22:00:47 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+22:00:47 INFO    [SoftUtilApplication] ===========================================
+22:00:47 INFO    [TestCases] Config: popSize=5, geneLength=10, maxGen=2
+22:00:47 INFO    [TestCases] Running Binary GA permutation (UniformCrossover + BinaryMutation + SteadyState)
+22:00:47 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=465.0 best=BinaryChromosome0111010001
+22:00:47 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=465.0 best=BinaryChromosome0111010001
+22:00:47 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=465.0 best= BinaryChromosome0111010001
+22:00:47 INFO    [GeneticAlgorithmBuilder] 
+====================================
+22:00:47 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+22:00:47 INFO    [GeneticAlgorithmBuilder] Best Fitness: 465.0
+22:00:47 INFO    [GeneticAlgorithmBuilder] Best Chromosome: BinaryChromosome0111010001
+22:00:47 INFO    [GeneticAlgorithmBuilder] ====================================
+
+22:00:53 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+22:00:53 INFO    [SoftUtilApplication] Choose chromosome type:
+22:00:53 INFO    [SoftUtilApplication] 1. Binary Chromosome
+22:00:53 INFO    [SoftUtilApplication] 2. Integer Chromosome
+22:00:53 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+22:00:53 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+22:00:53 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+22:00:53 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+22:00:53 INFO    [SoftUtilApplication] ===========================================
+22:00:54 INFO    [TestCases] Config: popSize=50, geneLength=10, bounds=[-10.0,10.0], mutationRate=0.050, maxGen=100
+22:00:54 INFO    [TestCases] Running FloatingPoint GA permutation (RankSelection + TwoPointCrossover + NonUniformMutation + Elitism)
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=4.709676571930717E7 best=FloatingPointChromosome[-4.532750106296845, 5.355895302645958, 7.814614414412313, -7.7371807895556906, 4.8011772834760755, -4.98835964127356, 8.330487029688456, 2.699050909743823, -8.254913507273136, 7.217843042366205]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=4.709676571930717E7 best=FloatingPointChromosome[-4.532750106296845, 5.355895302645958, 7.814614414412313, -7.7371807895556906, 4.8011772834760755, -4.98835964127356, 8.330487029688456, 2.699050909743823, -8.254913507273136, 7.217843042366205]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=5.559563695151421E7 best=FloatingPointChromosome[-4.532750106296845, 5.355895302645958, 7.814614414412313, -7.7371807895556906, 4.8011772834760755, -4.98835964127356, 9.833769377968032, 2.699050909743823, -8.254913507273136, 7.217843042366205]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=6.66574921187996E7 best=FloatingPointChromosome[-8.765967737419938, 5.355895302645958, 7.814614414412313, 8.818970917761163, 9.29394298984175, 6.274192767959091, -9.699680794880406, -4.160106129874839, 4.98305091161291, -1.7570192506670068]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=3.912082997528358E8 best=FloatingPointChromosome[-9.849237539850094, -6.32605715359267, 7.438300187176406, -9.804620893210041, -8.27198422353349, -6.493404893943473, -7.863362237623975, 8.168312241007186, 2.5845607343906085, 9.655133726742427]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=7.057241497655608E7 best=FloatingPointChromosome[-8.765967737419938, 5.355895302645958, 7.814614414412313, 8.818970917761163, 9.727159573792001, 6.274192767959091, -9.811997190217353, -4.160106129874839, 4.98305091161291, -1.7570192506670068]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=1.2670124945652375E8 best=FloatingPointChromosome[-9.578746583007225, 5.355895302645958, 7.814614414412313, 8.818970917761163, 9.29394298984175, 6.274192767959091, -9.72525332182318, -7.217454288379652, 4.98305091161291, -1.7570192506670068]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=1.6927639599452993E8 best=FloatingPointChromosome[5.499067768048146, 9.55326048794474, 7.814614414412313, -7.7371807895556906, -7.929686080820768, -7.14640436776114, 9.833769377968032, 2.699050909743823, -8.254913507273136, 4.292182798658024]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=3.494232353216433E8 best=FloatingPointChromosome[5.499067768048146, 9.55326048794474, 7.814614414412313, -7.7371807895556906, -7.929686080820768, -7.14640436776114, 9.833769377968032, 2.699050909743823, -8.254913507273136, 8.859997232853758]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=3.542282997943767E8 best=FloatingPointChromosome[5.499067768048146, 9.55326048794474, 7.814614414412313, -7.7371807895556906, -7.929686080820768, -7.14640436776114, 9.968997637266908, 2.699050909743823, -8.254913507273136, 8.859997232853758]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=4.13670285000031E8 best=FloatingPointChromosome[5.499067768048146, 9.55326048794474, 7.814614414412313, -7.7371807895556906, -7.929686080820768, -7.14640436776114, 9.985668003078086, 2.699050909743823, -9.624052165196996, 8.859997232853758]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=3.187251179990792E8 best=FloatingPointChromosome[2.405586711524914, 9.55326048794474, 7.814614414412313, -7.7371807895556906, -7.929686080820768, -6.493404893943473, -9.40766812233734, 8.168312241007186, -8.871912206299559, -6.534213528598162]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=3.187251179990792E8 best=FloatingPointChromosome[2.405586711524914, 9.55326048794474, 7.814614414412313, -7.7371807895556906, -7.929686080820768, -6.493404893943473, -9.40766812233734, 8.168312241007186, -8.871912206299559, -6.534213528598162]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=3.187251179990792E8 best=FloatingPointChromosome[2.405586711524914, 9.55326048794474, 7.814614414412313, -7.7371807895556906, -7.929686080820768, -6.493404893943473, -9.40766812233734, 8.168312241007186, -8.871912206299559, -6.534213528598162]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=3.473139464624667E8 best=FloatingPointChromosome[2.405586711524914, 9.55326048794474, 7.814614414412313, -8.431186131122349, -7.929686080820768, -6.493404893943473, -9.40766812233734, 8.168312241007186, -8.871912206299559, -6.534213528598162]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=4.354284704461156E8 best=FloatingPointChromosome[-5.465748522780817, -5.231488107048092, 8.228640321214908, -9.78836661304191, -7.929686080820768, -9.335332160286585, -9.40766812233734, 9.847298698786368, 9.974768295553268, 2.7638593653647305]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=4.17300934328799E8 best=FloatingPointChromosome[5.9067451438858924, 9.55326048794474, 7.814614414412313, -7.7371807895556906, 3.325226392779201, -6.821371769088832, -7.528656356796796, 8.168312241007186, -9.194844885451474, 9.536127626346989]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=2.794908712938661E8 best=FloatingPointChromosome[-9.578746583007225, 5.260168488961361, 7.814614414412313, 8.31273051658087, 9.29394298984175, 9.46225713414522, 7.140312824564409, -4.160106129874839, 6.984373171880889, 4.680197693243647]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=5.89918268181091E8 best=FloatingPointChromosome[-9.578746583007225, 5.260168488961361, 7.814614414412313, 8.31273051658087, 9.29394298984175, 9.918000626863, 7.140312824564409, -4.160106129874839, 6.984373171880889, 9.424515439764509]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=1.0633763530436087E9 best=FloatingPointChromosome[-9.578746583007225, 5.260168488961361, 7.814614414412313, 8.31273051658087, 9.29394298984175, 9.918000626863, 7.140312824564409, -6.430678165788497, 8.144608695818373, 9.424515439764509]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=1.0633763530436087E9 best=FloatingPointChromosome[-9.578746583007225, 5.260168488961361, 7.814614414412313, 8.31273051658087, 9.29394298984175, 9.918000626863, 7.140312824564409, -6.430678165788497, 8.144608695818373, 9.424515439764509]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=1.3195457215632703E9 best=FloatingPointChromosome[-9.578746583007225, 5.260168488961361, 7.814614414412313, 8.942374210737135, 9.29394298984175, 9.918000626863, 9.60480016911264, -6.430678165788497, 6.984373171880889, 9.424515439764509]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=1.3195457215632703E9 best=FloatingPointChromosome[-9.578746583007225, 5.260168488961361, 7.814614414412313, 8.942374210737135, 9.29394298984175, 9.918000626863, 9.60480016911264, -6.430678165788497, 6.984373171880889, 9.424515439764509]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=2.332693394059022E8 best=FloatingPointChromosome[-9.03986659102572, 5.355895302645958, 8.228640321214908, -9.78836661304191, -7.929686080820768, -9.979992347162808, -5.775983634952864, 8.988038254475084, -3.920362522797803, 3.713829440496572]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=4.8033507425851303E8 best=FloatingPointChromosome[-9.03986659102572, 9.022094036451822, 8.228640321214908, -9.78836661304191, -9.693204270050572, -9.979992347162808, -5.775983634952864, 8.988038254475084, -3.920362522797803, 3.713829440496572]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=2.4284061906687504E8 best=FloatingPointChromosome[-1.6169181720454286, -9.648259512510377, -8.165421983654724, -9.99126535398624, 4.461663905014553, -9.986792978365322, -9.616914006669509, 6.764568335230656, 6.984373171880889, 9.424515439764509]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=2.5438656870644653E8 best=FloatingPointChromosome[1.7958181796494408, 9.591726413627883, 9.91933917529878, -9.872287173193584, -9.693204270050572, -9.984907239530282, -5.775983634952864, 8.988038254475084, -3.920362522797803, -7.656072117192865]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=3.1870279430767745E8 best=FloatingPointChromosome[-1.6169181720454286, -9.648259512510377, -8.165421983654724, -9.99126535398624, 4.461663905014553, -9.986792978365322, -9.616914006669509, 8.877785104515572, 6.984373171880889, 9.424515439764509]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=1.346249243826354E9 best=FloatingPointChromosome[-8.92548517422112, -9.648259512510377, -9.213995441698152, -9.99126535398624, -9.693204270050572, -9.984907239530282, -7.0665405786207796, 6.400566957557702, -3.920362522797803, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=1.346249243826354E9 best=FloatingPointChromosome[-8.92548517422112, -9.648259512510377, -9.213995441698152, -9.99126535398624, -9.693204270050572, -9.984907239530282, -7.0665405786207796, 6.400566957557702, -3.920362522797803, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=1.3793205283317842E9 best=FloatingPointChromosome[-8.92548517422112, -9.648259512510377, -9.44034183786626, -9.99126535398624, -9.693204270050572, -9.984907239530282, -7.0665405786207796, 6.400566957557702, -3.920362522797803, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=4.703300239483914E8 best=FloatingPointChromosome[-9.23448069965567, 9.07473099642863, 9.857546512538445, -4.540399617373083, -9.693204270050572, -5.807657697041743, -7.0665405786207796, 8.12603790493153, -3.920362522797803, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=4.703300239483914E8 best=FloatingPointChromosome[-9.23448069965567, 9.07473099642863, 9.857546512538445, -4.540399617373083, -9.693204270050572, -5.807657697041743, -7.0665405786207796, 8.12603790493153, -3.920362522797803, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=4.703300239483914E8 best=FloatingPointChromosome[-9.23448069965567, 9.07473099642863, 9.857546512538445, -4.540399617373083, -9.693204270050572, -5.807657697041743, -7.0665405786207796, 8.12603790493153, -3.920362522797803, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=9.848054791453972E8 best=FloatingPointChromosome[-9.23448069965567, 9.557434531129623, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -5.315490641657654, 6.764568335230656, -9.663525346957147, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=9.848054791453972E8 best=FloatingPointChromosome[-9.23448069965567, 9.557434531129623, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -5.315490641657654, 6.764568335230656, -9.663525346957147, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=9.848054791453972E8 best=FloatingPointChromosome[-9.23448069965567, 9.557434531129623, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -5.315490641657654, 6.764568335230656, -9.663525346957147, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=9.848054791453972E8 best=FloatingPointChromosome[-9.23448069965567, 9.557434531129623, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -5.315490641657654, 6.764568335230656, -9.663525346957147, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=1.309223992586842E9 best=FloatingPointChromosome[-9.23448069965567, 9.557434531129623, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -7.0665405786207796, 6.764568335230656, -9.663525346957147, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=1.309223992586842E9 best=FloatingPointChromosome[-9.23448069965567, 9.557434531129623, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -7.0665405786207796, 6.764568335230656, -9.663525346957147, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=1.378598262639406E9 best=FloatingPointChromosome[-9.343769500210223, 9.754589070804847, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -7.0665405786207796, 6.764568335230656, -9.853308401439477, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=1.378598262639406E9 best=FloatingPointChromosome[-9.343769500210223, 9.754589070804847, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -7.0665405786207796, 6.764568335230656, -9.853308401439477, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=1.378598262639406E9 best=FloatingPointChromosome[-9.343769500210223, 9.754589070804847, 9.857546512538445, -4.540399617373083, -9.97391294855122, -7.270024550552671, -7.0665405786207796, 6.764568335230656, -9.853308401439477, 9.89494184091031]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=9.388286349812065E8 best=FloatingPointChromosome[-9.965852380467167, -6.139671595684125, 9.857546512538445, -4.540399617373083, -9.998842901788189, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -7.489445984593537, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=9.388286349812065E8 best=FloatingPointChromosome[-9.965852380467167, -6.139671595684125, 9.857546512538445, -4.540399617373083, -9.998842901788189, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -7.489445984593537, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=9.388286349812065E8 best=FloatingPointChromosome[-9.965852380467167, -6.139671595684125, 9.857546512538445, -4.540399617373083, -9.998842901788189, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -7.489445984593537, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=9.388286349812065E8 best=FloatingPointChromosome[-9.965852380467167, -6.139671595684125, 9.857546512538445, -4.540399617373083, -9.998842901788189, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -7.489445984593537, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=9.388286349812065E8 best=FloatingPointChromosome[-9.965852380467167, -6.139671595684125, 9.857546512538445, -4.540399617373083, -9.998842901788189, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -7.489445984593537, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=1.2408139139635344E9 best=FloatingPointChromosome[-9.965852380467167, -6.139671595684125, 9.857546512538445, -4.540399617373083, -9.998842901788189, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -9.898514424571223, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=1.2408139139635344E9 best=FloatingPointChromosome[-9.965852380467167, -6.139671595684125, 9.857546512538445, -4.540399617373083, -9.998842901788189, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -9.898514424571223, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=1.242772168982129E9 best=FloatingPointChromosome[-9.98158050876989, -6.139671595684125, 9.857546512538445, -4.540399617373083, -9.998842901788189, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -9.898514424571223, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=2.460437217745812E9 best=FloatingPointChromosome[-9.98158050876989, -6.139671595684125, 9.967829332173963, 9.272302534375026, 9.586172515341081, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -9.898514424571223, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=2.0956296477385707E9 best=FloatingPointChromosome[-9.98158050876989, -6.139671595684125, 8.489905176787953, 9.272302534375026, 9.586172515341081, -9.319390589158154, -7.0665405786207796, 7.770897864142124, -9.898514424571223, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=1.8479189802245276E9 best=FloatingPointChromosome[-9.98158050876989, -6.139671595684125, 9.99005713255833, -4.540399617373083, -9.998842901788189, -9.786980555323598, -9.855952552042544, 7.770897864142124, -9.915379299024371, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=8.655949567885685E8 best=FloatingPointChromosome[-9.98158050876989, -6.139671595684125, 9.953865387776514, 4.975064525215647, -9.998842901788189, 5.866554976062007, -7.0665405786207796, 7.770897864142124, -9.898514424571223, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=8.730946684671441E8 best=FloatingPointChromosome[-9.98158050876989, -6.139671595684125, 9.953865387776514, 4.975064525215647, -9.998842901788189, 5.866554976062007, -7.0665405786207796, 7.770897864142124, -9.984277406030737, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=8.730946684671441E8 best=FloatingPointChromosome[-9.98158050876989, -6.139671595684125, 9.953865387776514, 4.975064525215647, -9.998842901788189, 5.866554976062007, -7.0665405786207796, 7.770897864142124, -9.984277406030737, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=1.1680385976962276E9 best=FloatingPointChromosome[-7.817364069443613, -9.981551689445388, 9.94743611030832, 9.272302534375026, 9.586172515341081, 9.392706884376393, -7.485365288857421, -3.5627629534241247, -7.489445984593537, -9.024318494324302]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=2.024683844910343E9 best=FloatingPointChromosome[-8.478956338231495, 5.797597340078745, 7.709623755259458, -8.449843084278431, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, -9.915379299024371, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=2.174875358162224E9 best=FloatingPointChromosome[-8.478956338231495, 5.797597340078745, 7.709623755259458, -9.076654387563618, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, -9.915379299024371, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=2.40571818751583E9 best=FloatingPointChromosome[-8.478956338231495, 5.797597340078745, 7.709623755259458, -9.076654387563618, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, -9.915379299024371, -9.894849461137724]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=2.40571818751583E9 best=FloatingPointChromosome[-8.478956338231495, 5.797597340078745, 7.709623755259458, -9.076654387563618, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, -9.915379299024371, -9.894849461137724]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=4.964370583661293E9 best=FloatingPointChromosome[-7.63617516342426, -9.989461730570804, 9.949984151932513, 9.272302534375026, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, -9.915379299024371, -9.980449760838336]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=4.964370583661293E9 best=FloatingPointChromosome[-7.63617516342426, -9.989461730570804, 9.949984151932513, 9.272302534375026, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, -9.915379299024371, -9.980449760838336]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=2.6809055738093777E9 best=FloatingPointChromosome[-8.478956338231495, -8.963532785882235, 7.709623755259458, -9.076654387563618, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, 7.085557299882334, -9.980449760838336]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=2.6809055738093777E9 best=FloatingPointChromosome[-8.478956338231495, -8.963532785882235, 7.709623755259458, -9.076654387563618, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, 7.085557299882334, -9.980449760838336]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=2.6809055738093777E9 best=FloatingPointChromosome[-8.478956338231495, -8.963532785882235, 7.709623755259458, -9.076654387563618, -9.999999446303685, 7.281169098856427, -9.862790962590068, 9.926036664643668, 7.085557299882334, -9.980449760838336]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=9.875689740709885E8 best=FloatingPointChromosome[-9.98158050876989, -8.678270577542158, -3.9433290755565693, 9.272302534375026, 6.42393254108566, -8.955747136785725, 7.796867759045119, 7.770897864142124, -9.9998007426384, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=1.8143318101654804E9 best=FloatingPointChromosome[-8.908574603574898, -8.963532785882235, 7.709623755259458, -9.299458436479675, 6.42393254108566, -8.955747136785725, 7.796867759045119, 7.770897864142124, -9.9998007426384, -9.091863994210414]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=1.8143318101654804E9 best=FloatingPointChromosome[-8.908574603574898, -8.963532785882235, 7.709623755259458, -9.299458436479675, 6.42393254108566, -8.955747136785725, 7.796867759045119, 7.770897864142124, -9.9998007426384, -9.091863994210414]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=1.8143318101654804E9 best=FloatingPointChromosome[-8.908574603574898, -8.963532785882235, 7.709623755259458, -9.299458436479675, 6.42393254108566, -8.955747136785725, 7.796867759045119, 7.770897864142124, -9.9998007426384, -9.091863994210414]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=1.6970651827540863E9 best=FloatingPointChromosome[-9.985645810736958, -8.963532785882235, -8.527676154396477, -6.930404131150237, -9.999999446303685, -8.955747136785725, 8.373425615007847, -6.7495699505919475, 7.085557299882334, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=1.6970651827540863E9 best=FloatingPointChromosome[-9.985645810736958, -8.963532785882235, -8.527676154396477, -6.930404131150237, -9.999999446303685, -8.955747136785725, 8.373425615007847, -6.7495699505919475, 7.085557299882334, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=1.2256889248725111E9 best=FloatingPointChromosome[-9.98158050876989, -9.992202596686466, 9.857805498636605, 4.6794625880004705, 7.576974291890408, -8.955747136785725, 9.731636339215017, 4.159455393003323, -9.85964224620951, 9.83699286127389]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=1.2256889248725111E9 best=FloatingPointChromosome[-9.98158050876989, -9.992202596686466, 9.857805498636605, 4.6794625880004705, 7.576974291890408, -8.955747136785725, 9.731636339215017, 4.159455393003323, -9.85964224620951, 9.83699286127389]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=9.342546301472983E8 best=FloatingPointChromosome[-7.861816260286937, -9.99292781174094, 9.928930575938379, -7.39957147618977, 6.210771292274507, 7.169975624151098, 7.796867759045119, 7.770897864142124, 6.647702502662089, -9.024318494324302]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=1.0232095455140584E9 best=FloatingPointChromosome[-7.861816260286937, -9.99292781174094, 9.928930575938379, -7.39957147618977, 6.210771292274507, 7.169975624151098, 8.539245360665705, 7.770897864142124, 6.647702502662089, -9.024318494324302]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=1.110054148817688E9 best=FloatingPointChromosome[-9.985645810736958, -9.992202596686466, 9.857805498636605, 4.6794625880004705, 7.576974291890408, -7.62763831193056, 5.5536431128401835, 9.925929503896173, 8.462460986381984, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=1.110054148817688E9 best=FloatingPointChromosome[-9.985645810736958, -9.992202596686466, 9.857805498636605, 4.6794625880004705, 7.576974291890408, -7.62763831193056, 5.5536431128401835, 9.925929503896173, 8.462460986381984, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=1.1177462432549183E9 best=FloatingPointChromosome[-9.985645810736958, -8.963532785882235, -8.527676154396477, -4.564605567630719, -9.999999446303685, -8.955747136785725, 8.373425615007847, -6.7495699505919475, 7.085557299882334, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=1.201274468797051E9 best=FloatingPointChromosome[-9.873363818873216, -9.99292781174094, 8.298048877088057, 9.83663801533137, 9.796837977844813, 7.169975624151098, 7.796867759045119, 7.770897864142124, 8.51483977817221, 4.116140813576052]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=1.201274468797051E9 best=FloatingPointChromosome[-9.873363818873216, -9.99292781174094, 8.298048877088057, 9.83663801533137, 9.796837977844813, 7.169975624151098, 7.796867759045119, 7.770897864142124, 8.51483977817221, 4.116140813576052]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=1.704187862602384E9 best=FloatingPointChromosome[-9.873363818873216, -9.99292781174094, 8.298048877088057, 9.83663801533137, -9.999999446303685, -9.965035492425029, 7.796867759045119, 7.770897864142124, 8.51483977817221, 4.116140813576052]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=1.704187862602384E9 best=FloatingPointChromosome[-9.873363818873216, -9.99292781174094, 8.298048877088057, 9.83663801533137, -9.999999446303685, -9.965035492425029, 7.796867759045119, 7.770897864142124, 8.51483977817221, 4.116140813576052]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=1.704187862602384E9 best=FloatingPointChromosome[-9.873363818873216, -9.99292781174094, 8.298048877088057, 9.83663801533137, -9.999999446303685, -9.965035492425029, 7.796867759045119, 7.770897864142124, 8.51483977817221, 4.116140813576052]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=1.5593484304734263E9 best=FloatingPointChromosome[-6.546304269321198, 8.94821845843946, 9.970059063564266, 8.220267806694958, 7.504646506695517, 9.482748442674012, 8.849898500850957, 7.770897864142124, 6.647702502662089, -9.983461964484317]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=1.7204889191041315E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.988526805206744, -8.79189120500361, 7.504646506695517, -7.033135229161812, 9.984766526414248, 7.770897864142124, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=1.7204889191041315E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.988526805206744, -8.79189120500361, 7.504646506695517, -7.033135229161812, 9.984766526414248, 7.770897864142124, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=1.8982903536004975E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.988526805206744, -8.79189120500361, 8.280203326307817, -7.033135229161812, 9.984766526414248, 7.770897864142124, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=1.8982903536004975E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.988526805206744, -8.79189120500361, 8.280203326307817, -7.033135229161812, 9.984766526414248, 7.770897864142124, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=2.254506089814687E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.988526805206744, -8.79189120500361, 8.280203326307817, -7.033135229161812, 9.984766526414248, 7.770897864142124, 8.82144891453937, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=2.6612440976210084E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.988526805206744, -8.79189120500361, 9.774044225824106, -7.033135229161812, 9.984766526414248, 7.770897864142124, 8.82144891453937, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=2.6612440976210084E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.988526805206744, -8.79189120500361, 9.774044225824106, -7.033135229161812, 9.984766526414248, 7.770897864142124, 8.82144891453937, -8.945380376400214]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=2.0920537743531764E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.988526805206744, -9.689302347369566, 8.280203326307817, -7.033135229161812, 9.984766526414248, 7.770897864142124, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=1.7292072720578227E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.982244985049878, -6.1002496696669795, 9.64781426830052, -8.620102499803863, 9.184993264560624, 7.770897864142124, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=1.7292072720578227E9 best=FloatingPointChromosome[-9.977353793165488, 7.216298268980087, 9.982244985049878, -6.1002496696669795, 9.64781426830052, -8.620102499803863, 9.184993264560624, 7.770897864142124, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=1.8124558996907692E9 best=FloatingPointChromosome[-9.977353793165488, -9.490092841868098, 9.987487722956102, 5.16112714821724, 8.269526175648076, -7.033135229161812, 9.984766526414248, 9.624170882979003, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=1.8124558996907692E9 best=FloatingPointChromosome[-9.977353793165488, -9.490092841868098, 9.987487722956102, 5.16112714821724, 8.269526175648076, -7.033135229161812, 9.984766526414248, 9.624170882979003, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=1.8124558996907692E9 best=FloatingPointChromosome[-9.977353793165488, -9.490092841868098, 9.987487722956102, 5.16112714821724, 8.269526175648076, -7.033135229161812, 9.984766526414248, 9.624170882979003, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=2.741843269324587E9 best=FloatingPointChromosome[-9.977353793165488, -9.490092841868098, 9.987487722956102, 7.807639201528822, 8.269526175648076, -7.033135229161812, 9.984766526414248, 9.624170882979003, 6.647702502662089, -9.994898501914316]
+22:00:54 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=4.964370583661293E9 best= FloatingPointChromosome[-7.63617516342426, -9.989461730570804, 9.949984151932513, 9.272302534375026, 8.806981309960436, 7.281169098856427, -9.862790962590068, 9.926036664643668, -7.80697372917993, -9.980449760838336]
+22:00:54 INFO    [GeneticAlgorithmBuilder] 
+====================================
+22:00:54 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+22:00:54 INFO    [GeneticAlgorithmBuilder] Best Fitness: 4.964370583661293E9
+22:00:54 INFO    [GeneticAlgorithmBuilder] Best Chromosome: FloatingPointChromosome[-7.63617516342426, -9.989461730570804, 9.949984151932513, 9.272302534375026, 8.806981309960436, 7.281169098856427, -9.862790962590068, 9.926036664643668, -7.80697372917993, -9.980449760838336]
+22:00:54 INFO    [GeneticAlgorithmBuilder] ====================================
+
