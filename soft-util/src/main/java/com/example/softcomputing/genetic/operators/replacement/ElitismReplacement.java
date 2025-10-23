@@ -1,14 +1,16 @@
 package com.example.softcomputing.genetic.operators.replacement;
 
-import com.example.softcomputing.genetic.chromosome.Chromosome;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import com.example.softcomputing.genetic.chromosome.Chromosome;
+
 public class ElitismReplacement<C extends Chromosome<?>> implements Replacement<C> {
 
     private final int eliteCount;
+
     public ElitismReplacement() {
         this(2);
     }
@@ -16,18 +18,18 @@ public class ElitismReplacement<C extends Chromosome<?>> implements Replacement<
     public ElitismReplacement(int eliteCount) {
         if (eliteCount <= 0) {
             throw new IllegalArgumentException(
-                String.format("Elite count must be positive, got: %d", eliteCount)
-            );
+                    String.format("Elite count must be positive, got: %d", eliteCount));
         }
         this.eliteCount = eliteCount;
     }
 
-    public static <C extends Chromosome<?>> ElitismReplacement<C> withPercentage(int populationSize, double elitePercentage) {
-        if (populationSize <= 0) throw new IllegalArgumentException("Population size must be positive");
+    public static <C extends Chromosome<?>> ElitismReplacement<C> withPercentage(int populationSize,
+            double elitePercentage) {
+        if (populationSize <= 0)
+            throw new IllegalArgumentException("Population size must be positive");
         if (elitePercentage <= 0.0 || elitePercentage >= 1.0) {
             throw new IllegalArgumentException(
-                String.format("Elite percentage must be in (0.0, 1.0), got: %.4f", elitePercentage)
-            );
+                    String.format("Elite percentage must be in (0.0, 1.0), got: %.4f", elitePercentage));
         }
         int count = Math.max(1, (int) Math.round(populationSize * elitePercentage));
         return new ElitismReplacement<>(count);
@@ -51,8 +53,8 @@ public class ElitismReplacement<C extends Chromosome<?>> implements Replacement<
         int actualEliteCount = Math.min(eliteCount, populationSize);
 
         List<IndividualWithFitness<C>> currentWithFitness = currentPopulation.stream()
-            .map(ind -> new IndividualWithFitness<>(ind, ind.evaluate()))
-            .collect(Collectors.toList());
+                .map(ind -> new IndividualWithFitness<>(ind, ind.getFitness()))
+                .collect(Collectors.toList());
 
         currentWithFitness.sort(Comparator.comparingDouble(IndividualWithFitness<C>::getFitness).reversed());
 
@@ -62,8 +64,8 @@ public class ElitismReplacement<C extends Chromosome<?>> implements Replacement<
         }
 
         List<IndividualWithFitness<C>> offspringWithFitness = newIndividuals.stream()
-            .map(ind -> new IndividualWithFitness<>(ind, ind.evaluate()))
-            .collect(Collectors.toList());
+                .map(ind -> new IndividualWithFitness<>(ind, ind.getFitness()))
+                .collect(Collectors.toList());
 
         offspringWithFitness.sort(Comparator.comparingDouble(IndividualWithFitness<C>::getFitness).reversed());
 

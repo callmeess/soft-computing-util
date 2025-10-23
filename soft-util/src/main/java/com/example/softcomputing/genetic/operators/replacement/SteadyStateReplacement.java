@@ -1,10 +1,11 @@
 package com.example.softcomputing.genetic.operators.replacement;
 
-import com.example.softcomputing.genetic.chromosome.Chromosome;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.example.softcomputing.genetic.chromosome.Chromosome;
 
 public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacement<C> {
 
@@ -23,12 +24,11 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
     public SteadyStateReplacement(int replacementCount, ReplacementMode mode) {
         this(replacementCount, mode, true);
     }
-    
+
     public SteadyStateReplacement(int replacementCount, ReplacementMode mode, boolean allowParentReplacement) {
         if (replacementCount <= 0) {
             throw new IllegalArgumentException(
-                String.format("Replacement count must be positive, got: %d", replacementCount)
-            );
+                    String.format("Replacement count must be positive, got: %d", replacementCount));
         }
         this.replacementCount = replacementCount;
         this.mode = mode;
@@ -42,8 +42,7 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
         }
         if (replacementPercentage <= 0.0 || replacementPercentage >= 1.0) {
             throw new IllegalArgumentException(
-                String.format("Replacement percentage must be in (0.0, 1.0), got: %.4f", replacementPercentage)
-            );
+                    String.format("Replacement percentage must be in (0.0, 1.0), got: %.4f", replacementPercentage));
         }
         int count = Math.max(1, (int) Math.round(populationSize * replacementPercentage));
         return new SteadyStateReplacement<>(count);
@@ -53,16 +52,18 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
     public static <C extends Chromosome<?>> SteadyStateReplacement<C> withStandardRate(int populationSize) {
         return withPercentage(populationSize, 0.1);
     }
-    
+
     @Override
     public List<C> replacePopulation(List<C> currentPopulation, List<C> newIndividuals) {
 
-        if (currentPopulation == null || currentPopulation.isEmpty())  return new ArrayList<>();
-        if (newIndividuals == null || newIndividuals.isEmpty()) return new ArrayList<>(currentPopulation);
+        if (currentPopulation == null || currentPopulation.isEmpty())
+            return new ArrayList<>();
+        if (newIndividuals == null || newIndividuals.isEmpty())
+            return new ArrayList<>(currentPopulation);
 
         int populationSize = currentPopulation.size();
 
-        // Adjust replacement count 
+        // Adjust replacement count
         int actualReplacementCount = Math.min(replacementCount, populationSize);
         actualReplacementCount = Math.min(actualReplacementCount, newIndividuals.size());
 
@@ -70,19 +71,19 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
     }
 
     private List<C> replaceFitnessBased(List<C> currentPopulation, List<C> offspring,
-                                        int populationSize, int actualReplacementCount) {
+            int populationSize, int actualReplacementCount) {
 
         // parents
         List<IndividualWithFitness<C>> currentWithFitness = currentPopulation.stream()
-            .map(ind -> new IndividualWithFitness<>(ind, ind.evaluate()))
-            .collect(Collectors.toList());
+                .map(ind -> new IndividualWithFitness<>(ind, ind.getFitness()))
+                .collect(Collectors.toList());
 
         currentWithFitness.sort(Comparator.comparingDouble(IndividualWithFitness<C>::getFitness).reversed());
 
         // offsprings
         List<IndividualWithFitness<C>> offspringWithFitness = offspring.stream()
-            .map(ind -> new IndividualWithFitness<>(ind, ind.evaluate()))
-            .collect(Collectors.toList());
+                .map(ind -> new IndividualWithFitness<>(ind, ind.getFitness()))
+                .collect(Collectors.toList());
 
         offspringWithFitness.sort(Comparator.comparingDouble(IndividualWithFitness<C>::getFitness).reversed());
 
@@ -108,12 +109,10 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
         return mode;
     }
 
-    
     public boolean isAllowParentReplacement() {
         return allowParentReplacement;
     }
 
-    
     private static class IndividualWithFitness<C extends Chromosome<?>> {
         private final C individual;
         private final double fitness;
@@ -135,7 +134,6 @@ public class SteadyStateReplacement<C extends Chromosome<?>> implements Replacem
     @Override
     public String toString() {
         return String.format("SteadyStateReplacement(count=%d, mode=%s, allowParentReplacement=%s)",
-                           replacementCount, mode, allowParentReplacement);
+                replacementCount, mode, allowParentReplacement);
     }
 }
-

@@ -42,6 +42,7 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
         this.crossoverRate = rate;
         return this;
     }
+
     public GeneticAlgorithmBuilder<C> withMutationRate(double rate) {
         this.mutationRate = rate;
         return this;

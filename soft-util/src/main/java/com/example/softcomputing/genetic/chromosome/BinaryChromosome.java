@@ -3,10 +3,10 @@ package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
 import java.util.Random;
-import java.util.function.ToDoubleFunction;
 
 public class BinaryChromosome implements Chromosome<Integer> {
     private final int[] genes;
+    private double fitness = 0.0;
     private static final Random rand = new Random();
 
     public BinaryChromosome(int[] genes) {
@@ -50,20 +50,25 @@ public class BinaryChromosome implements Chromosome<Integer> {
 
     @Override
     public double getFitness() {
-        return evaluate();
+        return fitness;
     }
 
     @Override
-    public double evaluate() {
-        return toInt();
+    public void setFitness(double fitness) {
+        this.fitness = fitness;
     }
 
-    public double evaluate(ToDoubleFunction<Chromosome<Integer>> evaluator) {
-        if (evaluator != null) {
-            return evaluator.applyAsDouble(this);
-        }
-        return evaluate();
-    }
+    // @Override
+    // public double evaluate() {
+    // return toInt();
+    // }
+
+    // public double evaluate(ToDoubleFunction<Chromosome<Integer>> evaluator) {
+    // if (evaluator != null) {
+    // return evaluator.applyAsDouble(this);
+    // }
+    // return evaluate();
+    // }
 
     public int toInt() {
         int val = 0;

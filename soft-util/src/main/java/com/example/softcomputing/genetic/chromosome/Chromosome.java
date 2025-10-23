@@ -11,10 +11,12 @@ public interface Chromosome<G> {
 
     void setGene(int index, G value);
 
-    double evaluate();
+    // double evaluate();
 
-    double evaluate(ToDoubleFunction<Chromosome<G>> evaluator);
+    // double evaluate(ToDoubleFunction<Chromosome<G>> evaluator);
 
     double getFitness();
+
+    void setFitness(double fitness);
 
 }
