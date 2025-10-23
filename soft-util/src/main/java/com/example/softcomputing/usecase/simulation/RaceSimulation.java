@@ -27,7 +27,7 @@ public class RaceSimulation extends JFrame {
     private static final int WIDTH = 1200;
     private static final int HEIGHT = 800;
     private static final String WEIGHTS_FILE = "best_weights.dat";
-    private static final boolean TRAINING_MODE = true;
+    private static final boolean TRAINING_MODE = false;
 
     private final GeneticAlgorithm geneticAlgorithm;
     private final SimulationCanvas canvas;
@@ -98,7 +98,6 @@ public class RaceSimulation extends JFrame {
             System.out.println("Loaded best weights with " + weights.length + " parameters");
         } catch (Exception e) {
             System.err.println("Error loading weights: " + e.getMessage());
-            e.printStackTrace();
             geneticAlgorithm.initializePopulation();
         }
     }

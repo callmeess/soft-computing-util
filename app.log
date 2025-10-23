@@ -608,3 +608,489 @@
 
 18:05:39 INFO    [TestCases] Integer GA completed.
 
+21:35:17 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+21:35:17 INFO    [SoftUtilApplication] Choose chromosome type:
+21:35:17 INFO    [SoftUtilApplication] 1. Binary Chromosome
+21:35:17 INFO    [SoftUtilApplication] 2. Integer Chromosome
+21:35:17 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+21:35:17 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+21:35:17 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+21:35:17 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+21:35:17 INFO    [SoftUtilApplication] ===========================================
+21:35:19 INFO    [TestCases] --- Binary Chromosome GA ---
+21:35:19 INFO    [TestCases] Config: popSize=50, geneLength=10, mutationRate=0.050, maxGen=100
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=0.0 best=BinaryChromosome1100100011
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=0.0 best=BinaryChromosome0000101000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=0.0 best=BinaryChromosome0111110101
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=0.0 best=BinaryChromosome0111111001
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=0.0 best=BinaryChromosome0000101001
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=0.0 best=BinaryChromosome1011111001
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=0.0 best=BinaryChromosome1111111001
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=0.0 best=BinaryChromosome1000011001
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=0.0 best=BinaryChromosome1000011000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=0.0 best=BinaryChromosome0011100000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=0.0 best=BinaryChromosome1011100000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=0.0 best=BinaryChromosome0010010000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=0.0 best=BinaryChromosome0000010010
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=0.0 best=BinaryChromosome0111100011
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=0.0 best=BinaryChromosome0100110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=0.0 best=BinaryChromosome0110010000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=0.0 best=BinaryChromosome0101110011
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=0.0 best=BinaryChromosome0100000101
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=0.0 best=BinaryChromosome0000110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=0.0 best=BinaryChromosome0011110100
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=0.0 best=BinaryChromosome0101111000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=0.0 best=BinaryChromosome0111110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=0.0 best=BinaryChromosome0111000010
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=0.0 best=BinaryChromosome0110110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=0.0 best=BinaryChromosome0110111000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=0.0 best=BinaryChromosome0101100000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=0.0 best=BinaryChromosome0110110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=0.0 best=BinaryChromosome0101100000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=0.0 best=BinaryChromosome0110110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=0.0 best=BinaryChromosome0101000011
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=0.0 best=BinaryChromosome0110110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=0.0 best=BinaryChromosome0101100000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=0.0 best=BinaryChromosome0100110011
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=0.0 best=BinaryChromosome0101100000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=0.0 best=BinaryChromosome0111100000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=0.0 best=BinaryChromosome0101110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=0.0 best=BinaryChromosome0110110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=0.0 best=BinaryChromosome0101100001
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=0.0 best=BinaryChromosome0110110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=0.0 best=BinaryChromosome0111010000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=0.0 best=BinaryChromosome0100100010
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=0.0 best=BinaryChromosome0000110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=0.0 best=BinaryChromosome0100100010
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=0.0 best=BinaryChromosome0101110000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=0.0 best=BinaryChromosome0100100000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:19 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=0.0 best=BinaryChromosome0100100000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=0.0 best=BinaryChromosome0100110010
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=0.0 best=BinaryChromosome0110010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=0.0 best=BinaryChromosome0100100001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=0.0 best=BinaryChromosome0100110000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=0.0 best=BinaryChromosome0110010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=0.0 best=BinaryChromosome0101010011
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=0.0 best=BinaryChromosome0100110000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=0.0 best=BinaryChromosome0100010011
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=0.0 best=BinaryChromosome0100010011
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=0.0 best=BinaryChromosome0100110000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=0.0 best=BinaryChromosome0000010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=0.0 best=BinaryChromosome0110100000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=0.0 best=BinaryChromosome0100010000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=0.0 best=BinaryChromosome0100000000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=0.0 best=BinaryChromosome0100110001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=0.0 best=BinaryChromosome0100110001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=0.0 best=BinaryChromosome0100110001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=0.0 best=BinaryChromosome0000010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=0.0 best=BinaryChromosome0100000001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=0.0 best=BinaryChromosome0100010101
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=0.0 best=BinaryChromosome0100011001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=0.0 best=BinaryChromosome0000000001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=0.0 best=BinaryChromosome0100000000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=0.0 best=BinaryChromosome0000010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=0.0 best=BinaryChromosome0000010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=0.0 best=BinaryChromosome0100000001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=0.0 best=BinaryChromosome0100001000
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=0.0 best=BinaryChromosome1100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=0.0 best=BinaryChromosome0100000001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=0.0 best=BinaryChromosome1010000001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=0.0 best=BinaryChromosome0100000001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=0.0 best=BinaryChromosome0100000001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=0.0 best=BinaryChromosome0100000001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=0.0 best=BinaryChromosome0100010001
+21:35:20 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=0.0 best= BinaryChromosome1100100011
+21:35:20 INFO    [GeneticAlgorithmBuilder] 
+====================================
+21:35:20 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+21:35:20 INFO    [GeneticAlgorithmBuilder] Best Fitness: 0.0
+21:35:20 INFO    [GeneticAlgorithmBuilder] Best Chromosome: BinaryChromosome1100100011
+21:35:20 INFO    [GeneticAlgorithmBuilder] ====================================
+
+21:35:20 INFO    [TestCases] Binary GA completed.
+
+21:36:29 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+21:36:29 INFO    [SoftUtilApplication] Choose chromosome type:
+21:36:29 INFO    [SoftUtilApplication] 1. Binary Chromosome
+21:36:29 INFO    [SoftUtilApplication] 2. Integer Chromosome
+21:36:29 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+21:36:29 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+21:36:29 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+21:36:29 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+21:36:29 INFO    [SoftUtilApplication] ===========================================
+21:36:30 INFO    [TestCases] --- Integer Chromosome GA ---
+21:36:30 INFO    [TestCases] Config: popSize=50, geneLength=10, geneRange=[0,99], mutationRate=0.050, maxGen=100
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=0.0 best=IntegerChromosome[65, 13, 91, 28, 37, 21, 91, 27, 82, 93]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=0.0 best=IntegerChromosome[36, 12, 30, 22, 86, 8, 5, 29, 81, 59]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=0.0 best=IntegerChromosome[42, 63, 85, 75, 33, 95, 99, 3, 19, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=0.0 best=IntegerChromosome[86, 97, 2, 23, 57, 68, 44, 4, 66, 0]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=0.0 best=IntegerChromosome[42, 63, 85, 75, 33, 95, 38, 55, 93, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=0.0 best=IntegerChromosome[95, 86, 75, 33, 0, 1, 27, 14, 98, 4]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=0.0 best=IntegerChromosome[56, 9, 75, 33, 0, 52, 5, 34, 98, 4]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=0.0 best=IntegerChromosome[12, 68, 66, 99, 37, 24, 52, 21, 44, 1]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=0.0 best=IntegerChromosome[95, 74, 30, 22, 86, 21, 91, 27, 82, -10]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=0.0 best=IntegerChromosome[84, 0, 7, 70, 38, 61, 19, 44, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=0.0 best=IntegerChromosome[36, 12, 30, 22, 86, 83, 52, 21, 44, 1]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=0.0 best=IntegerChromosome[4, 82, 63, 8, 72, 6, 11, 21, 44, 1]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=0.0 best=IntegerChromosome[4, 0, 7, 70, 38, 61, 52, 21, 44, 1]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=0.0 best=IntegerChromosome[4, 38, 7, 6, -1, 8, 48, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=0.0 best=IntegerChromosome[95, 33, 52, 82, 0, 3, 52, 80, 44, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=0.0 best=IntegerChromosome[84, 0, 7, 70, 38, 21, 52, 21, 44, 1]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=0.0 best=IntegerChromosome[95, 86, 7, 70, 38, 21, 52, 21, 44, 1]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=0.0 best=IntegerChromosome[95, 86, 63, 70, 8, 83, 52, 80, -8, -8]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=0.0 best=IntegerChromosome[95, 86, 30, 22, 86, 83, 3, 44, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=0.0 best=IntegerChromosome[-10, 0, 7, 70, 38, 21, 91, 21, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=0.0 best=IntegerChromosome[56, 38, 63, 33, -1, 8, 91, 44, -8, -8]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=0.0 best=IntegerChromosome[3, -3, 63, 64, 86, 21, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=0.0 best=IntegerChromosome[3, -3, 30, 22, 86, 83, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=0.0 best=IntegerChromosome[-10, 86, 30, 22, 86, 21, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=0.0 best=IntegerChromosome[-10, 74, 42, 6, -1, 83, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=0.0 best=IntegerChromosome[56, 0, 7, 33, 86, -5, 91, 21, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=0.0 best=IntegerChromosome[3, 38, 42, 22, -1, 21, 52, 80, 56, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=0.0 best=IntegerChromosome[-10, 74, 42, 6, -1, 83, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=0.0 best=IntegerChromosome[56, 38, 63, 33, 86, 4, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=0.0 best=IntegerChromosome[-10, 74, 42, 6, -1, 8, 91, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=0.0 best=IntegerChromosome[95, 0, -8, 22, -1, 8, 52, 44, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=0.0 best=IntegerChromosome[-10, 74, 42, 6, -1, 83, 52, -9, 56, -8]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=0.0 best=IntegerChromosome[3, 0, 63, 33, 86, -5, 91, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=0.0 best=IntegerChromosome[-10, 74, -10, 6, -1, 83, 52, -4, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 22, -1, 21, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, 86, -5, 91, 44, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, 33, -1, 8, 52, 27, 98, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, 33, -1, 8, 52, 27, 98, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, 22, -1, 83, 52, 27, 98, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, -1, 21, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 2, 86, -5, 91, 44, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=0.0 best=IntegerChromosome[-10, -3, 63, 33, -1, 83, 52, 80, 98, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, -1, 83, 52, 80, 98, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, 2, 6, 83, 52, 27, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=0.0 best=IntegerChromosome[10, -3, 7, 33, -1, 8, 52, 27, -1, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, -1, 83, 52, 27, 98, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, -1, 21, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, 6, 8, 52, 27, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=0.0 best=IntegerChromosome[-10, 0, 7, 33, -1, 83, 52, 27, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, -1, -5, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, 6, 83, -10, 27, 98, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, 2, 86, -5, 52, 80, 56, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, -1, 83, 52, 27, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, -1, 21, 52, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=0.0 best=IntegerChromosome[-10, -3, 7, 33, -1, -5, 52, 27, -1, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, -2, -1, -5, 91, 27, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=0.0 best=IntegerChromosome[0, 0, 63, 33, -1, 83, 52, 80, -8, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, 2, -1, 21, 91, 27, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, -4, -1, 21, 91, 27, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, 2, -1, -5, 52, 80, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, 33, -1, 21, 91, 80, 56, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, 2, -1, 21, 52, 80, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, -2, -1, 6, 2, 10, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, -2, -1, 83, 52, 80, 56, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, 2, -1, -5, -10, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, -2, 86, -5, 91, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, -2, -1, -5, 91, 80, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, -2, -1, -5, 91, 80, -3, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, -2, -1, 21, 52, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, 2, -1, 21, 91, 27, 3, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, 33, 86, -7, 91, 80, -3, 3]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, 33, -1, 21, 91, 80, 56, -7]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=0.0 best=IntegerChromosome[-10, -9, 42, -2, -1, 21, -10, 27, 6, 9]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, 33, -1, 21, 91, 80, 6, 9]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=0.0 best=IntegerChromosome[-10, 7, 42, 33, -1, -5, -10, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=0.0 best=IntegerChromosome[-10, -3, 42, -4, -1, -5, 52, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=0.0 best=IntegerChromosome[-10, -9, 63, 33, 86, -5, -10, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, -4, -1, -5, 91, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=0.0 best=IntegerChromosome[-10, -9, 42, -2, 86, -5, -10, 80, 56, -7]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=0.0 best=IntegerChromosome[-10, 0, 63, -2, -1, 21, -10, 80, -8, -7]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, -3, -1, 21, -10, 80, -8, -7]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=0.0 best=IntegerChromosome[-10, 6, 42, -4, -1, 21, -10, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=0.0 best=IntegerChromosome[0, 7, 42, -4, -1, -5, 91, 80, 56, -7]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=0.0 best=IntegerChromosome[-10, 6, 42, -4, -1, 21, 91, 80, 56, -7]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=0.0 best=IntegerChromosome[-10, -9, 42, -4, -1, 21, -10, 80, -8, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=0.0 best=IntegerChromosome[-10, 6, 42, -4, -1, -5, -10, 80, 56, 0]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=0.0 best=IntegerChromosome[0, 0, 42, -2, -1, 21, -10, 80, 56, -7]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=0.0 best=IntegerChromosome[-10, -9, 42, -4, -1, -5, -10, 80, -8, 9]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=0.0 best=IntegerChromosome[0, -3, 42, 33, -1, -5, -10, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=0.0 best=IntegerChromosome[0, 0, 42, -4, -1, 21, -10, 80, -8, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=0.0 best=IntegerChromosome[-10, -9, 42, -4, -9, 21, -10, 80, -8, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=0.0 best=IntegerChromosome[-10, 6, 42, -3, -9, 21, -10, 80, -6, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, 33, -1, 21, -10, 80, -8, 71]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=0.0 best=IntegerChromosome[0, 0, 42, 33, -1, 21, 91, 80, -8, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=0.0 best=IntegerChromosome[-10, -9, 42, -2, -1, -7, -10, 80, -8, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=0.0 best=IntegerChromosome[-10, 6, 42, 33, -1, 21, -10, 80, 56, 9]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=0.0 best=IntegerChromosome[-10, -9, 42, -4, -1, -5, 91, 80, -8, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=0.0 best=IntegerChromosome[-2, 0, 42, 4, -1, 21, 91, 80, -8, 9]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=0.0 best=IntegerChromosome[-10, 6, 42, -4, -1, -7, -10, 80, -8, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=0.0 best=IntegerChromosome[-10, 0, 42, -4, -1, 21, 5, 80, 56, 56]
+21:36:30 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=0.0 best= IntegerChromosome[65, 13, 91, 28, 37, 21, 91, 27, 82, 2]
+21:36:30 INFO    [GeneticAlgorithmBuilder] 
+====================================
+21:36:30 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+21:36:30 INFO    [GeneticAlgorithmBuilder] Best Fitness: 0.0
+21:36:30 INFO    [GeneticAlgorithmBuilder] Best Chromosome: IntegerChromosome[65, 13, 91, 28, 37, 21, 91, 27, 82, 2]
+21:36:30 INFO    [GeneticAlgorithmBuilder] ====================================
+
+21:36:30 INFO    [TestCases] Integer GA completed.
+
+21:36:31 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+21:36:31 INFO    [SoftUtilApplication] Choose chromosome type:
+21:36:31 INFO    [SoftUtilApplication] 1. Binary Chromosome
+21:36:31 INFO    [SoftUtilApplication] 2. Integer Chromosome
+21:36:31 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+21:36:31 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+21:36:31 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+21:36:31 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+21:36:31 INFO    [SoftUtilApplication] ===========================================
+21:36:31 INFO    [TestCases] --- Integer Chromosome GA ---
+21:36:31 INFO    [TestCases] Config: popSize=50, geneLength=10, geneRange=[0,99], mutationRate=0.050, maxGen=100
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=0.0 best=IntegerChromosome[97, 95, 20, 79, 66, 14, 81, 63, 64, 13]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=0.0 best=IntegerChromosome[29, 26, 9, 55, 49, 76, 3, 88, 13, 90]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=0.0 best=IntegerChromosome[56, 5, 31, 49, 94, 97, 80, 7, 42, 23]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=0.0 best=IntegerChromosome[29, 26, 9, 55, 49, 52, 56, 38, 90, 63]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=0.0 best=IntegerChromosome[88, 55, 35, 47, 60, 66, 31, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=0.0 best=IntegerChromosome[58, 5, 31, 49, 92, 71, 29, 44, 10, 78]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=0.0 best=IntegerChromosome[41, 5, 31, 49, 94, 97, 80, 46, 88, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=0.0 best=IntegerChromosome[41, 75, 71, 37, 95, 11, 31, 38, 55, 23]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=0.0 best=IntegerChromosome[59, 64, 4, 49, 13, 97, 61, 77, 47, 17]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=0.0 best=IntegerChromosome[41, 5, 34, 49, 94, 97, 72, 21, 15, 68]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=0.0 best=IntegerChromosome[41, 5, 34, 49, 94, 97, 72, 21, 15, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=0.0 best=IntegerChromosome[41, 5, 4, 49, 94, 71, 29, 44, 88, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=0.0 best=IntegerChromosome[41, 5, 4, 49, 94, 97, 72, 21, 15, 14]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=0.0 best=IntegerChromosome[98, 75, 31, 6, 45, 66, 31, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=0.0 best=IntegerChromosome[30, 30, 71, 49, 94, 97, 29, 17, 15, 68]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=0.0 best=IntegerChromosome[58, -6, 4, 49, 94, 97, 72, 46, 88, 68]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=0.0 best=IntegerChromosome[7, 5, 4, 49, 94, 75, 22, 46, 88, 68]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=0.0 best=IntegerChromosome[41, 75, 4, 49, 13, 97, 29, 17, 47, 68]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=0.0 best=IntegerChromosome[41, 30, 71, 49, 94, 66, 31, 17, 88, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=0.0 best=IntegerChromosome[41, 5, 34, 49, 94, 75, 29, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=0.0 best=IntegerChromosome[41, 5, 34, 44, 6, 17, 3, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=0.0 best=IntegerChromosome[7, 5, 31, 28, 92, 75, 22, 46, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=0.0 best=IntegerChromosome[59, 5, 34, 49, 94, 66, 31, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=0.0 best=IntegerChromosome[30, 30, 71, 49, 94, 66, 29, 46, 88, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=0.0 best=IntegerChromosome[30, 30, 31, 28, 94, 66, 29, 46, 88, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=0.0 best=IntegerChromosome[41, 30, 4, -9, 94, -7, 31, -2, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=0.0 best=IntegerChromosome[-1, 3, 4, 49, 92, 66, 29, -7, 88, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=0.0 best=IntegerChromosome[59, 5, 71, 49, 6, 17, 29, 44, -1, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=0.0 best=IntegerChromosome[30, -7, 71, 44, 94, 97, 29, 46, 88, 1]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 94, 97, 29, 44, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 94, 97, 29, 44, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=0.0 best=IntegerChromosome[7, 5, 71, 44, -5, -7, 31, -2, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=0.0 best=IntegerChromosome[-10, 30, 71, 44, 6, 17, 31, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=0.0 best=IntegerChromosome[41, 5, 31, 44, 6, 66, -7, -2, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=0.0 best=IntegerChromosome[7, 5, 31, 28, 94, 97, 29, 17, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=0.0 best=IntegerChromosome[41, -7, 31, 44, 94, 66, 31, -2, 88, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 94, 66, 31, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 44, 6, 17, 31, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 44, 94, 17, 31, 17, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=0.0 best=IntegerChromosome[-1, 5, 4, -10, 6, 9, 29, 17, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=0.0 best=IntegerChromosome[7, 5, 31, 28, -10, -7, 29, 44, 47, 3]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 44, 94, 17, 31, 44, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 94, 71, 29, 44, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 44, 94, 97, 31, 17, 47, 0]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=0.0 best=IntegerChromosome[41, -7, 34, 28, 94, 71, 31, 46, 88, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 94, 71, 29, 44, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=0.0 best=IntegerChromosome[-10, 30, 31, 44, 94, 97, 31, 17, 47, 0]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=0.0 best=IntegerChromosome[7, 5, -10, 28, -4, 97, 29, 44, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 17, 31, 17, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=0.0 best=IntegerChromosome[-10, 3, 31, -4, 8, -3, 31, -2, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 94, 17, 31, -2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=0.0 best=IntegerChromosome[-10, 3, 4, 28, 94, 71, 31, 46, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 44, 94, 71, 31, -2, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=0.0 best=IntegerChromosome[-10, 1, 31, 44, 94, -7, 31, 17, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, -4, 8, -3, 31, 46, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 94, 71, 31, -2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=0.0 best=IntegerChromosome[7, -9, 31, -4, 94, 17, 31, 46, 3, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 44, 94, 17, 31, 46, -1, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=0.0 best=IntegerChromosome[-10, -9, 31, -4, 94, 17, 31, 46, 3, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 6, 31, 46, 5, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 17, 31, 9, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 17, 31, 9, 47, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 44, 94, 71, 31, 46, 3, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 0, 31, 46, 5, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=0.0 best=IntegerChromosome[7, 5, 0, 28, 94, 6, 31, 46, 5, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 0, 31, 17, 3, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=0.0 best=IntegerChromosome[7, 8, 31, 44, 94, 17, 31, 2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, -4, 94, 17, 31, -2, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=0.0 best=IntegerChromosome[7, 1, 31, 44, 94, 71, -5, -2, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=0.0 best=IntegerChromosome[7, 1, 31, 28, 94, 6, 31, 46, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=0.0 best=IntegerChromosome[7, -2, 31, 44, 94, 17, 31, -2, 15, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, -4, 94, 71, 31, 46, 3, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=0.0 best=IntegerChromosome[7, 8, 31, 44, 94, 17, 31, -2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=0.0 best=IntegerChromosome[-10, 8, 31, 44, 94, 6, 31, 2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=0.0 best=IntegerChromosome[6, 5, 31, -10, -2, 17, 31, 2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 17, 31, -2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 9, 1, 6, 31, -2, 3, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 17, 31, 2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=0.0 best=IntegerChromosome[7, 5, 0, 7, 1, 17, 31, 2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 1, 17, 31, -2, 47, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=0.0 best=IntegerChromosome[6, 5, 0, 28, 94, 6, 31, -2, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=0.0 best=IntegerChromosome[7, 5, 0, 28, 1, 17, 31, -2, 47, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 6, 31, -2, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=0.0 best=IntegerChromosome[-10, 5, -5, 28, 94, 17, 31, -2, 47, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=0.0 best=IntegerChromosome[7, 5, 0, 28, 1, 17, 31, -2, 47, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 0, 31, 46, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=0.0 best=IntegerChromosome[7, 5, 0, 7, 94, -6, 31, -2, 2, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, 0, 31, 46, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 94, -6, 31, -2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 7, 1, 17, 31, -2, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=0.0 best=IntegerChromosome[7, 5, 0, 28, 1, 17, 31, -2, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 7, 1, 6, 31, -2, 47, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, 28, 94, 6, 31, -2, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, -4, 94, 17, 31, -2, 15, 57]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 1, 17, 31, -2, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=0.0 best=IntegerChromosome[-10, 5, 31, -4, 1, 7, 31, -2, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 7, 94, 17, 31, -2, 47, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=0.0 best=IntegerChromosome[7, 5, 0, 7, 1, 17, 31, -2, 15, 9]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, -4, 94, 6, 31, -2, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=0.0 best=IntegerChromosome[-10, 5, 0, 28, 1, 17, 31, -2, 47, 91]
+21:36:31 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=0.0 best= IntegerChromosome[97, 95, 20, 79, 66, 14, 81, 63, 64, 13]
+21:36:31 INFO    [GeneticAlgorithmBuilder] 
+====================================
+21:36:31 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+21:36:31 INFO    [GeneticAlgorithmBuilder] Best Fitness: 0.0
+21:36:31 INFO    [GeneticAlgorithmBuilder] Best Chromosome: IntegerChromosome[97, 95, 20, 79, 66, 14, 81, 63, 64, 13]
+21:36:31 INFO    [GeneticAlgorithmBuilder] ====================================
+
+21:36:31 INFO    [TestCases] Integer GA completed.
+
+21:36:32 INFO    [SoftUtilApplication] === SoftUtil Genetic Algorithm Examples ===
+
+21:36:32 INFO    [SoftUtilApplication] Choose chromosome type:
+21:36:32 INFO    [SoftUtilApplication] 1. Binary Chromosome
+21:36:32 INFO    [SoftUtilApplication] 2. Integer Chromosome
+21:36:32 INFO    [SoftUtilApplication] 3. FloatingPoint Chromosome
+21:36:32 INFO    [SoftUtilApplication] 4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement
+21:36:32 INFO    [SoftUtilApplication] 5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement
+21:36:32 INFO    [SoftUtilApplication] 6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement
+21:36:32 INFO    [SoftUtilApplication] ===========================================
+21:36:33 INFO    [TestCases] Config: popSize=50, geneLength=10, geneRange=[0,99], mutationRate=0.050, maxGen=100
+21:36:33 INFO    [TestCases] Running Integer GA  (SinglePoint + IntegerMutation + FullGeneration)
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 1 bestFitness=0.0 best=IntegerChromosome[77, 39, 93, 51, 40, 33, 81, 10, 27, 92]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 2 bestFitness=0.0 best=IntegerChromosome[89, 20, 84, 65, 31, 17, 4, 16, 78, 55]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 3 bestFitness=0.0 best=IntegerChromosome[48, 39, 93, 51, 40, 33, 69, 81, 42, 63]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 4 bestFitness=0.0 best=IntegerChromosome[68, 61, 6, 1, 65, 94, 26, 96, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 5 bestFitness=0.0 best=IntegerChromosome[40, 68, 79, 10, 80, 7, 34, 44, 39, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 6 bestFitness=0.0 best=IntegerChromosome[40, 68, 79, 10, 80, 7, 34, 44, 39, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 7 bestFitness=0.0 best=IntegerChromosome[65, 87, 5, 86, 40, 72, 17, 96, 27, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 8 bestFitness=0.0 best=IntegerChromosome[0, 81, 27, 19, 84, 90, 81, 10, 27, 92]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 9 bestFitness=0.0 best=IntegerChromosome[77, 68, 79, 10, 80, 36, 61, 60, 72, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 10 bestFitness=0.0 best=IntegerChromosome[77, 39, 1, 94, -10, 10, 61, 60, 39, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 11 bestFitness=0.0 best=IntegerChromosome[40, 68, 79, 10, 80, 90, 81, 10, 17, 8]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 12 bestFitness=0.0 best=IntegerChromosome[40, 68, 58, 94, -10, 10, 61, 60, 39, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 13 bestFitness=0.0 best=IntegerChromosome[40, 68, 58, 94, 54, 58, 41, 90, 72, 25]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 14 bestFitness=0.0 best=IntegerChromosome[-4, 13, 6, 1, -10, 94, 99, 96, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 15 bestFitness=0.0 best=IntegerChromosome[-4, 68, 58, 94, -10, 10, 61, 60, 39, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 16 bestFitness=0.0 best=IntegerChromosome[0, 66, 44, 94, 65, 36, 76, 90, 27, 92]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 17 bestFitness=0.0 best=IntegerChromosome[40, 68, 79, 19, 54, 58, 41, 90, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 18 bestFitness=0.0 best=IntegerChromosome[40, 68, 58, 94, -10, 10, 61, 60, 72, 22]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 19 bestFitness=0.0 best=IntegerChromosome[40, 68, 6, 10, 65, 36, 76, 90, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 20 bestFitness=0.0 best=IntegerChromosome[40, 68, 6, 34, 17, 58, 61, 38, 39, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 21 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, 86, 65, 36, 76, 90, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 22 bestFitness=0.0 best=IntegerChromosome[40, 13, 6, 1, 80, 25, 61, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 23 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, 86, 65, 36, 76, 90, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 24 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, 86, 65, 36, 76, 90, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 25 bestFitness=0.0 best=IntegerChromosome[-4, 66, 44, 94, 80, 94, 61, 38, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 26 bestFitness=0.0 best=IntegerChromosome[40, 5, 6, 86, 54, 10, 61, 38, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 27 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, 86, 65, 36, 76, -8, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 28 bestFitness=0.0 best=IntegerChromosome[40, 68, 58, 0, 6, 25, -10, 60, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 29 bestFitness=0.0 best=IntegerChromosome[7, 68, 58, 86, -10, 10, 99, 60, 72, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 30 bestFitness=0.0 best=IntegerChromosome[-4, 66, 5, 86, 80, 94, 99, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 31 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, 86, -10, 94, 76, -7, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 32 bestFitness=0.0 best=IntegerChromosome[-4, 66, 44, 86, 65, 94, 99, 96, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 33 bestFitness=0.0 best=IntegerChromosome[40, -7, 5, 86, -10, 94, -10, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 34 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 86, 80, 94, 99, -7, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 35 bestFitness=0.0 best=IntegerChromosome[40, 68, 44, 94, 8, 94, 99, 60, 72, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 36 bestFitness=0.0 best=IntegerChromosome[40, 68, 44, 94, 8, 94, -2, 38, 72, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 37 bestFitness=0.0 best=IntegerChromosome[40, 68, 58, 94, 8, 94, 99, 60, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 38 bestFitness=0.0 best=IntegerChromosome[40, 68, 44, 86, 65, 94, 99, 1, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 39 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 65, 36, 76, 1, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 40 bestFitness=0.0 best=IntegerChromosome[40, 68, 44, 94, 8, 94, 76, 60, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 41 bestFitness=0.0 best=IntegerChromosome[40, 68, 58, 1, 65, 36, 76, -7, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 42 bestFitness=0.0 best=IntegerChromosome[40, 68, 8, 86, 8, 94, -2, 38, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 43 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, 94, 65, 36, 76, -7, 8, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 44 bestFitness=0.0 best=IntegerChromosome[40, 68, 44, 94, 8, 94, 99, 38, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 45 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 65, 36, 76, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 46 bestFitness=0.0 best=IntegerChromosome[4, 68, 5, 94, 65, 36, 76, -5, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 47 bestFitness=0.0 best=IntegerChromosome[40, 68, 0, 94, 8, 94, -10, -7, 8, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 48 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 65, 94, -10, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 49 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 8, 10, 0, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 50 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 8, 10, 0, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 51 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, 94, 65, 94, -10, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 52 bestFitness=0.0 best=IntegerChromosome[-4, 66, 5, 94, 65, 10, 0, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 53 bestFitness=0.0 best=IntegerChromosome[40, 68, 58, -3, 8, 36, -2, 60, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 54 bestFitness=0.0 best=IntegerChromosome[-4, 66, 58, -3, 8, 94, -2, 38, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 55 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 65, 10, 0, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 56 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 8, 94, 76, 96, 72, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 57 bestFitness=0.0 best=IntegerChromosome[-4, 66, 5, 94, 65, 10, 0, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 58 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 65, 94, 76, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 59 bestFitness=0.0 best=IntegerChromosome[40, 66, 5, 94, 65, 94, 76, 96, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 60 bestFitness=0.0 best=IntegerChromosome[77, 5, 5, 94, 8, 36, -2, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 61 bestFitness=0.0 best=IntegerChromosome[77, 5, 5, 94, 65, 94, 76, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 62 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 8, 36, 76, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 63 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, 94, 65, 36, -10, 60, 72, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 64 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 65, 94, -10, 60, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 65 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, 94, 8, 36, -10, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 66 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, -9, 65, 94, 76, 38, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 67 bestFitness=0.0 best=IntegerChromosome[-4, -10, 5, -9, 65, 94, 76, 38, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 68 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, -9, 65, 94, 76, 38, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 69 bestFitness=0.0 best=IntegerChromosome[40, 66, 5, 94, 8, 36, 76, 60, -9, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 70 bestFitness=0.0 best=IntegerChromosome[40, 66, 5, -9, 65, 94, -10, 60, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 71 bestFitness=0.0 best=IntegerChromosome[40, 66, 5, 94, 8, 36, 76, 3, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 72 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, -9, 8, 94, -9, 60, 17, 3]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 73 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 8, 94, 76, 38, 17, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 74 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, 94, 65, 94, 76, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 75 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, -9, 8, 94, -9, 60, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 76 bestFitness=0.0 best=IntegerChromosome[-4, -10, 5, 94, 65, 94, 76, 60, -9, 68]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 77 bestFitness=0.0 best=IntegerChromosome[-4, 5, 5, -9, 65, 94, 76, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 78 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, -9, 65, 94, 76, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 79 bestFitness=0.0 best=IntegerChromosome[40, 66, 5, -10, 65, 94, 76, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 80 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, -9, 8, 94, 76, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 81 bestFitness=0.0 best=IntegerChromosome[7, 5, 5, -9, 8, 94, -2, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 82 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, -9, 65, 94, -9, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 83 bestFitness=0.0 best=IntegerChromosome[40, 8, 5, -9, 65, 94, -3, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 84 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, 94, 8, 94, 76, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 85 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, -9, 65, 94, 76, 60, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 86 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, 94, 8, 94, 76, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 87 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, -9, 65, 94, -9, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 88 bestFitness=0.0 best=IntegerChromosome[-4, 5, 5, 94, 65, 94, -9, 60, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 89 bestFitness=0.0 best=IntegerChromosome[40, 5, 5, -9, 65, 94, -3, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 90 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, -9, 8, 94, -10, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 91 bestFitness=0.0 best=IntegerChromosome[40, -10, 5, -9, 65, 94, -3, 60, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 92 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, -9, 65, 94, 76, 60, -3, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 93 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, 94, 65, 94, -9, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 94 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, 94, -1, 94, -9, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 95 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, -9, 8, 94, 76, 60, 17, -5]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 96 bestFitness=0.0 best=IntegerChromosome[-4, 5, 5, -9, 65, 94, 76, 60, 17, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 97 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, -9, 65, 94, 76, 60, -9, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 98 bestFitness=0.0 best=IntegerChromosome[-4, 68, 5, 0, 65, 94, 76, 60, 17, 64]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 99 bestFitness=0.0 best=IntegerChromosome[40, 68, 5, -9, 8, 2, 76, 60, -3, -10]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Generation 100 bestFitness=0.0 best=IntegerChromosome[-10, -10, 5, 94, 65, 94, 76, 60, -8, 70]
+21:36:33 INFO    [GeneticAlgorithmBuilder] Overall bestFitness=0.0 best= IntegerChromosome[77, 39, 93, 51, 40, 33, 81, 10, 27, 92]
+21:36:33 INFO    [GeneticAlgorithmBuilder] 
+====================================
+21:36:33 INFO    [GeneticAlgorithmBuilder] BEST SOLUTION FOUND OVERALL:
+21:36:33 INFO    [GeneticAlgorithmBuilder] Best Fitness: 0.0
+21:36:33 INFO    [GeneticAlgorithmBuilder] Best Chromosome: IntegerChromosome[77, 39, 93, 51, 40, 33, 81, 10, 27, 92]
+21:36:33 INFO    [GeneticAlgorithmBuilder] ====================================
+
