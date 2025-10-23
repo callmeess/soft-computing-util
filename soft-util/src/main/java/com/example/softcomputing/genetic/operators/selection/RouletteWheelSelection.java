@@ -6,9 +6,13 @@ import java.util.Map;
 
 import com.example.softcomputing.genetic.chromosome.Chromosome;
 
-public class RouletteWheelSelection implements SelectionStrategy<Chromosome<?>> {
+public class RouletteWheelSelection<T extends Chromosome<?>> implements SelectionStrategy<Chromosome<?>> {
 
     private Map<Chromosome<?>, Pair<Double, Double>> wheel;
+
+    public RouletteWheelSelection() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 
     public void createWheel(List<Chromosome<?>> population) {
         if (population == null || population.isEmpty()) {

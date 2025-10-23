@@ -1,6 +1,7 @@
 package com.example.softcomputing.usecase.simulation.utils;
 
 import java.awt.*;
+import java.util.LinkedList;
 import javax.swing.JPanel;
 
 import com.example.softcomputing.usecase.simulation.GeneticAlgorithm;
@@ -10,8 +11,13 @@ public class SimulationCanvas extends JPanel {
     public static final int CELL_SIZE = 5;
     private final GeneticAlgorithm geneticAlgorithm;
 
+    private final LinkedList<Double> outputActivationHistory;
+    private int updateCounter = 0;
+    private static final int LOG_INTERVAL = 10;
+
     public SimulationCanvas(GeneticAlgorithm ga) {
         this.geneticAlgorithm = ga;
+        this.outputActivationHistory = new LinkedList<>();
         setBackground(new Color(240, 240, 240));
     }
 
@@ -24,10 +30,28 @@ public class SimulationCanvas extends JPanel {
         // Draw track
         drawTrack(g2d);
 
-        // Draw cars
-
+        // Update and draw cars
         if (geneticAlgorithm.getPopulation() != null) {
             Car bestCar = geneticAlgorithm.getBestCar();
+
+            // Track and log best car's output activation
+            if (bestCar != null && bestCar.isAlive()) {
+                double currentOutput = bestCar.getLastOutputActivation();
+                outputActivationHistory.addLast(currentOutput);
+
+                updateCounter++;
+
+                // Log periodically
+                if (updateCounter % LOG_INTERVAL == 0) {
+                    System.out.println(String.format(
+                            "Gen %d | Time: %d | Best Car Output: %.4f | Fitness: %.2f",
+                            geneticAlgorithm.getGeneration(),
+                            updateCounter,
+                            currentOutput,
+                            bestCar.getFitness()));
+                }
+            }
+
             for (Car car : geneticAlgorithm.getPopulation()) {
                 car.setBest(car == bestCar);
                 car.draw(g2d);
@@ -51,13 +75,19 @@ public class SimulationCanvas extends JPanel {
         }
     }
 
-
     private void drawStats(Graphics2D g2d) {
         g2d.setColor(Color.BLACK);
         g2d.setFont(new Font("Arial", Font.BOLD, 16));
 
         g2d.drawString("Generation: " + geneticAlgorithm.getGeneration(), 10, 25);
-        g2d.drawString("Best Fitness: " + (int)geneticAlgorithm.getBestFitness(), 10, 50);
+        g2d.drawString("Best Fitness: " + (int) geneticAlgorithm.getBestFitness(), 10, 50);
         g2d.drawString("Alive: " + geneticAlgorithm.getAliveCars(), 10, 75);
+    }
+
+    // Method to clear history when generation changes
+    public void clearHistory() {
+        outputActivationHistory.clear();
+        updateCounter = 0;
+        System.out.println("=== New Generation Started ===");
     }
 }

@@ -38,6 +38,7 @@ public class Car {
     private boolean[][] trackGrid;
     private final int gridWidth;
     private final int gridHeight;
+    private double lastOutputActivation = 0.0;
 
     public Car(double startX, double startY, double startAngle, boolean[][] trackGrid) {
         this.x = startX;
@@ -77,6 +78,10 @@ public class Car {
         }
     }
 
+    public double getLastOutputActivation() {
+        return lastOutputActivation;
+    }
+
     public void update() {
         if (!alive)
             return;
@@ -105,6 +110,7 @@ public class Car {
             if (outputs != null && outputs.length > 0) {
                 steering = outputs[0];
                 steering = Math.max(-1.0, Math.min(1.0, steering));
+                lastOutputActivation = steering;
             }
         } catch (Exception e) {
             steering = 0.0;

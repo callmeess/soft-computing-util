@@ -24,7 +24,6 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
     private Replacement<C> _replacement;
 
     AppLogger _logger = AppLogger.getLogger(GeneticAlgorithm.class);
-    FitnessFunction fitnessFunction = new FitnessFunction();
 
     public GeneticAlgorithm(GeneticAlgorithmBuilder<C> builder) {
         this._populationSize = builder.populationSize;

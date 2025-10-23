@@ -7,7 +7,7 @@ import javax.swing.Timer;
 import com.example.softcomputing.genetic.chromosome.Factories.FloatingPointChromosomeFactory;
 import com.example.softcomputing.genetic.operators.crossover.UniformCrossover;
 import com.example.softcomputing.genetic.operators.mutation.UniformMutation;
-import com.example.softcomputing.genetic.operators.replacement.FullGenerationReplacement;
+import com.example.softcomputing.genetic.operators.replacement.ElitismReplacement;
 import com.example.softcomputing.genetic.operators.selection.TournametSelection;
 import com.example.softcomputing.usecase.simulation.utils.SimulationCanvas;
 
@@ -28,8 +28,8 @@ public class RaceSimulation extends JFrame {
                 trackGrid,
                 new UniformCrossover<>(factory),
                 new UniformMutation(0.05),
-                new TournametSelection<>(3),
-                new FullGenerationReplacement<>());
+                new TournametSelection<>(5),
+                new ElitismReplacement<>());
 
         canvas = new SimulationCanvas(geneticAlgorithm);
 
