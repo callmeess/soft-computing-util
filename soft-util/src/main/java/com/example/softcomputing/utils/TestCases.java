@@ -162,6 +162,7 @@ public class TestCases {
         GeneticAlgorithm<IntegerChromosome> intGa = GeneticAlgorithm.<IntegerChromosome>builder()
                 .withPopulationSize(populationSize)
                 .withPopulation(intPop)
+                .withChromosomeFactory(factory)
                 .withSelectionStrategy(new RandomSelection<>())
                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                 .withMutationStrategy(new IntegerMutation(mutationRate))
@@ -202,7 +203,7 @@ public class TestCases {
         binGa.run();
     }
 
-    public static void runIntegrationFloatingPermutation() {
+    public static void runFloating_RnkSele_2CrsOv_ElitRep() {
 
         int populationSize = 50;
         int geneLength = 10;

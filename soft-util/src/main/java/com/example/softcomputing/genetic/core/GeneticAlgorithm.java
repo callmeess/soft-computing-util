@@ -58,17 +58,17 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
             while (offspring.size() < _populationSize) {
                 C parent1 = _selection.selectIndividual(_population);
                 C parent2 = _selection.selectIndividual(_population);
-               _logger.info("Selected Parents: \n Parent1: " + parent1 + "\n Parent2: " + parent2);
+            //    _logger.info("Selected Parents: \n Parent1: " + parent1 + "\n Parent2: " + parent2);
 
                 // crossover
                 List<C> children = _crossover.crossover(parent1, parent2);
-                _logger.info("Generated Children after Crossover: " + children);
+                // _logger.info("Generated Children after Crossover: " + children);
 
                 // mutation
                 for (C child : children) {
                     C mutated = _mutation.mutate(child);
                     offspring.add(mutated);
-                    _logger.info("Mutated Child: " + mutated);
+                    // _logger.info("Mutated Child: " + mutated);
                     if (offspring.size() >= _populationSize) break;
                 }
             }

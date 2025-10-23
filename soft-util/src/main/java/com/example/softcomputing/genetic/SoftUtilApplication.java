@@ -20,7 +20,9 @@ public class SoftUtilApplication {
         logger.info("3. FloatingPoint Chromosome");
         logger.info("4. IntChromosome , SP-Crossover ,  IntMutation , GReplacement");
         logger.info("5. BinChromosome , Uniform-Crossover , BinMutation , SSReplacement");
-        System.out.print("\nEnter your choice (1, 2, 3, 4, 5): ");
+        logger.info("6. FloatChromosome , RnkSel, 2Pt-Crossover , NotUniMutation , EliteReplacement");
+        logger.info("===========================================");
+        System.out.print("\nEnter your choice (1, 2, 3, 4, 5, 6): ");
 
 
         try (Scanner scanner = new Scanner(System.in)) {
@@ -32,6 +34,7 @@ public class SoftUtilApplication {
                 case 3 -> TestCases.runFloatingPointExample();
                 case 4 -> TestCases.runInteger_SinglePCrsv_IntMut_FlReplacement();
                 case 5 -> TestCases.runBin_UniformCrsv_BinMut_SSReplacement();
+                case 6 -> TestCases.runFloating_RnkSele_2CrsOv_ElitRep();
                 default -> logger.warn("Invalid choice. Please run again and select 1, 2, or 3.");
             }
         }
