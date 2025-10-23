@@ -9,6 +9,7 @@ import com.example.softcomputing.genetic.operators.mutation.MutationStrategy;
 import com.example.softcomputing.genetic.operators.replacement.Replacement;
 import com.example.softcomputing.genetic.operators.selection.SelectionStrategy;
 import com.example.softcomputing.utils.AppLogger;
+import com.example.softcomputing.utils.FitnessFunction;
 
 public class GeneticAlgorithm<C extends Chromosome<?>> {
 
@@ -23,6 +24,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
     private Replacement<C> _replacement;
 
     AppLogger _logger = AppLogger.getLogger(GeneticAlgorithm.class);
+    FitnessFunction fitnessFunction = new FitnessFunction();
 
     public GeneticAlgorithm(GeneticAlgorithmBuilder<C> builder) {
         this._populationSize = builder.populationSize;
@@ -82,7 +84,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
             C best = null;
             double bestFitness = Double.NEGATIVE_INFINITY;
             for (C ind : _population) {
-                double fitness = ind.evaluate();
+                double fitness = ind.getFitness();
                 if (best == null || fitness > bestFitness) {
                     best = ind;
                     bestFitness = fitness;

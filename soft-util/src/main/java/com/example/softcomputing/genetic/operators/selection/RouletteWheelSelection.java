@@ -22,7 +22,7 @@ public class RouletteWheelSelection implements SelectionStrategy<Chromosome<?>> 
         wheel = new HashMap<>();
 
         for (Chromosome<?> individual : population) {
-            currentFitness = individual.evaluate();
+            currentFitness = individual.getFitness();
             totalFitness += currentFitness;
             fitnessMap.put(individual, currentFitness);
         }

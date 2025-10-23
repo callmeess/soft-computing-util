@@ -7,10 +7,8 @@ import java.util.Random;
 
 import com.example.softcomputing.genetic.chromosome.Chromosome;
 
-
 public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy<C> {
 
-    
     public enum RankingMode {
         LINEAR,
         EXPONENTIAL
@@ -25,7 +23,6 @@ public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy
     private List<RankedIndividual<C>> rankedPopulation;
     private double[] cumulativeProbabilities;
 
-    
     public RankSelection() {
         this(1.5, RankingMode.LINEAR, true);
     }
@@ -34,12 +31,10 @@ public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy
         this(selectionPressure, RankingMode.LINEAR, true);
     }
 
-    
     public RankSelection(double selectionPressure, RankingMode rankingMode, boolean maximization) {
         if (selectionPressure < 1.0 || selectionPressure > 2.0) {
             throw new IllegalArgumentException(
-                "Selection pressure must be between 1.0 and 2.0, got: " + selectionPressure
-            );
+                    "Selection pressure must be between 1.0 and 2.0, got: " + selectionPressure);
         }
         this.selectionPressure = selectionPressure;
         this.rankingMode = rankingMode;
@@ -53,7 +48,7 @@ public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy
             throw new IllegalArgumentException("Population must not be null or empty");
         }
 
-        //  need to rebuild the ranking ? 
+        // need to rebuild the ranking ?
         if (cachedPopulation != population || rankedPopulation == null) {
             buildRanking(population);
             cachedPopulation = population;
@@ -77,14 +72,13 @@ public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy
         // Step 1: Evaluate fitness for all individuals and create ranked list
         rankedPopulation = new ArrayList<>(n);
         for (C individual : population) {
-            double fitness = individual.evaluate();
+            double fitness = individual.getFitness();
             rankedPopulation.add(new RankedIndividual<>(individual, fitness));
         }
 
         rankedPopulation.sort(maximization
-            ? Comparator.comparingDouble((RankedIndividual<C> ri) -> ri.fitness)
-            : Comparator.comparingDouble((RankedIndividual<C> ri) -> ri.fitness).reversed()
-        );
+                ? Comparator.comparingDouble((RankedIndividual<C> ri) -> ri.fitness)
+                : Comparator.comparingDouble((RankedIndividual<C> ri) -> ri.fitness).reversed());
 
         assignRanks();
 
@@ -96,7 +90,7 @@ public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy
             calculateExponentialProbabilities(probabilities, n);
         }
 
-        //  Build cumulative  for wheel selection
+        // Build cumulative for wheel selection
         cumulativeProbabilities = new double[n];
         cumulativeProbabilities[0] = probabilities[0];
         for (int i = 1; i < n; i++) {
@@ -111,7 +105,8 @@ public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy
     }
 
     private void assignRanks() {
-        if (rankedPopulation.isEmpty()) return;
+        if (rankedPopulation.isEmpty())
+            return;
 
         int currentRank = 1;
         rankedPopulation.get(0).rank = currentRank;
@@ -139,7 +134,7 @@ public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy
         }
     }
 
-    //  p(i) = (1 - e^(-i)) / C where C normalizes probabilities to sum to 1
+    // p(i) = (1 - e^(-i)) / C where C normalizes probabilities to sum to 1
     private void calculateExponentialProbabilities(double[] probabilities, int n) {
         double sumProbabilities = 0.0;
 
@@ -190,4 +185,3 @@ public class RankSelection<C extends Chromosome<?>> implements SelectionStrategy
         }
     }
 }
-

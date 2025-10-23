@@ -50,15 +50,12 @@ public class TestCases {
                 ChromosomeFactory<Integer, BinaryChromosome> factory = new BinaryChromosomeFactory();
 
                 GeneticAlgorithm<BinaryChromosome> ga = GeneticAlgorithm.<BinaryChromosome>builder()
-                                .withPopulationSize(populationSize)
-                                .withPopulation(population)
-                                .withChromosomeFactory(factory)
-                                .withSelectionStrategy(new RandomSelection<>())
+                                .withPopulationSize(populationSize).withPopulation(population)
+                                .withChromosomeFactory(factory).withSelectionStrategy(new RandomSelection<>())
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new BinaryMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
-                                .withMaxGenerations(maxGenerations)
-                                .build();
+                                .withMaxGenerations(maxGenerations).build();
 
                 ga.run();
                 _logger.info("Binary GA completed.\n");
@@ -92,15 +89,12 @@ public class TestCases {
                 }
 
                 GeneticAlgorithm<IntegerChromosome> ga = GeneticAlgorithm.<IntegerChromosome>builder()
-                                .withPopulationSize(populationSize)
-                                .withPopulation(population)
-                                .withChromosomeFactory(factory)
-                                .withSelectionStrategy(new RandomSelection<>())
+                                .withPopulationSize(populationSize).withPopulation(population)
+                                .withChromosomeFactory(factory).withSelectionStrategy(new RandomSelection<>())
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new IntegerMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
-                                .withMaxGenerations(maxGenerations)
-                                .build();
+                                .withMaxGenerations(maxGenerations).build();
 
                 ga.run();
                 _logger.info("Integer GA completed.\n");
@@ -117,29 +111,24 @@ public class TestCases {
                 double mutationRate = 0.05;
                 int maxGenerations = 100;
 
-                _logger.info(
-                                String.format("Config: popSize=%d, geneLength=%d, bounds=[%.1f,%.1f], mutationRate=%.3f, maxGen=%d",
-                                                populationSize, geneLength, lowerBound, upperBound, mutationRate,
-                                                maxGenerations));
+                _logger.info(String.format(
+                                "Config: popSize=%d, geneLength=%d, bounds=[%.1f,%.1f], mutationRate=%.3f, maxGen=%d",
+                                populationSize, geneLength, lowerBound, upperBound, mutationRate, maxGenerations));
 
                 List<FloatingPointChromosome> population;
                 population = PopulationInitializer.randomFloatingPopulation(populationSize, geneLength, lowerBound,
                                 upperBound);
 
                 ChromosomeFactory<Double, FloatingPointChromosome> factory = new FloatingPointChromosomeFactory(
-                                lowerBound,
-                                upperBound);
+                                lowerBound, upperBound);
 
                 GeneticAlgorithm<FloatingPointChromosome> ga = GeneticAlgorithm.<FloatingPointChromosome>builder()
-                                .withPopulationSize(populationSize)
-                                .withPopulation(population)
-                                .withChromosomeFactory(factory)
-                                .withSelectionStrategy(new RandomSelection<>())
+                                .withPopulationSize(populationSize).withPopulation(population)
+                                .withChromosomeFactory(factory).withSelectionStrategy(new RandomSelection<>())
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new UniformMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
-                                .withMaxGenerations(maxGenerations)
-                                .build();
+                                .withMaxGenerations(maxGenerations).build();
 
                 ga.run();
                 _logger.info("FloatingPoint GA completed.\n");
@@ -166,15 +155,12 @@ public class TestCases {
                                 geneLength, geneMin, geneMax);
 
                 GeneticAlgorithm<IntegerChromosome> intGa = GeneticAlgorithm.<IntegerChromosome>builder()
-                                .withPopulationSize(populationSize)
-                                .withPopulation(intPop)
-                                .withChromosomeFactory(factory)
-                                .withSelectionStrategy(new RandomSelection<>())
+                                .withPopulationSize(populationSize).withPopulation(intPop)
+                                .withChromosomeFactory(factory).withSelectionStrategy(new RandomSelection<>())
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new IntegerMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
-                                .withMaxGenerations(maxGenerations)
-                                .build();
+                                .withMaxGenerations(maxGenerations).build();
 
                 _logger.info("Running Integer GA  (SinglePoint + IntegerMutation + FullGeneration)");
                 intGa.run();
@@ -196,15 +182,12 @@ public class TestCases {
                                 geneLength);
 
                 GeneticAlgorithm<BinaryChromosome> binGa = GeneticAlgorithm.<BinaryChromosome>builder()
-                                .withPopulationSize(populationSize)
-                                .withChromosomeFactory(binFactory)
-                                .withPopulation(binPop)
-                                .withSelectionStrategy(new RandomSelection<>())
+                                .withPopulationSize(populationSize).withChromosomeFactory(binFactory)
+                                .withPopulation(binPop).withSelectionStrategy(new RandomSelection<>())
                                 .withCrossoverStrategy(new UniformCrossover<>(crossoverRate, binFactory, crossoverRate))
                                 .withMutationStrategy(new BinaryMutation(mutationRate))
                                 .withReplacementStrategy(new SteadyStateReplacement<>(replacementCount))
-                                .withMaxGenerations(maxGenerations)
-                                .build();
+                                .withMaxGenerations(maxGenerations).build();
 
                 _logger.info("Running Binary GA permutation (UniformCrossover + BinaryMutation + SteadyState)");
                 binGa.run();
@@ -230,18 +213,14 @@ public class TestCases {
                                 lowerBound, upperBound);
 
                 GeneticAlgorithm<FloatingPointChromosome> floatGa = GeneticAlgorithm.<FloatingPointChromosome>builder()
-                                .withPopulationSize(populationSize)
-                                .withPopulation(population)
-                                .withChromosomeFactory(factory)
-                                .withSelectionStrategy(new RankSelection<>())
+                                .withPopulationSize(populationSize).withPopulation(population)
+                                .withChromosomeFactory(factory).withSelectionStrategy(new RankSelection<>())
                                 .withCrossoverStrategy(new TwoPointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new NonUniformMutation(mutationRate, maxGenerations, 2.0))
-                                .withReplacementStrategy(new ElitismReplacement<>())
-                                .withMaxGenerations(maxGenerations)
+                                .withReplacementStrategy(new ElitismReplacement<>()).withMaxGenerations(maxGenerations)
                                 .build();
 
-                _logger.info(
-                                "Running FloatingPoint GA permutation (RankSelection + TwoPointCrossover + NonUniformMutation + Elitism)");
+                _logger.info("Running FloatingPoint GA permutation (RankSelection + TwoPointCrossover + NonUniformMutation + Elitism)");
                 floatGa.run();
         }
 }
