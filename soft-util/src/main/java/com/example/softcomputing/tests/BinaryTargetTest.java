@@ -10,6 +10,7 @@ import com.example.softcomputing.genetic.operators.crossover.SinglePointCrossove
 import com.example.softcomputing.genetic.operators.crossover.TwoPointCrossover;
 import com.example.softcomputing.genetic.operators.mutation.BinaryMutation;
 import com.example.softcomputing.genetic.operators.replacement.ElitismReplacement;
+import com.example.softcomputing.genetic.operators.selection.RandomSelection;
 import com.example.softcomputing.genetic.operators.selection.RouletteWheelSelection;
 import com.example.softcomputing.genetic.operators.selection.TournametSelection;
 
@@ -21,7 +22,8 @@ public class BinaryTargetTest {
         int[] target = { 1, 1, 1, 1, 1, 1, 1, 1 };
         BinaryTargetFitness fitness = new BinaryTargetFitness(target);
 
-        List<BinaryChromosome> population = PopulationInitializer.randomBinaryPopulation(50, 8);
+        int populationSize = 50;
+        List<BinaryChromosome> population = PopulationInitializer.randomBinaryPopulation(populationSize, 8);
 
         for (BinaryChromosome c : population) {
             c.setFitness(fitness.evaluate(c));
@@ -30,10 +32,10 @@ public class BinaryTargetTest {
         BinaryChromosomeFactory factory = new BinaryChromosomeFactory();
 
         GeneticAlgorithm<BinaryChromosome> ga = GeneticAlgorithm.<BinaryChromosome>builder()
-                .withPopulationSize(50)
+                .withPopulationSize(populationSize)
                 .withPopulation(population)
                 .withChromosomeFactory(factory)
-                .withSelectionStrategy(new TournametSelection<>(5))
+                .withSelectionStrategy(new RouletteWheelSelection<>(population))
                 .withCrossoverStrategy(new TwoPointCrossover<>(0.8, factory))
                 .withMutationStrategy(new BinaryMutation(0.05))
                 .withReplacementStrategy(new ElitismReplacement<>(5))

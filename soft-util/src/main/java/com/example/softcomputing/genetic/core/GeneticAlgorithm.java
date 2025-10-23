@@ -101,7 +101,7 @@ public class GeneticAlgorithm<C extends Chromosome<?>> {
                 break;
         }
 
-        _logger.info("Overall bestFitness=" + overallBestFitness + " best=" + overallBest);
+        _logger.info("Overall bestFitness=" + overallBestFitness + " best= " + overallBest);
         _logger.info("\n====================================");
         _logger.info("BEST SOLUTION FOUND OVERALL:");
         _logger.info("Best Fitness: " + overallBestFitness);

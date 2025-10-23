@@ -3,18 +3,19 @@ package com.example.softcomputing.genetic.operators.selection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import com.example.softcomputing.genetic.chromosome.Chromosome;
 
-public class RouletteWheelSelection<T extends Chromosome<?>> implements SelectionStrategy<Chromosome<?>> {
+public class RouletteWheelSelection<C extends Chromosome<?>> implements SelectionStrategy<C> {
 
-    private Map<Chromosome<?>, Pair<Double, Double>> wheel;
+    private Map<C, Pair<Double, Double>> wheel;
 
-    public RouletteWheelSelection() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public RouletteWheelSelection(List<C> population) {
+        createWheel(population);
     }
 
-    public void createWheel(List<Chromosome<?>> population) {
+    public void createWheel(List<C> population) {
         if (population == null || population.isEmpty()) {
             throw new IllegalArgumentException("Population must not be null or empty");
         }
@@ -22,17 +23,17 @@ public class RouletteWheelSelection<T extends Chromosome<?>> implements Selectio
         Double lowerBound = 0.0, upperBound = 0.0;
         Double currentFitness = 0.0, totalFitness = 0.0;
 
-        Map<Chromosome<?>, Double> fitnessMap = new HashMap<>();
+        Map<C, Double> fitnessMap = new HashMap<>();
         wheel = new HashMap<>();
 
-        for (Chromosome<?> individual : population) {
+        for (C individual : population) {
             currentFitness = individual.getFitness();
             totalFitness += currentFitness;
             fitnessMap.put(individual, currentFitness);
         }
 
-        for (Map.Entry<Chromosome<?>, Double> entry : fitnessMap.entrySet()) {
-            Chromosome<?> individual = entry.getKey();
+        for (Map.Entry<C, Double> entry : fitnessMap.entrySet()) {
+            C individual = entry.getKey();
             Double fitness = entry.getValue();
 
             upperBound = lowerBound + (fitness / totalFitness);
@@ -42,18 +43,18 @@ public class RouletteWheelSelection<T extends Chromosome<?>> implements Selectio
     }
 
     @Override
-    public Chromosome<?> selectIndividual(List<Chromosome<?>> population) {
+    public C selectIndividual(List<C> population) {
 
         if (wheel == null) {
             createWheel(population);
         }
         Double randomValue = Math.random();
-        for (Map.Entry<Chromosome<?>, Pair<Double, Double>> entry : wheel.entrySet()) {
+        for (Entry<C, Pair<Double, Double>> entry : wheel.entrySet()) {
             Pair<Double, Double> bounds = entry.getValue();
             if (randomValue >= bounds.getFirst() && randomValue < bounds.getSecond()) {
                 return entry.getKey();
             }
         }
-        return null;
+        return population.get((int) (Math.random() * population.size()));
     }
 }
