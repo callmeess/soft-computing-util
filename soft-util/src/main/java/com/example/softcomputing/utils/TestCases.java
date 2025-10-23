@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import com.example.softcomputing.tests.fitness.MaxSumFitness;
 import com.example.softcomputing.genetic.chromosome.BinaryChromosome;
 import com.example.softcomputing.genetic.chromosome.Factories.BinaryChromosomeFactory;
 import com.example.softcomputing.genetic.chromosome.Factories.ChromosomeFactory;
@@ -26,6 +27,8 @@ import com.example.softcomputing.genetic.operators.selection.RandomSelection;
 import com.example.softcomputing.genetic.operators.selection.RankSelection;
 import com.example.softcomputing.genetic.operators.selection.RouletteWheelSelection;
 import com.example.softcomputing.genetic.utils.PopulationInitializer;
+import com.example.softcomputing.tests.fitness.DecFromBinFitness;
+import com.example.softcomputing.tests.fitness.MaxProductFitness;
 
 public class TestCases {
 
@@ -49,6 +52,7 @@ public class TestCases {
                 }
 
                 ChromosomeFactory<Integer, BinaryChromosome> factory = new BinaryChromosomeFactory();
+                FitnessFunction<BinaryChromosome> fitnessFunction = new DecFromBinFitness();
 
                 GeneticAlgorithm<BinaryChromosome> ga = GeneticAlgorithm.<BinaryChromosome>builder()
                                 .withPopulationSize(populationSize)
@@ -58,6 +62,7 @@ public class TestCases {
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new BinaryMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
+                                .withFitnessFunction(fitnessFunction)
                                 .withMaxGenerations(maxGenerations).build();
 
                 ga.run();
@@ -90,6 +95,7 @@ public class TestCases {
                         }
                         population.add(factory.create(genes));
                 }
+                FitnessFunction<IntegerChromosome> fitnessFunction = new MaxSumFitness();
 
                 GeneticAlgorithm<IntegerChromosome> ga = GeneticAlgorithm.<IntegerChromosome>builder()
                                 .withPopulationSize(populationSize).withPopulation(population)
@@ -97,6 +103,7 @@ public class TestCases {
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new IntegerMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
+                                .withFitnessFunction(fitnessFunction)
                                 .withMaxGenerations(maxGenerations).build();
 
                 ga.run();
@@ -124,6 +131,7 @@ public class TestCases {
 
                 ChromosomeFactory<Double, FloatingPointChromosome> factory = new FloatingPointChromosomeFactory(
                                 lowerBound, upperBound);
+                FitnessFunction<FloatingPointChromosome> fitnessFunction = new MaxProductFitness();
 
                 GeneticAlgorithm<FloatingPointChromosome> ga = GeneticAlgorithm.<FloatingPointChromosome>builder()
                                 .withPopulationSize(populationSize).withPopulation(population)
@@ -131,6 +139,7 @@ public class TestCases {
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new UniformMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
+                                .withFitnessFunction(fitnessFunction)
                                 .withMaxGenerations(maxGenerations).build();
 
                 ga.run();
@@ -156,6 +165,7 @@ public class TestCases {
 
                 List<IntegerChromosome> intPop = PopulationInitializer.randomIntegerPopulation(populationSize,
                                 geneLength, geneMin, geneMax);
+                FitnessFunction<IntegerChromosome> fitnessFunction = new MaxSumFitness();
 
                 GeneticAlgorithm<IntegerChromosome> intGa = GeneticAlgorithm.<IntegerChromosome>builder()
                                 .withPopulationSize(populationSize).withPopulation(intPop)
@@ -163,6 +173,7 @@ public class TestCases {
                                 .withCrossoverStrategy(new SinglePointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new IntegerMutation(mutationRate))
                                 .withReplacementStrategy(new FullGenerationReplacement<>())
+                                .withFitnessFunction(fitnessFunction)
                                 .withMaxGenerations(maxGenerations).build();
 
                 _logger.info("Running Integer GA  (SinglePoint + IntegerMutation + FullGeneration)");
@@ -184,12 +195,15 @@ public class TestCases {
                 List<BinaryChromosome> binPop = PopulationInitializer.randomBinaryPopulation(populationSize,
                                 geneLength);
 
+                FitnessFunction<BinaryChromosome> fitnessFunction = new DecFromBinFitness();
+
                 GeneticAlgorithm<BinaryChromosome> binGa = GeneticAlgorithm.<BinaryChromosome>builder()
                                 .withPopulationSize(populationSize).withChromosomeFactory(binFactory)
                                 .withPopulation(binPop).withSelectionStrategy(new RandomSelection<>())
                                 .withCrossoverStrategy(new UniformCrossover<>(crossoverRate, binFactory, crossoverRate))
                                 .withMutationStrategy(new BinaryMutation(mutationRate))
                                 .withReplacementStrategy(new SteadyStateReplacement<>(replacementCount))
+                                .withFitnessFunction(fitnessFunction)
                                 .withMaxGenerations(maxGenerations).build();
 
                 _logger.info("Running Binary GA permutation (UniformCrossover + BinaryMutation + SteadyState)");
@@ -214,6 +228,7 @@ public class TestCases {
                                 .randomFloatingPopulation(populationSize, geneLength, lowerBound, upperBound);
                 ChromosomeFactory<Double, FloatingPointChromosome> factory = new FloatingPointChromosomeFactory(
                                 lowerBound, upperBound);
+                FitnessFunction<FloatingPointChromosome> fitnessFunction = new MaxProductFitness();
 
                 GeneticAlgorithm<FloatingPointChromosome> floatGa = GeneticAlgorithm.<FloatingPointChromosome>builder()
                                 .withPopulationSize(populationSize).withPopulation(population)
@@ -221,6 +236,7 @@ public class TestCases {
                                 .withCrossoverStrategy(new TwoPointCrossover<>(crossoverRate, factory))
                                 .withMutationStrategy(new NonUniformMutation(mutationRate, maxGenerations, 2.0))
                                 .withReplacementStrategy(new ElitismReplacement<>()).withMaxGenerations(maxGenerations)
+                                .withFitnessFunction(fitnessFunction)
                                 .build();
 
                 _logger.info("Running FloatingPoint GA permutation (RankSelection + TwoPointCrossover + NonUniformMutation + Elitism)");

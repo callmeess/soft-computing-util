@@ -10,6 +10,7 @@ import com.example.softcomputing.genetic.operators.mutation.MutationStrategy;
 import com.example.softcomputing.genetic.operators.replacement.Replacement;
 import com.example.softcomputing.genetic.operators.selection.SelectionStrategy;
 import com.example.softcomputing.utils.AppLogger;
+import com.example.softcomputing.utils.FitnessFunction;
 
 public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
 
@@ -25,6 +26,7 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
     MutationStrategy<C> mutation;
     Replacement<C> replacement;
     ChromosomeFactory<?, C> chromosomeFactory;
+    FitnessFunction<C> fitnessFunction;
 
     AppLogger logger = AppLogger.getLogger(GeneticAlgorithmBuilder.class);
 
@@ -50,6 +52,11 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
 
     public GeneticAlgorithmBuilder<C> withGeneLength(int length) {
         this.geneLength = length;
+        return this;
+    }
+
+    public GeneticAlgorithmBuilder<C> withFitnessFunction(FitnessFunction<C> fitnessFunction) {
+        this.fitnessFunction = fitnessFunction;
         return this;
     }
 
@@ -99,6 +106,7 @@ public class GeneticAlgorithmBuilder<C extends Chromosome<?>> {
         Objects.requireNonNull(mutation, "mutation strategy is required");
         Objects.requireNonNull(replacement, "replacement strategy is required");
         Objects.requireNonNull(chromosomeFactory, "chromosome factory is required");
+        Objects.requireNonNull(fitnessFunction, "fitness function is required");
         if (populationSize <= 0) {
             throw new IllegalArgumentException("populationSize must be > 0");
         }
