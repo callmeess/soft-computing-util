@@ -27,7 +27,7 @@ public class RaceSimulation extends JFrame {
     private static final int WIDTH = 1200;
     private static final int HEIGHT = 800;
     private static final String WEIGHTS_FILE = "best_weights.dat";
-    private static final boolean TRAINING_MODE = false;
+    private static final boolean TRAINING_MODE = true;
 
     private final GeneticAlgorithm geneticAlgorithm;
     private final SimulationCanvas canvas;
@@ -102,6 +102,7 @@ public class RaceSimulation extends JFrame {
     }
 
     // start the simulation loop
+    @SuppressWarnings("unused")
     private void startSimulation() {
         updateTimer = new Timer(16, e -> {
             geneticAlgorithm.updatePopulation();
