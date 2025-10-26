@@ -2,9 +2,10 @@ package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
 
-public class IntegerChromosome implements  Chromosome<Integer> {
+public class IntegerChromosome implements Chromosome<Integer> {
 
     private Integer[] _genes;
+    double fitness = 0.0;
 
     public IntegerChromosome(Integer[] genes) {
         this._genes = genes;
@@ -31,16 +32,32 @@ public class IntegerChromosome implements  Chromosome<Integer> {
     }
 
     @Override
-    public double evaluate() {
-        double fitness = 0.0;
-        for (Integer gene : _genes) {
-            fitness += gene;
-        }
-        System.err.println("Fitness as max sum : " + fitness);
+    public double getFitness() {
         return fitness;
     }
 
+    @Override
+    public void setFitness(double fit) {
+        this.fitness = fit;
+    }
+    // @Override
+    // public double evaluate() {
+    // double fitness = 0.0;
+    // for (Integer gene : _genes) {
+    // fitness += gene;
+    // }
+    // return fitness;
+    // }
+
+    // @Override
+    // public double evaluate(ToDoubleFunction<Chromosome<Integer>> evaluator) {
+    // if (evaluator != null) {
+    // return evaluator.applyAsDouble(this);
+    // }
+    // return evaluate();
+    // }
+
     public String toString() {
         return "IntegerChromosome" + Arrays.toString(_genes);
-    } 
+    }
 }

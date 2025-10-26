@@ -27,16 +27,6 @@
 		<maven.compiler.target>17</maven.compiler.target>
 		<java.version>17</java.version>
 	</properties>
-	<dependencies>
-		<!-- JUnit for testing -->
-		<dependency>
-			<groupId>org.junit.jupiter</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<version>5.10.0</version>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>

@@ -1,5 +1,4 @@
 
-
 package com.example.softcomputing.genetic.chromosome;
 
 import java.util.Arrays;
@@ -7,6 +6,7 @@ import java.util.Random;
 
 public class BinaryChromosome implements Chromosome<Integer> {
     private final int[] genes;
+    private double fitness = 0.0;
     private static final Random rand = new Random();
 
     public BinaryChromosome(int[] genes) {
@@ -28,7 +28,8 @@ public class BinaryChromosome implements Chromosome<Integer> {
     @Override
     public Integer[] toArray() {
         Integer[] arr = new Integer[genes.length];
-        for (int i = 0; i < genes.length; i++) arr[i] = genes[i];
+        for (int i = 0; i < genes.length; i++)
+            arr[i] = genes[i];
         return arr;
     }
 
@@ -48,10 +49,26 @@ public class BinaryChromosome implements Chromosome<Integer> {
     }
 
     @Override
-    public double evaluate() {
-        // Fitness: decimal value of the bit string
-        return toInt();
+    public double getFitness() {
+        return fitness;
     }
+
+    @Override
+    public void setFitness(double fitness) {
+        this.fitness = fitness;
+    }
+
+    // @Override
+    // public double evaluate() {
+    // return toInt();
+    // }
+
+    // public double evaluate(ToDoubleFunction<Chromosome<Integer>> evaluator) {
+    // if (evaluator != null) {
+    // return evaluator.applyAsDouble(this);
+    // }
+    // return evaluate();
+    // }
 
     public int toInt() {
         int val = 0;
@@ -64,7 +81,8 @@ public class BinaryChromosome implements Chromosome<Integer> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int g : genes) sb.append(g);
-        return sb.toString();
+        for (int g : genes)
+            sb.append(g);
+        return "BinaryChromosome" + sb.toString();
     }
 }
